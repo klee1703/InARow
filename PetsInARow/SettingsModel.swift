@@ -15,6 +15,5 @@ class SettingsModel {
     var enableGameCenter = true
     var board: EnumGameBoard = .TTBoard
     var gamePlayMode: EnumPlayMode = .SinglePlayer
-    var gameFirstMove: EnumFirstMove = .Me
-    
+    var gameFirstMove: EnumFirstMove = .Me    
 }
