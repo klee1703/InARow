@@ -26,8 +26,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var board: EnumGameBoard = .TTBoard
     var gamePlayMode: EnumPlayMode = .SinglePlayer
     var gameFirstMove: EnumFirstMove = .Me
-    var yourPet = ""
-    var opponentPet = ""
+    var yourPet = "Cat"
     var difficulty: EnumLevelOfDifficulty = .Easy
     var enableSoundEffects = true
     var enableGameCenter = true
@@ -94,6 +93,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // use the row to get the selected row from the picker view
         // using the row extract the value from your datasource (array[row])
         yourPet = petData[row]
+        model?.yourPet = petData[row]
     }
     
     // Set view for picker
@@ -119,8 +119,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func switchSoundEffects(_ sender: UISwitch) {
         if sender.isOn {
             enableSoundEffects = true
+            model?.enableSoundEffects = true
         } else {
             enableSoundEffects = false
+            model?.enableSoundEffects = false
         }
     }
 
@@ -147,6 +149,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             if isEnabled {
                 // Enabling game center, update accordingly
                 enableGameCenter = true
+                model?.enableGameCenter = true
                 opponent.setEnabled(true, forSegmentAt: EnumPlayMode.SinglePlayer.rawValue)
                 opponent.setEnabled(true, forSegmentAt: EnumPlayMode.MultiPlayer.rawValue)
                 gameBoard.setEnabled(true, forSegmentAt: EnumGameBoard.FFBoard.rawValue)
@@ -163,6 +166,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             } else {
                 // Disabling game center, update accordingly
                 enableGameCenter = false
+                model?.enableGameCenter = false
                 opponent.selectedSegmentIndex = EnumPlayMode.SinglePlayer.rawValue
                 opponent.setEnabled(false, forSegmentAt: EnumPlayMode.MultiPlayer.rawValue)
                 gameBoard.selectedSegmentIndex = EnumGameBoard.TTBoard.rawValue
@@ -178,10 +182,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         switch sender.selectedSegmentIndex {
         case 0:
             self.board = .TTBoard
+            model?.board = .TTBoard
         case 1:
             self.board = .FFBoard
+            model?.board = .FFBoard
         default:
             self.board = .TTBoard
+            model?.board = .TTBoard
         }
 
         if isInitializedGameBoard {
@@ -230,10 +237,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         switch sender.selectedSegmentIndex {
         case 0:
             self.gamePlayMode = .SinglePlayer
+            model?.gamePlayMode = .SinglePlayer
         case 1:
             self.gamePlayMode = .MultiPlayer
+            model?.gamePlayMode = .MultiPlayer
         default:
             self.gamePlayMode = .SinglePlayer
+            model?.gamePlayMode = .SinglePlayer
         }
 
         if isInitializedPlayMode {
@@ -276,10 +286,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         switch sender.selectedSegmentIndex {
         case 0:
             self.gameFirstMove = .Me
+            model?.gameFirstMove = .Me
         case 1:
             self.gameFirstMove = .Opponent
+            model?.gameFirstMove = .Opponent
         default:
             self.gameFirstMove = .Me
+            model?.gameFirstMove = .Me
         }
     }
 
@@ -287,10 +300,16 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         switch sender.selectedSegmentIndex {
         case 0:
             self.difficulty = .Easy
+            model?.difficulty = .Easy
         case 1:
             self.difficulty = .Medium
-        default:
+            model?.difficulty = .Medium
+        case 2:
             self.difficulty = .Hard
+            model?.difficulty = .Hard
+        default:
+            self.difficulty = .Easy
+            model?.difficulty = .Easy
         }
     }
     
