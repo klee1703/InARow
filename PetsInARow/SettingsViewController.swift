@@ -34,10 +34,15 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var isInitializedGameBoard = false
     var isInitializedGameCenter = false
     var isInitializedPlayMode = false
+    
+    var tbvc: GameTabBarController?
+    var model: SettingsModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        tbvc = (self.tabBarController as! GameTabBarController)
+        model = tbvc!.settings
         
         // Connect outlet
         self.pickerViewPet.delegate = self

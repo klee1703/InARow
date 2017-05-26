@@ -1,28 +1,21 @@
 //
-//  FourthViewController.swift
+//  GameTabBarController.swift
 //  PetsInARow
 //
-//  Created by Keith Lee on 5/6/17.
+//  Created by Keith Lee on 5/25/17.
 //  Copyright © 2017 Keith Lee. All rights reserved.
 //
 
 import UIKit
 
-class GameViewController: UIViewController {
-    // Variables
-    var gameBoard3x3: [String] = [String]()
-    var gameBoard4x4: [String] = [String]()
-    var gameBoard3x4: [String] = [String]()
-    
-    var tbvc: GameTabBarController?
-    var settingsModel: SettingsModel?
+class GameTabBarController: UITabBarController {
+    // Create a SettingsModel instance
+    var settings = SettingsModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        tbvc = (self.tabBarController as! GameTabBarController)
-        settingsModel = tbvc!.settings
     }
 
     override func didReceiveMemoryWarning() {
