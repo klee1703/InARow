@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,19 +42,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Game"/>
                             </button>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEI-We-Udo" customClass="BoardUIView" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="16" y="162" width="343" height="343"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EEI-We-Udo" secondAttribute="height" multiplier="1:1" id="m1J-cB-XJE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="Eav-UG-pff"/>
+                            <constraint firstItem="EEI-We-Udo" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="KKt-HV-QHu"/>
+                            <constraint firstItem="EEI-We-Udo" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="RFH-Df-6ZT"/>
+                            <constraint firstItem="EEI-We-Udo" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="TNd-Ya-L5G"/>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="UXw-xV-Y1i"/>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Y3q-g4-mSi"/>
+                            <constraint firstItem="EEI-We-Udo" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="dHV-bh-cJZ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="cat" id="acW-dT-cKf" userLabel="Game"/>
+                    <connections>
+                        <outlet property="boardView" destination="EEI-We-Udo" id="jLV-gc-jKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
         <!--Support-->
         <scene sceneID="HNb-E2-aeo">

@@ -9,6 +9,9 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    @IBOutlet weak var boardView: BoardUIView!
+    
     // Variables
     var gameBoard3x3: [String] = [String]()
     var gameBoard4x4: [String] = [String]()
@@ -35,7 +38,6 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
