@@ -9,8 +9,8 @@
 import Foundation
 
 class GameBoard {
-
-    init() {
-        
+    var boardSize: Int
+    init(boardSize: Int) {
+        self.boardSize = boardSize
     }
 }

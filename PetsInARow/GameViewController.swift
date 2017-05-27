@@ -19,11 +19,16 @@ class GameViewController: UIViewController {
     
     var tbvc: GameTabBarController?
     var settingsModel: SettingsModel?
+    var statisticsModel: StatisticsModel?
+    var gameModel: GameModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view, typically from a nib.
+        tbvc = (self.tabBarController as! GameTabBarController)
+        gameModel = tbvc!.game
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +37,7 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         tbvc = (self.tabBarController as! GameTabBarController)
         settingsModel = tbvc!.settings
+        statisticsModel = tbvc!.statistics
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,6 +45,10 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func newGame(_ sender: UIButton) {
+        statisticsModel?.spEasyWins += 1
+    }
+    
     /*
     // MARK: - Navigation
 

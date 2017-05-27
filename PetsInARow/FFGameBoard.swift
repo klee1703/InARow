@@ -1,18 +1,18 @@
 //
-//  TTGameBoard.swift
+//  FFGameBoard.swift
 //  PetsInARow
 //
-//  Created by Keith Lee on 5/13/17.
+//  Created by Keith Lee on 5/26/17.
 //  Copyright © 2017 Keith Lee. All rights reserved.
 //
 
 import Foundation
 
-class TTGameBoard : GameBoard {
+class FFGameBoard : GameBoard {
     var board: [Square]
     
     init() {
         board = [Square]()
-        super.init(boardSize: 9)
+        super.init(boardSize: 16)
     }
 }

@@ -35,13 +35,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var isInitializedPlayMode = false
     
     var tbvc: GameTabBarController?
-    var model: SettingsModel?
+    var settingsModel: SettingsModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tbvc = (self.tabBarController as! GameTabBarController)
-        model = tbvc!.settings
+        settingsModel = tbvc!.settings
         
         // Connect outlet
         self.pickerViewPet.delegate = self
@@ -93,7 +93,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // use the row to get the selected row from the picker view
         // using the row extract the value from your datasource (array[row])
         yourPet = petData[row]
-        model?.yourPet = petData[row]
+        settingsModel?.yourPet = petData[row]
     }
     
     // Set view for picker
@@ -119,10 +119,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func switchSoundEffects(_ sender: UISwitch) {
         if sender.isOn {
             enableSoundEffects = true
-            model?.enableSoundEffects = true
+            settingsModel?.enableSoundEffects = true
         } else {
             enableSoundEffects = false
-            model?.enableSoundEffects = false
+            settingsModel?.enableSoundEffects = false
         }
     }
 
@@ -149,7 +149,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             if isEnabled {
                 // Enabling game center, update accordingly
                 enableGameCenter = true
-                model?.enableGameCenter = true
+                settingsModel?.enableGameCenter = true
                 opponent.setEnabled(true, forSegmentAt: EnumPlayMode.SinglePlayer.rawValue)
                 opponent.setEnabled(true, forSegmentAt: EnumPlayMode.MultiPlayer.rawValue)
                 gameBoard.setEnabled(true, forSegmentAt: EnumGameBoard.FFBoard.rawValue)
@@ -166,7 +166,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             } else {
                 // Disabling game center, update accordingly
                 enableGameCenter = false
-                model?.enableGameCenter = false
+                settingsModel?.enableGameCenter = false
                 opponent.selectedSegmentIndex = EnumPlayMode.SinglePlayer.rawValue
                 opponent.setEnabled(false, forSegmentAt: EnumPlayMode.MultiPlayer.rawValue)
                 gameBoard.selectedSegmentIndex = EnumGameBoard.TTBoard.rawValue
@@ -182,13 +182,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         switch sender.selectedSegmentIndex {
         case 0:
             self.board = .TTBoard
-            model?.board = .TTBoard
+            settingsModel?.board = .TTBoard
         case 1:
             self.board = .FFBoard
-            model?.board = .FFBoard
+            settingsModel?.board = .FFBoard
         default:
             self.board = .TTBoard
-            model?.board = .TTBoard
+            settingsModel?.board = .TTBoard
         }
 
         if isInitializedGameBoard {
@@ -237,13 +237,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         switch sender.selectedSegmentIndex {
         case 0:
             self.gamePlayMode = .SinglePlayer
-            model?.gamePlayMode = .SinglePlayer
+            settingsModel?.gamePlayMode = .SinglePlayer
         case 1:
             self.gamePlayMode = .MultiPlayer
-            model?.gamePlayMode = .MultiPlayer
+            settingsModel?.gamePlayMode = .MultiPlayer
         default:
             self.gamePlayMode = .SinglePlayer
-            model?.gamePlayMode = .SinglePlayer
+            settingsModel?.gamePlayMode = .SinglePlayer
         }
 
         if isInitializedPlayMode {
@@ -286,13 +286,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         switch sender.selectedSegmentIndex {
         case 0:
             self.gameFirstMove = .Me
-            model?.gameFirstMove = .Me
+            settingsModel?.gameFirstMove = .Me
         case 1:
             self.gameFirstMove = .Opponent
-            model?.gameFirstMove = .Opponent
+            settingsModel?.gameFirstMove = .Opponent
         default:
             self.gameFirstMove = .Me
-            model?.gameFirstMove = .Me
+            settingsModel?.gameFirstMove = .Me
         }
     }
 
@@ -300,16 +300,16 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         switch sender.selectedSegmentIndex {
         case 0:
             self.difficulty = .Easy
-            model?.difficulty = .Easy
+            settingsModel?.difficulty = .Easy
         case 1:
             self.difficulty = .Medium
-            model?.difficulty = .Medium
+            settingsModel?.difficulty = .Medium
         case 2:
             self.difficulty = .Hard
-            model?.difficulty = .Hard
+            settingsModel?.difficulty = .Hard
         default:
             self.difficulty = .Easy
-            model?.difficulty = .Easy
+            settingsModel?.difficulty = .Easy
         }
     }
     

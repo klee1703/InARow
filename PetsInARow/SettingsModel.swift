@@ -9,11 +9,16 @@
 import Foundation
 
 class SettingsModel {
-    var yourPet = "Cat"
-    var difficulty: EnumLevelOfDifficulty = .Easy
+    // Properties
     var enableSoundEffects = true
     var enableGameCenter = true
+    
+    // Properties
     var board: EnumGameBoard = .TTBoard
     var gamePlayMode: EnumPlayMode = .SinglePlayer
     var gameFirstMove: EnumFirstMove = .Me    
+    var difficulty: EnumLevelOfDifficulty = .Easy
+    
+    // Pet property
+    var yourPet = "Cat"
 }

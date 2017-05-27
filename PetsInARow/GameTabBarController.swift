@@ -11,6 +11,8 @@ import UIKit
 class GameTabBarController: UITabBarController {
     // Create a SettingsModel instance
     var settings = SettingsModel()
+    var statistics = StatisticsModel()
+    var game = GameModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()

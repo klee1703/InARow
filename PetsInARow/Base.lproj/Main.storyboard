@@ -41,6 +41,9 @@
                                 <rect key="frame" x="284" y="55" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Aj3-Pt-X5s"/>
+                                </connections>
                             </button>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEI-We-Udo" customClass="BoardUIView" customModule="PetsInARow" customModuleProvider="target">
                                 <rect key="frame" x="16" y="162" width="343" height="343"/>
@@ -142,7 +145,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acj-6Y-kOj">
-                                <rect key="frame" x="49" y="158" width="56" height="29"/>
+                                <rect key="frame" x="50" y="158" width="56" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="tr6-bS-BQM"/>
                                 </constraints>
@@ -157,7 +160,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47N-Fk-9wG">
-                                <rect key="frame" x="294" y="158" width="29" height="29"/>
+                                <rect key="frame" x="285" y="158" width="29" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -169,7 +172,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kut-6y-Fxz">
-                                <rect key="frame" x="289" y="132" width="38" height="21"/>
+                                <rect key="frame" x="281" y="132" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -217,7 +220,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vw1-3m-QQ1" firstAttribute="leading" secondItem="Acj-6Y-kOj" secondAttribute="trailing" constant="68" id="0pF-80-qPc"/>
+                            <constraint firstItem="vw1-3m-QQ1" firstAttribute="leading" secondItem="Acj-6Y-kOj" secondAttribute="trailing" constant="67" id="0pF-80-qPc"/>
                             <constraint firstItem="tFd-zE-kxH" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="156-pL-Qy2"/>
                             <constraint firstItem="Acj-6Y-kOj" firstAttribute="baseline" secondItem="vw1-3m-QQ1" secondAttribute="baseline" id="3nL-BP-l24"/>
                             <constraint firstItem="vw1-3m-QQ1" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="4Gf-QZ-8bs"/>
@@ -228,8 +231,8 @@
                             <constraint firstItem="S5w-gX-8Vc" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="QXL-BI-xky"/>
                             <constraint firstItem="S5w-gX-8Vc" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="RLY-ZL-XTg"/>
                             <constraint firstItem="S5w-gX-8Vc" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="RuV-aN-CaD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="47N-Fk-9wG" secondAttribute="trailing" constant="36" id="ULq-ry-yk9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kut-6y-Fxz" secondAttribute="trailing" constant="32" id="WU5-lG-5IA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="47N-Fk-9wG" secondAttribute="trailing" constant="45" id="ULq-ry-yk9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kut-6y-Fxz" secondAttribute="trailing" constant="40" id="WU5-lG-5IA"/>
                             <constraint firstItem="Acj-6Y-kOj" firstAttribute="firstBaseline" secondItem="vw1-3m-QQ1" secondAttribute="firstBaseline" id="X5U-rV-bCX"/>
                             <constraint firstItem="Acj-6Y-kOj" firstAttribute="top" secondItem="xhW-UO-9kc" secondAttribute="bottom" constant="1" id="ZRt-na-0QN"/>
                             <constraint firstItem="Wxc-UL-AMk" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="g2T-iA-3Lc"/>
@@ -238,11 +241,18 @@
                             <constraint firstItem="kut-6y-Fxz" firstAttribute="top" secondItem="S5w-gX-8Vc" secondAttribute="bottom" constant="85" id="iZr-A2-EhK"/>
                             <constraint firstItem="tFd-zE-kxH" firstAttribute="leading" secondItem="xhW-UO-9kc" secondAttribute="trailing" constant="51.5" id="lPt-Ft-Uon"/>
                             <constraint firstItem="tFd-zE-kxH" firstAttribute="top" secondItem="Wxc-UL-AMk" secondAttribute="bottom" constant="8" id="rSj-Hl-pxM"/>
-                            <constraint firstItem="Acj-6Y-kOj" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="33" id="u24-5w-bcH"/>
+                            <constraint firstItem="Acj-6Y-kOj" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="34" id="u24-5w-bcH"/>
                             <constraint firstItem="xhW-UO-9kc" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="40" id="xQl-H2-7Iw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Statistics" image="stats" id="cPa-gy-q4n" userLabel="Statistics"/>
+                    <connections>
+                        <outlet property="multi33Wins" destination="xN5-y0-Msm" id="iH8-1e-b3O"/>
+                        <outlet property="multi44Wins" destination="ROC-NG-XUe" id="2Nx-JA-btn"/>
+                        <outlet property="spEasyWins" destination="Acj-6Y-kOj" id="F71-I9-hbv"/>
+                        <outlet property="spHardWins" destination="47N-Fk-9wG" id="ACb-n8-SIk"/>
+                        <outlet property="spMediumWins" destination="vw1-3m-QQ1" id="Ze8-o3-eA5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

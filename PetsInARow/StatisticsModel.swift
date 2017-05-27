@@ -9,10 +9,12 @@
 import Foundation
 
 class StatisticsModel {
-    var spWinsEasy: Int?
-    var spWinsMedium: Int?
-    var spWinsHard: Int?
-    
-    var mpWins33: Int?
-    var mpWins44: Int?
+    // Single player wins
+    var spEasyWins = 0
+    var spMediumWins = 0
+    var spHardWins = 0
+
+    // MultiPlayer wins
+    var mp33Wins = 0
+    var mp44Wins = 0
 }
