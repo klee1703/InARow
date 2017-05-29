@@ -15,7 +15,7 @@ class StatisticsViewController: UIViewController {
     var statisticsModel: StatisticsModel?
 
     @IBOutlet weak var spEasyWins: UILabel!
-    @IBOutlet weak var spMediumWins: UILabel!    
+    @IBOutlet weak var spMediumWins: UILabel!
     @IBOutlet weak var spHardWins: UILabel!
 
     @IBOutlet weak var multi33Wins: UILabel!
@@ -46,6 +46,20 @@ class StatisticsViewController: UIViewController {
         multi44Wins.text = "\(statisticsModel!.mp44Wins)"
     }
 
+    @IBAction func resetSpEasyWins(_ sender: UIButton) {
+    }
 
+    @IBAction func resetSpMediumWins(_ sender: UIButton) {
+    }
+    
+    @IBAction func resetSpHardWins(_ sender: UIButton) {
+    }
+
+    @IBAction func resetMp33Wins(_ sender: UIButton) {
+    }
+
+    @IBAction func resetMp44Wins(_ sender: UIButton) {
+    }
+    
 }
 

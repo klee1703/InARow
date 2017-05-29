@@ -60,9 +60,23 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ept-ax-hAh">
+                                <rect key="frame" x="187.5" y="132" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-tE-XBQ">
+                                <rect key="frame" x="170" y="520" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="A6a-82-mwX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KWK-tE-XBQ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="18r-SQ-mQS"/>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="Eav-UG-pff"/>
                             <constraint firstItem="EEI-We-Udo" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="KKt-HV-QHu"/>
                             <constraint firstItem="EEI-We-Udo" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="RFH-Df-6ZT"/>
@@ -70,11 +84,15 @@
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="UXw-xV-Y1i"/>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Y3q-g4-mSi"/>
                             <constraint firstItem="EEI-We-Udo" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="dHV-bh-cJZ"/>
+                            <constraint firstItem="KWK-tE-XBQ" firstAttribute="top" secondItem="EEI-We-Udo" secondAttribute="bottom" constant="15" id="jHh-Yn-2kI"/>
+                            <constraint firstItem="EEI-We-Udo" firstAttribute="top" secondItem="ept-ax-hAh" secondAttribute="bottom" constant="30" id="pL0-SC-bCx"/>
+                            <constraint firstItem="ept-ax-hAh" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="r8U-ef-dU4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Game" image="cat" id="acW-dT-cKf" userLabel="Game"/>
                     <connections>
                         <outlet property="boardView" destination="EEI-We-Udo" id="jLV-gc-jKG"/>
+                        <outlet property="resultsLabel" destination="ept-ax-hAh" id="Wow-Ew-An8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -99,19 +117,89 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2f-dx-xdK" customClass="WebView" customModule="PetsInARow">
+                                <rect key="frame" x="16" y="76" width="343" height="515"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="O4U-VF-VZG" firstAttribute="leading" secondItem="2hG-vC-2NY" secondAttribute="leadingMargin" id="3xR-qf-pOr"/>
+                            <constraint firstItem="d2f-dx-xdK" firstAttribute="centerX" secondItem="2hG-vC-2NY" secondAttribute="centerX" id="7ZJ-jf-Ddo"/>
                             <constraint firstItem="O4U-VF-VZG" firstAttribute="trailing" secondItem="2hG-vC-2NY" secondAttribute="trailingMargin" id="DjK-Wo-Zj2"/>
                             <constraint firstItem="O4U-VF-VZG" firstAttribute="top" secondItem="F5h-gR-Udg" secondAttribute="bottom" id="MhT-HA-kta"/>
+                            <constraint firstItem="eQF-83-Ncy" firstAttribute="top" secondItem="d2f-dx-xdK" secondAttribute="bottom" constant="27" id="UF6-Vn-M1e"/>
+                            <constraint firstItem="d2f-dx-xdK" firstAttribute="centerY" secondItem="2hG-vC-2NY" secondAttribute="centerY" id="brM-Ya-QPM"/>
+                            <constraint firstItem="d2f-dx-xdK" firstAttribute="leading" secondItem="O4U-VF-VZG" secondAttribute="leading" id="sYF-Tc-0f8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Support" image="faq" id="ryL-Cn-Jkv" userLabel="Support"/>
+                    <connections>
+                        <outlet property="webView" destination="d2f-dx-xdK" id="aNM-5l-HJI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnG-Km-Qa0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="-320"/>
+            <point key="canvasLocation" x="1580" y="-320.68965517241384"/>
+        </scene>
+        <!--Frequently Asked Questions-->
+        <scene sceneID="Lfz-97-X2Y">
+            <objects>
+                <viewController title="Frequently Asked Questions" id="O90-tN-LmF" customClass="FaqsViewController" customModule="PetsInARow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Qc-RA-ZKl"/>
+                        <viewControllerLayoutGuide type="bottom" id="vLi-lA-5w4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IXA-F4-75J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets In a Row" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg0-bg-eOe">
+                                <rect key="frame" x="18" y="-34" width="343" height="27"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXl-ai-B82" customClass="WebView" customModule="PetsInARow">
+                                <rect key="frame" x="0.0" y="63" width="375" height="584"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets In a Row" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJi-TF-PhI">
+                                <rect key="frame" x="122" y="28" width="132" height="27"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-Q8-ove">
+                                <rect key="frame" x="318" y="20" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="O90-tN-LmF" eventType="touchUpInside" id="psn-76-PoF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fXl-ai-B82" firstAttribute="leading" secondItem="IXA-F4-75J" secondAttribute="leading" id="1UN-ej-8YK"/>
+                            <constraint firstItem="Cg0-bg-eOe" firstAttribute="leading" secondItem="IXA-F4-75J" secondAttribute="leadingMargin" constant="2" id="4yl-8F-dH1"/>
+                            <constraint firstItem="fXl-ai-B82" firstAttribute="centerX" secondItem="IXA-F4-75J" secondAttribute="centerX" id="9Vi-nr-5JX"/>
+                            <constraint firstItem="vJi-TF-PhI" firstAttribute="centerX" secondItem="IXA-F4-75J" secondAttribute="centerX" id="azY-Ie-Xg9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cg0-bg-eOe" secondAttribute="trailing" constant="-2" id="c4J-gR-mmG"/>
+                            <constraint firstItem="fXl-ai-B82" firstAttribute="top" secondItem="0Qc-RA-ZKl" secondAttribute="bottom" constant="43" id="efk-4A-6s9"/>
+                            <constraint firstItem="fXl-ai-B82" firstAttribute="centerY" secondItem="IXA-F4-75J" secondAttribute="centerY" constant="21.5" id="fdm-JG-IjJ"/>
+                            <constraint firstItem="fXl-ai-B82" firstAttribute="top" secondItem="Cg0-bg-eOe" secondAttribute="bottom" constant="70" id="kQQ-e3-CPV"/>
+                            <constraint firstItem="vJi-TF-PhI" firstAttribute="top" secondItem="0Qc-RA-ZKl" secondAttribute="bottom" constant="8" id="xSO-Sd-KM3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="fXl-ai-B82" id="yOI-fs-ai9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="18a-VV-S4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2440.8000000000002" y="-317.09145427286359"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="wg7-f3-ORb">
@@ -217,6 +305,46 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsE-AP-0fK">
+                                <rect key="frame" x="59" y="195" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetSpEasyWins:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="uwX-JN-42o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnH-9J-TEb">
+                                <rect key="frame" x="169" y="195" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetSpMediumWins:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="tMw-Yo-8qg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVe-a1-zzq">
+                                <rect key="frame" x="281" y="195" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetSpHardWins:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="O48-4v-jJB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v59-nC-oYt">
+                                <rect key="frame" x="90" y="378" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetMp33Wins:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="Bh5-gE-Imy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6k-yX-nxF">
+                                <rect key="frame" x="240" y="378" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetMp44Wins:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="sAv-Tg-vjX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

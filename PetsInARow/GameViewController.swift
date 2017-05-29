@@ -9,9 +9,11 @@
 import UIKit
 
 class GameViewController: UIViewController {
-    
+
+    // Outlets
     @IBOutlet weak var boardView: BoardUIView!
-    
+    @IBOutlet weak var resultsLabel: UILabel!
+
     // Variables
     var gameBoard3x3: [String] = [String]()
     var gameBoard4x4: [String] = [String]()
@@ -21,7 +23,10 @@ class GameViewController: UIViewController {
     var settingsModel: SettingsModel?
     var statisticsModel: StatisticsModel?
     var gameModel: GameModel?
-
+    var startLabel: String = "Let's Begin"
+    var resultWin: String = "Congratulations on the Win!"
+    var resultLoss: String = "Too bad, better luck next time"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +43,8 @@ class GameViewController: UIViewController {
         tbvc = (self.tabBarController as! GameTabBarController)
         settingsModel = tbvc!.settings
         statisticsModel = tbvc!.statistics
+        
+        resultsLabel.text = startLabel
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,5 +65,8 @@ class GameViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func startGame(_ sender: UIButton) {
+    }
 
 }

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		791C38051ED94F5F00BA4F16 /* FFGameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C38041ED94F5F00BA4F16 /* FFGameBoard.swift */; };
 		791C38061ED94F5F00BA4F16 /* FFGameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C38041ED94F5F00BA4F16 /* FFGameBoard.swift */; };
+		791C38091EDA1E3800BA4F16 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C38081EDA1E3800BA4F16 /* WebView.swift */; };
+		791C380A1EDA1E3800BA4F16 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C38081EDA1E3800BA4F16 /* WebView.swift */; };
+		791C380C1EDA5D0800BA4F16 /* Help.html in Resources */ = {isa = PBXBuildFile; fileRef = 791C380B1EDA5D0800BA4F16 /* Help.html */; };
+		791C380D1EDA5D0800BA4F16 /* Help.html in Resources */ = {isa = PBXBuildFile; fileRef = 791C380B1EDA5D0800BA4F16 /* Help.html */; };
+		791C38121EDBA40E00BA4F16 /* FAQs.html in Resources */ = {isa = PBXBuildFile; fileRef = 791C38111EDBA40E00BA4F16 /* FAQs.html */; };
+		791C38131EDBA40E00BA4F16 /* FAQs.html in Resources */ = {isa = PBXBuildFile; fileRef = 791C38111EDBA40E00BA4F16 /* FAQs.html */; };
+		791C38151EDBA54C00BA4F16 /* FaqsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */; };
+		791C38161EDBA54C00BA4F16 /* FaqsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */; };
 		792F88521ED0112B006685CC /* EnumLevelOfDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */; };
 		792F88541ED0FC45006685CC /* EnumPlayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88531ED0FC45006685CC /* EnumPlayMode.swift */; };
 		79312C0F1ED675EC0054490C /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 79312C0C1ED675EC0054490C /* cat.png */; };
@@ -80,6 +88,10 @@
 
 /* Begin PBXFileReference section */
 		791C38041ED94F5F00BA4F16 /* FFGameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFGameBoard.swift; sourceTree = "<group>"; };
+		791C38081EDA1E3800BA4F16 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		791C380B1EDA5D0800BA4F16 /* Help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Help.html; sourceTree = "<group>"; };
+		791C38111EDBA40E00BA4F16 /* FAQs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FAQs.html; sourceTree = "<group>"; };
+		791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqsViewController.swift; sourceTree = "<group>"; };
 		792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumLevelOfDifficulty.swift; sourceTree = "<group>"; };
 		792F88531ED0FC45006685CC /* EnumPlayMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumPlayMode.swift; sourceTree = "<group>"; };
 		79312C0C1ED675EC0054490C /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
@@ -170,6 +182,7 @@
 				79F71A701EBD3BB60067D98C /* SettingsViewController.swift */,
 				79F71A721EBD3BB60067D98C /* StatisticsViewController.swift */,
 				79F71A9E1EBE7FEE0067D98C /* SupportViewController.swift */,
+				791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -222,6 +235,8 @@
 		79F71A621EBD3BB60067D98C = {
 			isa = PBXGroup;
 			children = (
+				791C38111EDBA40E00BA4F16 /* FAQs.html */,
+				791C380B1EDA5D0800BA4F16 /* Help.html */,
 				79F71A6D1EBD3BB60067D98C /* PetsInARow */,
 				79F71A841EBD3BB70067D98C /* PetsInARowTests */,
 				79F71A8F1EBD3BB70067D98C /* PetsInARowUITests */,
@@ -247,6 +262,7 @@
 				79F71A6E1EBD3BB60067D98C /* AppDelegate.swift */,
 				791C38011ED94E7C00BA4F16 /* models */,
 				79F71A741EBD3BB60067D98C /* Main.storyboard */,
+				791C38081EDA1E3800BA4F16 /* WebView.swift */,
 				7964CA121ED887CD00C8A92D /* BoardUIView.swift */,
 				791C38071ED94FCB00BA4F16 /* boards */,
 				79B8A0F71EC7BC640005F98A /* Square.swift */,
@@ -386,6 +402,7 @@
 				79312C101ED675EC0054490C /* cat@2x.png in Resources */,
 				796C58C91EC6B2770034CF94 /* faq@3x.png in Resources */,
 				79B8A0F01EC7B84C0005F98A /* settings@2x.png in Resources */,
+				791C380C1EDA5D0800BA4F16 /* Help.html in Resources */,
 				79312C0F1ED675EC0054490C /* cat.png in Resources */,
 				79312C111ED675EC0054490C /* cat@3x.png in Resources */,
 				796C58CF1EC6B2770034CF94 /* stats@3x.png in Resources */,
@@ -393,6 +410,7 @@
 				7948C5951ED673690028C062 /* wrench@3x.png in Resources */,
 				796C58CA1EC6B2770034CF94 /* settings.png in Resources */,
 				79F71A7B1EBD3BB60067D98C /* LaunchScreen.storyboard in Resources */,
+				791C38121EDBA40E00BA4F16 /* FAQs.html in Resources */,
 				79F71A781EBD3BB60067D98C /* Assets.xcassets in Resources */,
 				7948C5941ED673690028C062 /* wrench@2x.png in Resources */,
 				7948C5911ED673510028C062 /* wrench.png in Resources */,
@@ -408,6 +426,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				791C380D1EDA5D0800BA4F16 /* Help.html in Resources */,
+				791C38131EDBA40E00BA4F16 /* FAQs.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +462,10 @@
 				79F71AA11EBE81030067D98C /* GameViewController.swift in Sources */,
 				7964CA131ED887CD00C8A92D /* BoardUIView.swift in Sources */,
 				7964CA101ED7E0FA00C8A92D /* StatisticsModel.swift in Sources */,
+				791C38151EDBA54C00BA4F16 /* FaqsViewController.swift in Sources */,
 				79B8A0F51EC7BAE00005F98A /* TTGameBoard.swift in Sources */,
 				796C58BD1EC524A20034CF94 /* EnumPet.swift in Sources */,
+				791C38091EDA1E3800BA4F16 /* WebView.swift in Sources */,
 				7964CA0D1ED7E0D900C8A92D /* GameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +479,7 @@
 				79FD34941ECC0A65005DC940 /* EnumOpponent.swift in Sources */,
 				79B8A0F91EC7BC640005F98A /* Square.swift in Sources */,
 				791C38061ED94F5F00BA4F16 /* FFGameBoard.swift in Sources */,
+				791C380A1EDA1E3800BA4F16 /* WebView.swift in Sources */,
 				79FD34971ECC0A6F005DC940 /* EnumFirstMove.swift in Sources */,
 				7964CA141ED887CD00C8A92D /* BoardUIView.swift in Sources */,
 				7964CA111ED7E0FA00C8A92D /* StatisticsModel.swift in Sources */,
@@ -464,6 +487,7 @@
 				79B8A0F61EC7BAE00005F98A /* TTGameBoard.swift in Sources */,
 				79B8A0F31EC7BA950005F98A /* GameBoard.swift in Sources */,
 				79F71A861EBD3BB70067D98C /* PetsInARowTests.swift in Sources */,
+				791C38161EDBA54C00BA4F16 /* FaqsViewController.swift in Sources */,
 				7964CA081ED7ADD300C8A92D /* GameTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
