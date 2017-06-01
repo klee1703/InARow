@@ -14,7 +14,7 @@ class FaqsViewController: UIViewController, UIWebViewDelegate {
 
     @IBAction func doneButton(_ sender: UIButton) {
         // Close window
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -12,7 +12,6 @@ import MessageUI
 class SupportViewController: UIViewController, UIWebViewDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var webView: WebView!
-    var faqsViewController: FaqsViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +21,8 @@ class SupportViewController: UIViewController, UIWebViewDelegate, MFMailComposeV
         let request = URLRequest(url: url!)
         webView.loadRequest(request)
         webView.delegate = self
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,11 +56,6 @@ class SupportViewController: UIViewController, UIWebViewDelegate, MFMailComposeV
                     self.present(picker, animated: true, completion: nil)
                 }
                 return false
-            }
-            if request.url?.scheme == "file" {
-                self.faqsViewController = FaqsViewController()
-                present(faqsViewController!, animated:true, completion:nil)
-                return false;
             }
         }
         return true

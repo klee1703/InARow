@@ -89,7 +89,7 @@
                             <constraint firstItem="ept-ax-hAh" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="r8U-ef-dU4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Game" image="cat" id="acW-dT-cKf" userLabel="Game"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="cat.png" id="acW-dT-cKf" userLabel="Game"/>
                     <connections>
                         <outlet property="boardView" destination="EEI-We-Udo" id="jLV-gc-jKG"/>
                         <outlet property="resultsLabel" destination="ept-ax-hAh" id="Wow-Ew-An8"/>
@@ -102,7 +102,7 @@
         <!--Support-->
         <scene sceneID="HNb-E2-aeo">
             <objects>
-                <viewController title="Support" id="UXk-3q-EMn" userLabel="Support" customClass="SupportViewController" customModule="PetsInARow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UXk-3q-EMn" userLabel="Support" customClass="SupportViewController" customModule="PetsInARow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F5h-gR-Udg"/>
                         <viewControllerLayoutGuide type="bottom" id="eQF-83-Ncy"/>
@@ -111,37 +111,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets In a Row" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4U-VF-VZG">
-                                <rect key="frame" x="16" y="20" width="343" height="27"/>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2f-dx-xdK" customClass="WebView" customModule="PetsInARow">
+                                <rect key="frame" x="16" y="58" width="343" height="552"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmA-B1-eyj">
+                                <rect key="frame" x="322" y="20" width="37" height="30"/>
+                                <state key="normal" title="FAQs"/>
+                                <connections>
+                                    <segue destination="O90-tN-LmF" kind="presentation" animates="NO" id="GBO-0y-cCU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets In a Row" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l80-LA-VQq">
+                                <rect key="frame" x="121" y="0.0" width="132" height="27"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2f-dx-xdK" customClass="WebView" customModule="PetsInARow">
-                                <rect key="frame" x="16" y="76" width="343" height="515"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
-                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="O4U-VF-VZG" firstAttribute="leading" secondItem="2hG-vC-2NY" secondAttribute="leadingMargin" id="3xR-qf-pOr"/>
-                            <constraint firstItem="d2f-dx-xdK" firstAttribute="centerX" secondItem="2hG-vC-2NY" secondAttribute="centerX" id="7ZJ-jf-Ddo"/>
-                            <constraint firstItem="O4U-VF-VZG" firstAttribute="trailing" secondItem="2hG-vC-2NY" secondAttribute="trailingMargin" id="DjK-Wo-Zj2"/>
-                            <constraint firstItem="O4U-VF-VZG" firstAttribute="top" secondItem="F5h-gR-Udg" secondAttribute="bottom" id="MhT-HA-kta"/>
-                            <constraint firstItem="eQF-83-Ncy" firstAttribute="top" secondItem="d2f-dx-xdK" secondAttribute="bottom" constant="27" id="UF6-Vn-M1e"/>
-                            <constraint firstItem="d2f-dx-xdK" firstAttribute="centerY" secondItem="2hG-vC-2NY" secondAttribute="centerY" id="brM-Ya-QPM"/>
-                            <constraint firstItem="d2f-dx-xdK" firstAttribute="leading" secondItem="O4U-VF-VZG" secondAttribute="leading" id="sYF-Tc-0f8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d2f-dx-xdK" secondAttribute="trailing" id="5cT-sl-yWe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VmA-B1-eyj" secondAttribute="trailing" id="5em-lH-RwI"/>
+                            <constraint firstItem="l80-LA-VQq" firstAttribute="centerX" secondItem="2hG-vC-2NY" secondAttribute="centerX" id="DWF-v1-hSz"/>
+                            <constraint firstItem="d2f-dx-xdK" firstAttribute="top" secondItem="VmA-B1-eyj" secondAttribute="bottom" constant="8" id="QIl-7i-jaw"/>
+                            <constraint firstItem="VmA-B1-eyj" firstAttribute="top" secondItem="F5h-gR-Udg" secondAttribute="bottom" constant="20" id="SKU-ya-7Mh"/>
+                            <constraint firstItem="eQF-83-Ncy" firstAttribute="top" secondItem="d2f-dx-xdK" secondAttribute="bottom" constant="8" id="cZd-Lo-edM"/>
+                            <constraint firstItem="d2f-dx-xdK" firstAttribute="leading" secondItem="2hG-vC-2NY" secondAttribute="leadingMargin" id="vK4-kJ-aXa"/>
+                            <constraint firstItem="l80-LA-VQq" firstAttribute="top" secondItem="F5h-gR-Udg" secondAttribute="bottom" id="yM2-jP-ppx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Support" image="faq" id="ryL-Cn-Jkv" userLabel="Support"/>
+                    <navigationItem key="navigationItem" id="P9u-TQ-ZRc">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="pKU-V6-mD9"/>
+                    </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="webView" destination="d2f-dx-xdK" id="aNM-5l-HJI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fnG-Km-Qa0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="2519.1999999999998" y="-320.68965517241384"/>
         </scene>
         <!--Frequently Asked Questions-->
         <scene sceneID="Lfz-97-X2Y">
@@ -155,51 +166,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets In a Row" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cg0-bg-eOe">
-                                <rect key="frame" x="18" y="-34" width="343" height="27"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fXl-ai-B82" customClass="WebView" customModule="PetsInARow">
-                                <rect key="frame" x="0.0" y="63" width="375" height="584"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets In a Row" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJi-TF-PhI">
-                                <rect key="frame" x="122" y="28" width="132" height="27"/>
+                                <rect key="frame" x="122" y="0.0" width="132" height="27"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-Q8-ove">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtG-Q8-ove">
                                 <rect key="frame" x="318" y="20" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneButton:" destination="O90-tN-LmF" eventType="touchUpInside" id="psn-76-PoF"/>
                                 </connections>
                             </button>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ecN-HQ-i3i">
+                                <rect key="frame" x="16" y="58" width="343" height="601"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fXl-ai-B82" firstAttribute="leading" secondItem="IXA-F4-75J" secondAttribute="leading" id="1UN-ej-8YK"/>
-                            <constraint firstItem="Cg0-bg-eOe" firstAttribute="leading" secondItem="IXA-F4-75J" secondAttribute="leadingMargin" constant="2" id="4yl-8F-dH1"/>
-                            <constraint firstItem="fXl-ai-B82" firstAttribute="centerX" secondItem="IXA-F4-75J" secondAttribute="centerX" id="9Vi-nr-5JX"/>
+                            <constraint firstItem="ecN-HQ-i3i" firstAttribute="top" secondItem="KtG-Q8-ove" secondAttribute="bottom" constant="8" id="CgT-mL-VJI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ecN-HQ-i3i" secondAttribute="trailing" id="F2m-51-3Ru"/>
+                            <constraint firstItem="ecN-HQ-i3i" firstAttribute="leading" secondItem="IXA-F4-75J" secondAttribute="leadingMargin" id="Hgb-OX-v1J"/>
+                            <constraint firstItem="KtG-Q8-ove" firstAttribute="top" secondItem="0Qc-RA-ZKl" secondAttribute="bottom" constant="20" id="Nkh-uq-SVB"/>
+                            <constraint firstItem="ecN-HQ-i3i" firstAttribute="centerX" secondItem="IXA-F4-75J" secondAttribute="centerX" id="WDe-JP-XXB"/>
                             <constraint firstItem="vJi-TF-PhI" firstAttribute="centerX" secondItem="IXA-F4-75J" secondAttribute="centerX" id="azY-Ie-Xg9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Cg0-bg-eOe" secondAttribute="trailing" constant="-2" id="c4J-gR-mmG"/>
-                            <constraint firstItem="fXl-ai-B82" firstAttribute="top" secondItem="0Qc-RA-ZKl" secondAttribute="bottom" constant="43" id="efk-4A-6s9"/>
-                            <constraint firstItem="fXl-ai-B82" firstAttribute="centerY" secondItem="IXA-F4-75J" secondAttribute="centerY" constant="21.5" id="fdm-JG-IjJ"/>
-                            <constraint firstItem="fXl-ai-B82" firstAttribute="top" secondItem="Cg0-bg-eOe" secondAttribute="bottom" constant="70" id="kQQ-e3-CPV"/>
-                            <constraint firstItem="vJi-TF-PhI" firstAttribute="top" secondItem="0Qc-RA-ZKl" secondAttribute="bottom" constant="8" id="xSO-Sd-KM3"/>
+                            <constraint firstItem="KtG-Q8-ove" firstAttribute="top" secondItem="0Qc-RA-ZKl" secondAttribute="bottom" constant="20" id="pfC-IB-o9m"/>
+                            <constraint firstItem="vLi-lA-5w4" firstAttribute="top" secondItem="ecN-HQ-i3i" secondAttribute="bottom" constant="8" id="qXb-Bg-K3S"/>
+                            <constraint firstItem="vJi-TF-PhI" firstAttribute="top" secondItem="0Qc-RA-ZKl" secondAttribute="bottom" id="xSO-Sd-KM3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KtG-Q8-ove" secondAttribute="trailing" constant="4" id="ztn-Hg-PRM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="fXl-ai-B82" id="yOI-fs-ai9"/>
+                        <outlet property="webView" destination="ecN-HQ-i3i" id="fHa-Yo-k4p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18a-VV-S4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2440.8000000000002" y="-317.09145427286359"/>
+            <point key="canvasLocation" x="3380" y="-317.09145427286359"/>
         </scene>
         <!--Statistics-->
         <scene sceneID="wg7-f3-ORb">
@@ -373,7 +378,7 @@
                             <constraint firstItem="xhW-UO-9kc" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="40" id="xQl-H2-7Iw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Statistics" image="stats" id="cPa-gy-q4n" userLabel="Statistics"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Statistics" image="stats.png" id="cPa-gy-q4n" userLabel="Statistics"/>
                     <connections>
                         <outlet property="multi33Wins" destination="xN5-y0-Msm" id="iH8-1e-b3O"/>
                         <outlet property="multi44Wins" destination="ROC-NG-XUe" id="2Nx-JA-btn"/>
@@ -627,7 +632,7 @@
                             <constraint firstItem="6wB-n6-gnC" firstAttribute="centerX" secondItem="FPV-JO-BYx" secondAttribute="centerX" id="xlh-qS-l0K"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Settings" image="wrench" id="DBD-9F-0f5" userLabel="Settings"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Settings" image="wrench.png" id="DBD-9F-0f5" userLabel="Settings"/>
                     <connections>
                         <outlet property="firstMove" destination="foI-AU-XTn" id="LBL-mb-RTR"/>
                         <outlet property="gameBoard" destination="blW-60-AgA" id="F7s-7W-b6U"/>
@@ -656,18 +661,39 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="2qt-TM-Z6b" kind="relationship" relationship="viewControllers" id="zdo-Tq-eKE"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="UXk-3q-EMn" kind="relationship" relationship="viewControllers" id="aT6-P7-IS8"/>
+                        <segue destination="GQG-7n-TcS" kind="relationship" relationship="viewControllers" id="aT6-P7-IS8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Support-->
+        <scene sceneID="iKR-fK-W5x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="GQG-7n-TcS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="3" title="Support" image="faq.png" id="ryL-Cn-Jkv" userLabel="Support"/>
+                    <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ms4-LR-XKg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UXk-3q-EMn" kind="relationship" relationship="rootViewController" id="2Pm-fC-Hba"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tj7-xz-6b9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="-320.68965517241384"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="cat" width="25" height="25"/>
-        <image name="faq" width="25" height="25"/>
-        <image name="stats" width="25" height="25"/>
-        <image name="wrench" width="25" height="25"/>
+        <image name="cat.png" width="25" height="25"/>
+        <image name="faq.png" width="25" height="25"/>
+        <image name="stats.png" width="25" height="25"/>
+        <image name="wrench.png" width="25" height="25"/>
     </resources>
 </document>

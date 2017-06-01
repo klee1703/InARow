@@ -17,6 +17,10 @@
 		791C38131EDBA40E00BA4F16 /* FAQs.html in Resources */ = {isa = PBXBuildFile; fileRef = 791C38111EDBA40E00BA4F16 /* FAQs.html */; };
 		791C38151EDBA54C00BA4F16 /* FaqsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */; };
 		791C38161EDBA54C00BA4F16 /* FaqsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */; };
+		791C38221EDFC6D200BA4F16 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 791C38201EDFC6D200BA4F16 /* settings.png */; };
+		791C38231EDFC6D200BA4F16 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 791C38201EDFC6D200BA4F16 /* settings.png */; };
+		791C38241EDFC6D200BA4F16 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 791C38211EDFC6D200BA4F16 /* settings@2x.png */; };
+		791C38251EDFC6D200BA4F16 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 791C38211EDFC6D200BA4F16 /* settings@2x.png */; };
 		792F88521ED0112B006685CC /* EnumLevelOfDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */; };
 		792F88541ED0FC45006685CC /* EnumPlayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88531ED0FC45006685CC /* EnumPlayMode.swift */; };
 		79312C0F1ED675EC0054490C /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 79312C0C1ED675EC0054490C /* cat.png */; };
@@ -39,12 +43,10 @@
 		796C58C71EC6B2770034CF94 /* faq.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58BE1EC6B2770034CF94 /* faq.png */; };
 		796C58C81EC6B2770034CF94 /* faq@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58BF1EC6B2770034CF94 /* faq@2x.png */; };
 		796C58C91EC6B2770034CF94 /* faq@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58C01EC6B2770034CF94 /* faq@3x.png */; };
-		796C58CA1EC6B2770034CF94 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58C11EC6B2770034CF94 /* settings.png */; };
 		796C58CC1EC6B2770034CF94 /* settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58C31EC6B2770034CF94 /* settings@3x.png */; };
 		796C58CD1EC6B2770034CF94 /* stats.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58C41EC6B2770034CF94 /* stats.png */; };
 		796C58CE1EC6B2770034CF94 /* stats@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58C51EC6B2770034CF94 /* stats@2x.png */; };
 		796C58CF1EC6B2770034CF94 /* stats@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58C61EC6B2770034CF94 /* stats@3x.png */; };
-		79B8A0F01EC7B84C0005F98A /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79B8A0EF1EC7B84C0005F98A /* settings@2x.png */; };
 		79B8A0F21EC7BA950005F98A /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8A0F11EC7BA950005F98A /* GameBoard.swift */; };
 		79B8A0F31EC7BA950005F98A /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8A0F11EC7BA950005F98A /* GameBoard.swift */; };
 		79B8A0F51EC7BAE00005F98A /* TTGameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8A0F41EC7BAE00005F98A /* TTGameBoard.swift */; };
@@ -92,6 +94,8 @@
 		791C380B1EDA5D0800BA4F16 /* Help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Help.html; sourceTree = "<group>"; };
 		791C38111EDBA40E00BA4F16 /* FAQs.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FAQs.html; sourceTree = "<group>"; };
 		791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqsViewController.swift; sourceTree = "<group>"; };
+		791C38201EDFC6D200BA4F16 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		791C38211EDFC6D200BA4F16 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumLevelOfDifficulty.swift; sourceTree = "<group>"; };
 		792F88531ED0FC45006685CC /* EnumPlayMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumPlayMode.swift; sourceTree = "<group>"; };
 		79312C0C1ED675EC0054490C /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
@@ -109,12 +113,10 @@
 		796C58BE1EC6B2770034CF94 /* faq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq.png; sourceTree = "<group>"; };
 		796C58BF1EC6B2770034CF94 /* faq@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "faq@2x.png"; sourceTree = "<group>"; };
 		796C58C01EC6B2770034CF94 /* faq@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "faq@3x.png"; sourceTree = "<group>"; };
-		796C58C11EC6B2770034CF94 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		796C58C31EC6B2770034CF94 /* settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@3x.png"; sourceTree = "<group>"; };
 		796C58C41EC6B2770034CF94 /* stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stats.png; sourceTree = "<group>"; };
 		796C58C51EC6B2770034CF94 /* stats@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stats@2x.png"; sourceTree = "<group>"; };
 		796C58C61EC6B2770034CF94 /* stats@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stats@3x.png"; sourceTree = "<group>"; };
-		79B8A0EF1EC7B84C0005F98A /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		79B8A0F11EC7BA950005F98A /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		79B8A0F41EC7BAE00005F98A /* TTGameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTGameBoard.swift; sourceTree = "<group>"; };
 		79B8A0F71EC7BC640005F98A /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
@@ -222,9 +224,9 @@
 				796C58BE1EC6B2770034CF94 /* faq.png */,
 				796C58BF1EC6B2770034CF94 /* faq@2x.png */,
 				796C58C01EC6B2770034CF94 /* faq@3x.png */,
-				796C58C11EC6B2770034CF94 /* settings.png */,
+				791C38201EDFC6D200BA4F16 /* settings.png */,
+				791C38211EDFC6D200BA4F16 /* settings@2x.png */,
 				796C58C31EC6B2770034CF94 /* settings@3x.png */,
-				79B8A0EF1EC7B84C0005F98A /* settings@2x.png */,
 				796C58C41EC6B2770034CF94 /* stats.png */,
 				796C58C51EC6B2770034CF94 /* stats@2x.png */,
 				796C58C61EC6B2770034CF94 /* stats@3x.png */,
@@ -401,14 +403,14 @@
 			files = (
 				79312C101ED675EC0054490C /* cat@2x.png in Resources */,
 				796C58C91EC6B2770034CF94 /* faq@3x.png in Resources */,
-				79B8A0F01EC7B84C0005F98A /* settings@2x.png in Resources */,
 				791C380C1EDA5D0800BA4F16 /* Help.html in Resources */,
 				79312C0F1ED675EC0054490C /* cat.png in Resources */,
 				79312C111ED675EC0054490C /* cat@3x.png in Resources */,
+				791C38241EDFC6D200BA4F16 /* settings@2x.png in Resources */,
 				796C58CF1EC6B2770034CF94 /* stats@3x.png in Resources */,
+				791C38221EDFC6D200BA4F16 /* settings.png in Resources */,
 				796C58CC1EC6B2770034CF94 /* settings@3x.png in Resources */,
 				7948C5951ED673690028C062 /* wrench@3x.png in Resources */,
-				796C58CA1EC6B2770034CF94 /* settings.png in Resources */,
 				79F71A7B1EBD3BB60067D98C /* LaunchScreen.storyboard in Resources */,
 				791C38121EDBA40E00BA4F16 /* FAQs.html in Resources */,
 				79F71A781EBD3BB60067D98C /* Assets.xcassets in Resources */,
@@ -426,6 +428,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				791C38231EDFC6D200BA4F16 /* settings.png in Resources */,
+				791C38251EDFC6D200BA4F16 /* settings@2x.png in Resources */,
 				791C380D1EDA5D0800BA4F16 /* Help.html in Resources */,
 				791C38131EDBA40E00BA4F16 /* FAQs.html in Resources */,
 			);
