@@ -23,18 +23,16 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     // Variables
     var petData = [String]()
     var gamePlayData = [Int]()
-    var board: EnumGameBoard = .TTBoard
-    var gamePlayMode: EnumPlayMode = .SinglePlayer
-    var gameFirstMove: EnumFirstMove = .Me
-    var yourPet = "Cat"
-    var difficulty: EnumLevelOfDifficulty = .Easy
-    var enableSoundEffects = true
-    var enableGameCenter = true
+    
+    // Flags to initialize settings
     var isInitializedGameBoard = false
     var isInitializedGameCenter = false
     var isInitializedPlayMode = false
-    
+
+    // Tab bar controller
     var tbvc: GameTabBarController?
+    
+    // Model data for settings
     var settingsModel: SettingsModel?
 
     override func viewDidLoad() {
@@ -58,8 +56,21 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         controlLevelOfDifficulty(levelOfDifficulty)
         switchGameCenter(gameCenter)
         switchSoundEffects(soundEffects)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        //gameBoard.selectedSegmentIndex =
+        // Set components
+        if isInitializedPlayMode {
+            self.doUpdatePlayMode(true)
+        }
+        if isInitializedGameBoard {
+            self.doUpdateGameBoard(true)
+        }
+        if isInitializedGameCenter {
+            self.doUpdateGameCenter(true, isEnabled: gameCenter.isOn)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,7 +103,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     {
         // use the row to get the selected row from the picker view
         // using the row extract the value from your datasource (array[row])
-        yourPet = petData[row]
         settingsModel?.yourPet = petData[row]
     }
     
@@ -118,10 +128,8 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBAction func switchSoundEffects(_ sender: UISwitch) {
         if sender.isOn {
-            enableSoundEffects = true
             settingsModel?.enableSoundEffects = true
         } else {
-            enableSoundEffects = false
             settingsModel?.enableSoundEffects = false
         }
     }
@@ -148,11 +156,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         if updateGameCenter {
             if isEnabled {
                 // Enabling game center, update accordingly
-                enableGameCenter = true
                 settingsModel?.enableGameCenter = true
                 opponent.setEnabled(true, forSegmentAt: EnumPlayMode.SinglePlayer.rawValue)
                 opponent.setEnabled(true, forSegmentAt: EnumPlayMode.MultiPlayer.rawValue)
                 gameBoard.setEnabled(true, forSegmentAt: EnumGameBoard.FFBoard.rawValue)
+                gameBoard.setEnabled(true, forSegmentAt: EnumGameBoard.TTBoard.rawValue)
                 if (opponent.selectedSegmentIndex == EnumPlayMode.MultiPlayer.rawValue) {
                     levelOfDifficulty.setEnabled(false, forSegmentAt: EnumLevelOfDifficulty.Easy.rawValue)
                     levelOfDifficulty.setEnabled(false, forSegmentAt: EnumLevelOfDifficulty.Medium.rawValue)
@@ -165,11 +173,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 }
             } else {
                 // Disabling game center, update accordingly
-                enableGameCenter = false
                 settingsModel?.enableGameCenter = false
                 opponent.selectedSegmentIndex = EnumPlayMode.SinglePlayer.rawValue
                 opponent.setEnabled(false, forSegmentAt: EnumPlayMode.MultiPlayer.rawValue)
-                gameBoard.selectedSegmentIndex = EnumGameBoard.TTBoard.rawValue
+                gameBoard.selectedSegmentIndex = settingsModel!.board.rawValue
                 gameBoard.setEnabled(false, forSegmentAt: EnumGameBoard.FFBoard.rawValue)
                 levelOfDifficulty.setEnabled(true, forSegmentAt: EnumLevelOfDifficulty.Easy.rawValue)
                 levelOfDifficulty.setEnabled(true, forSegmentAt: EnumLevelOfDifficulty.Medium.rawValue)
@@ -181,14 +188,12 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func controlGameBoard(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            self.board = .TTBoard
             settingsModel?.board = .TTBoard
         case 1:
-            self.board = .FFBoard
             settingsModel?.board = .FFBoard
         default:
-            self.board = .TTBoard
-            settingsModel?.board = .TTBoard
+            break
+//            settingsModel?.board = .TTBoard
         }
 
         if isInitializedGameBoard {
@@ -209,7 +214,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func doUpdateGameBoard(_ updateGameBoard: Bool) {
         // Update game board if necessary
         if updateGameBoard {
-            if (EnumGameBoard.FFBoard == self.board) {
+            if (EnumGameBoard.FFBoard == settingsModel!.board) {
                 // 4x4 board, update accordingly
                 opponent.selectedSegmentIndex = EnumPlayMode.MultiPlayer.rawValue
                 levelOfDifficulty.setEnabled(false, forSegmentAt: EnumLevelOfDifficulty.Easy.rawValue)
@@ -219,8 +224,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                 // 3x3 board, update accordingly
                 opponent.setEnabled(true, forSegmentAt: EnumPlayMode.MultiPlayer.rawValue)
                 opponent.setEnabled(true, forSegmentAt: EnumPlayMode.SinglePlayer.rawValue)
-                gameBoard.setEnabled(false, forSegmentAt: EnumGameBoard.FFBoard.rawValue)
-                if (EnumPlayMode.SinglePlayer == gamePlayMode) {
+                if (EnumPlayMode.SinglePlayer == settingsModel?.gamePlayMode) {
                     levelOfDifficulty.setEnabled(true, forSegmentAt: EnumLevelOfDifficulty.Easy.rawValue)
                     levelOfDifficulty.setEnabled(true, forSegmentAt: EnumLevelOfDifficulty.Medium.rawValue)
                     levelOfDifficulty.setEnabled(true, forSegmentAt: EnumLevelOfDifficulty.Hard.rawValue)
@@ -236,13 +240,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func controlOpponent(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            self.gamePlayMode = .SinglePlayer
             settingsModel?.gamePlayMode = .SinglePlayer
         case 1:
-            self.gamePlayMode = .MultiPlayer
             settingsModel?.gamePlayMode = .MultiPlayer
         default:
-            self.gamePlayMode = .SinglePlayer
             settingsModel?.gamePlayMode = .SinglePlayer
         }
 
@@ -265,17 +266,20 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     func doUpdatePlayMode(_ updatePlayMode: Bool) {
         // Update play mode if necessary
         if updatePlayMode {
-            if (EnumPlayMode.SinglePlayer == gamePlayMode) {
+            if (EnumPlayMode.SinglePlayer == settingsModel?.gamePlayMode) {
                 levelOfDifficulty.setEnabled(true, forSegmentAt: EnumLevelOfDifficulty.Easy.rawValue)
                 levelOfDifficulty.setEnabled(true, forSegmentAt: EnumLevelOfDifficulty.Medium.rawValue)
                 levelOfDifficulty.setEnabled(true, forSegmentAt: EnumLevelOfDifficulty.Hard.rawValue)
-                gameBoard.selectedSegmentIndex = EnumGameBoard.TTBoard.rawValue
+                settingsModel?.board = .TTBoard
+                gameBoard.selectedSegmentIndex = settingsModel!.board.rawValue
                 gameBoard.setEnabled(true, forSegmentAt: EnumGameBoard.TTBoard.rawValue)
                 gameBoard.setEnabled(false, forSegmentAt: EnumGameBoard.FFBoard.rawValue)
             } else {
                 levelOfDifficulty.setEnabled(false, forSegmentAt: EnumLevelOfDifficulty.Easy.rawValue)
                 levelOfDifficulty.setEnabled(false, forSegmentAt: EnumLevelOfDifficulty.Medium.rawValue)
                 levelOfDifficulty.setEnabled(false, forSegmentAt: EnumLevelOfDifficulty.Hard.rawValue)
+                settingsModel?.board = .FFBoard
+                gameBoard.selectedSegmentIndex = settingsModel!.board.rawValue
                 gameBoard.setEnabled(true, forSegmentAt: EnumGameBoard.TTBoard.rawValue)
                 gameBoard.setEnabled(true, forSegmentAt: EnumGameBoard.FFBoard.rawValue)
             }
@@ -285,13 +289,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func controlFirstMove(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            self.gameFirstMove = .Me
             settingsModel?.gameFirstMove = .Me
         case 1:
-            self.gameFirstMove = .Opponent
             settingsModel?.gameFirstMove = .Opponent
         default:
-            self.gameFirstMove = .Me
             settingsModel?.gameFirstMove = .Me
         }
     }
@@ -299,16 +300,12 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func controlLevelOfDifficulty(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            self.difficulty = .Easy
             settingsModel?.difficulty = .Easy
         case 1:
-            self.difficulty = .Medium
             settingsModel?.difficulty = .Medium
         case 2:
-            self.difficulty = .Hard
             settingsModel?.difficulty = .Hard
         default:
-            self.difficulty = .Easy
             settingsModel?.difficulty = .Easy
         }
     }

@@ -33,16 +33,22 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         // Do any additional setup after loading the view, typically from a nib.
         tbvc = (self.tabBarController as! GameTabBarController)
-        gameModel = tbvc!.game
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        settingsModel = appDelegate?.settings
+        statisticsModel = appDelegate?.statistics
+        gameModel = appDelegate?.game
+//        tbvc?.settings = settingsModel!
+//        tbvc?.statistics = statisticsModel!
+//        tbvc?.game = gameModel!
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Do any additional setup after loading the view.
-        tbvc = (self.tabBarController as! GameTabBarController)
-        settingsModel = tbvc!.settings
-        statisticsModel = tbvc!.statistics
+ //       tbvc = (self.tabBarController as! GameTabBarController)
+ //       settingsModel = tbvc!.settings
+ //       statisticsModel = tbvc!.statistics
         
         resultsLabel.text = startLabel
     }
@@ -55,6 +61,11 @@ class GameViewController: UIViewController {
     @IBAction func newGame(_ sender: UIButton) {
         statisticsModel?.spEasyWins += 1
     }
+    
+    @IBAction func beginGame(_ sender: UIButton) {
+        print("Begin Game")
+    }
+    
     
     /*
     // MARK: - Navigation
@@ -69,4 +80,13 @@ class GameViewController: UIViewController {
     @IBAction func startGame(_ sender: UIButton) {
     }
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ContainerViewSegue" {
+            // Add tab bar controller to container view controller
+            if let gbcvc = segue.destination as? GameBoardContainerViewController {
+                gbcvc.tbvc = (self.tabBarController as! GameTabBarController)
+            }
+        }
+    }
 }

@@ -37,6 +37,7 @@ class StatisticsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // Do any additional setup after loading the view.
+        statisticsModel = tbvc!.statistics
         gameModel = tbvc!.game
         spEasyWins.text = "\(statisticsModel!.spEasyWins)"
         spMediumWins.text = "\(statisticsModel!.spMediumWins)"

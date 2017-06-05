@@ -1,27 +1,19 @@
 //
-//  GameTabBarController.swift
+//  GameBoardViewController.swift
 //  PetsInARow
 //
-//  Created by Keith Lee on 5/25/17.
+//  Created by Keith Lee on 6/1/17.
 //  Copyright © 2017 Keith Lee. All rights reserved.
 //
 
 import UIKit
 
-class GameTabBarController: UITabBarController {
-    // Create a SettingsModel instance
-    var settings: SettingsModel?
-    var statistics: StatisticsModel?
-    var game: GameModel?
+class GameBoard33ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let appDelegate = UIApplication.shared.delegate as? AppDelegate
-        settings = appDelegate?.settings
-        statistics = appDelegate?.statistics
-        game = appDelegate?.game
     }
 
     override func didReceiveMemoryWarning() {

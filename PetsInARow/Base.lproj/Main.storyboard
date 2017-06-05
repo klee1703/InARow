@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="90.5" y="362.5" width="194.5" height="17"/>
+                                <rect key="frame" x="91" y="363" width="195" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -37,67 +36,61 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmw-Cd-shq">
-                                <rect key="frame" x="284" y="55" width="75" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmw-Cd-shq">
+                                <rect key="frame" x="284" y="40" width="75" height="30"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
                                     <action selector="newGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Aj3-Pt-X5s"/>
                                 </connections>
                             </button>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEI-We-Udo" customClass="BoardUIView" customModule="PetsInARow" customModuleProvider="target">
-                                <rect key="frame" x="16" y="162" width="343" height="343"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="EEI-We-Udo" secondAttribute="height" multiplier="1:1" id="m1J-cB-XJE"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ept-ax-hAh">
-                                <rect key="frame" x="187.5" y="132" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Begin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ept-ax-hAh">
+                                <rect key="frame" x="149" y="97" width="77" height="19"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-tE-XBQ">
-                                <rect key="frame" x="170" y="520" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
+                                <rect key="frame" x="116" y="520" width="143" height="30"/>
+                                <state key="normal" title="Begin/Resume Game"/>
                                 <connections>
+                                    <action selector="beginGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="oww-PO-x8B"/>
                                     <action selector="startGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="A6a-82-mwX"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4D-2K-FPJ">
+                                <rect key="frame" x="16" y="151" width="343" height="343"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="AKh-AF-ROM" kind="embed" identifier="ContainerViewSegue" id="VCm-lv-pat"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KWK-tE-XBQ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="18r-SQ-mQS"/>
+                            <constraint firstItem="Pmw-Cd-shq" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="20" id="4AB-tM-zUH"/>
+                            <constraint firstItem="F4D-2K-FPJ" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="EL0-VU-jOk"/>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="Eav-UG-pff"/>
-                            <constraint firstItem="EEI-We-Udo" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="KKt-HV-QHu"/>
-                            <constraint firstItem="EEI-We-Udo" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="RFH-Df-6ZT"/>
-                            <constraint firstItem="EEI-We-Udo" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="TNd-Ya-L5G"/>
+                            <constraint firstItem="KWK-tE-XBQ" firstAttribute="top" secondItem="F4D-2K-FPJ" secondAttribute="bottom" constant="26" id="IcZ-Cu-MKW"/>
+                            <constraint firstItem="F4D-2K-FPJ" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="U4y-zl-qjx"/>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="UXw-xV-Y1i"/>
+                            <constraint firstItem="ept-ax-hAh" firstAttribute="top" secondItem="1aG-Z2-fUL" secondAttribute="bottom" constant="50" id="V8y-bI-i3d"/>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Y3q-g4-mSi"/>
-                            <constraint firstItem="EEI-We-Udo" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="dHV-bh-cJZ"/>
-                            <constraint firstItem="KWK-tE-XBQ" firstAttribute="top" secondItem="EEI-We-Udo" secondAttribute="bottom" constant="15" id="jHh-Yn-2kI"/>
-                            <constraint firstItem="EEI-We-Udo" firstAttribute="top" secondItem="ept-ax-hAh" secondAttribute="bottom" constant="30" id="pL0-SC-bCx"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="KWK-tE-XBQ" secondAttribute="bottom" constant="68" id="ddm-9d-dd8"/>
+                            <constraint firstItem="ept-ax-hAh" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ezW-C1-R7O"/>
+                            <constraint firstItem="Pmw-Cd-shq" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="nCW-ND-rEN"/>
+                            <constraint firstItem="F4D-2K-FPJ" firstAttribute="top" secondItem="ept-ax-hAh" secondAttribute="bottom" constant="35" id="poK-r9-d5D"/>
                             <constraint firstItem="ept-ax-hAh" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="r8U-ef-dU4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Game" image="cat.png" id="acW-dT-cKf" userLabel="Game"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="stats.png" id="acW-dT-cKf" userLabel="Game"/>
                     <connections>
-                        <outlet property="boardView" destination="EEI-We-Udo" id="jLV-gc-jKG"/>
                         <outlet property="resultsLabel" destination="ept-ax-hAh" id="Wow-Ew-An8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+            <point key="canvasLocation" x="776.79999999999995" y="-813.64317841079469"/>
         </scene>
         <!--Support-->
         <scene sceneID="HNb-E2-aeo">
@@ -632,7 +625,7 @@
                             <constraint firstItem="6wB-n6-gnC" firstAttribute="centerX" secondItem="FPV-JO-BYx" secondAttribute="centerX" id="xlh-qS-l0K"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Settings" image="wrench.png" id="DBD-9F-0f5" userLabel="Settings"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Settings" image="faq.png" id="DBD-9F-0f5" userLabel="Settings"/>
                     <connections>
                         <outlet property="firstMove" destination="foI-AU-XTn" id="LBL-mb-RTR"/>
                         <outlet property="gameBoard" destination="blW-60-AgA" id="F7s-7W-b6U"/>
@@ -689,11 +682,137 @@
             </objects>
             <point key="canvasLocation" x="1580" y="-320.68965517241384"/>
         </scene>
+        <!--Game Board Container View Controller-->
+        <scene sceneID="Eva-QY-tL0">
+            <objects>
+                <viewController id="AKh-AF-ROM" customClass="GameBoardContainerViewController" customModule="PetsInARow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bqf-Ca-hXe"/>
+                        <viewControllerLayoutGuide type="bottom" id="30Z-0d-sjf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EWZ-KI-MJL">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="343" height="343"/>
+                    <connections>
+                        <segue destination="95R-Km-OsH" kind="custom" identifier="Board33Segue" customClass="EmptySegue" customModule="PetsInARow" customModuleProvider="target" animates="NO" id="g1u-6V-cRn"/>
+                        <segue destination="BQ4-ED-nY1" kind="custom" identifier="Board44Segue" customClass="EmptySegue" customModule="PetsInARow" customModuleProvider="target" animates="NO" id="448-Af-j0G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNu-5M-3x2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567" y="-1811"/>
+        </scene>
+        <!--Game Board44 View Controller-->
+        <scene sceneID="KLp-Pw-pUP">
+            <objects>
+                <viewController id="BQ4-ED-nY1" customClass="GameBoard44ViewController" customModule="PetsInARow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O2O-kF-NaP"/>
+                        <viewControllerLayoutGuide type="bottom" id="yWv-lK-Iim"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zcD-x2-zBH">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chb-Tr-8tB" customClass="BoardUIView" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4x4 Game Board" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etO-us-pZq">
+                                <rect key="frame" x="107" y="100" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="etO-us-pZq" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="100" id="6g8-fc-KdM"/>
+                            <constraint firstAttribute="trailing" secondItem="Chb-Tr-8tB" secondAttribute="trailing" id="PTx-yv-CwN"/>
+                            <constraint firstItem="etO-us-pZq" firstAttribute="centerX" secondItem="zcD-x2-zBH" secondAttribute="centerX" id="PcD-4d-rVD"/>
+                            <constraint firstItem="yWv-lK-Iim" firstAttribute="top" secondItem="Chb-Tr-8tB" secondAttribute="bottom" id="Wew-3W-TwM"/>
+                            <constraint firstItem="Chb-Tr-8tB" firstAttribute="centerX" secondItem="zcD-x2-zBH" secondAttribute="centerX" id="fmX-nH-2mI"/>
+                            <constraint firstItem="Chb-Tr-8tB" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" id="iEw-NE-2kg"/>
+                            <constraint firstItem="Chb-Tr-8tB" firstAttribute="centerY" secondItem="zcD-x2-zBH" secondAttribute="centerY" id="wyJ-oF-2yW"/>
+                            <constraint firstItem="Chb-Tr-8tB" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" id="ztD-8Y-cxL"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="343" height="343"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nut-7Q-CnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2293.5999999999999" y="-1606.1469265367318"/>
+        </scene>
+        <!--Game Board33 View Controller-->
+        <scene sceneID="kwy-ry-vls">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" id="95R-Km-OsH" customClass="GameBoard33ViewController" customModule="PetsInARow" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OzE-sp-Jv3"/>
+                        <viewControllerLayoutGuide type="bottom" id="cRR-uE-nH1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QpV-aP-2i1">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orD-4p-ScL" customClass="BoardUIView" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3x3 Game Board" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvF-yF-jCf">
+                                <rect key="frame" x="107" y="100" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="contentStretch" x="1" y="1" width="0.5" height="0.5"/>
+                        <constraints>
+                            <constraint firstItem="orD-4p-ScL" firstAttribute="centerY" secondItem="QpV-aP-2i1" secondAttribute="centerY" id="3Bo-ML-k38"/>
+                            <constraint firstAttribute="trailing" secondItem="orD-4p-ScL" secondAttribute="trailing" id="BQK-vA-lAR"/>
+                            <constraint firstItem="orD-4p-ScL" firstAttribute="centerX" secondItem="QpV-aP-2i1" secondAttribute="centerX" id="Bf7-2h-DeQ"/>
+                            <constraint firstItem="orD-4p-ScL" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" id="HYw-ML-cui"/>
+                            <constraint firstItem="UvF-yF-jCf" firstAttribute="centerX" secondItem="QpV-aP-2i1" secondAttribute="centerX" id="IUp-a3-h85"/>
+                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="orD-4p-ScL" secondAttribute="bottom" id="MzN-0k-Y16"/>
+                            <constraint firstItem="orD-4p-ScL" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" id="XYH-gS-3tc"/>
+                            <constraint firstItem="UvF-yF-jCf" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" constant="100" id="rVu-W9-DdH"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="343" height="343"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dpt-IM-mab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2293.5999999999999" y="-1990.2548725637182"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="cat.png" width="25" height="25"/>
         <image name="faq.png" width="25" height="25"/>
         <image name="stats.png" width="25" height="25"/>
-        <image name="wrench.png" width="25" height="25"/>
     </resources>
 </document>

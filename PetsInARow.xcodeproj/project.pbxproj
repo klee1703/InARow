@@ -21,6 +21,14 @@
 		791C38231EDFC6D200BA4F16 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 791C38201EDFC6D200BA4F16 /* settings.png */; };
 		791C38241EDFC6D200BA4F16 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 791C38211EDFC6D200BA4F16 /* settings@2x.png */; };
 		791C38251EDFC6D200BA4F16 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 791C38211EDFC6D200BA4F16 /* settings@2x.png */; };
+		792603821EE109A500A6EEDD /* GameBoardContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792603811EE109A500A6EEDD /* GameBoardContainerViewController.swift */; };
+		792603831EE109A500A6EEDD /* GameBoardContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792603811EE109A500A6EEDD /* GameBoardContainerViewController.swift */; };
+		792603851EE122A800A6EEDD /* GameBoard33ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792603841EE122A800A6EEDD /* GameBoard33ViewController.swift */; };
+		792603861EE122A800A6EEDD /* GameBoard33ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792603841EE122A800A6EEDD /* GameBoard33ViewController.swift */; };
+		792603881EE123DF00A6EEDD /* GameBoard44ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */; };
+		792603891EE123DF00A6EEDD /* GameBoard44ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */; };
+		7926038B1EE1C21F00A6EEDD /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */; };
+		7926038C1EE1C21F00A6EEDD /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */; };
 		792F88521ED0112B006685CC /* EnumLevelOfDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */; };
 		792F88541ED0FC45006685CC /* EnumPlayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88531ED0FC45006685CC /* EnumPlayMode.swift */; };
 		79312C0F1ED675EC0054490C /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 79312C0C1ED675EC0054490C /* cat.png */; };
@@ -96,6 +104,10 @@
 		791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqsViewController.swift; sourceTree = "<group>"; };
 		791C38201EDFC6D200BA4F16 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		791C38211EDFC6D200BA4F16 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		792603811EE109A500A6EEDD /* GameBoardContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoardContainerViewController.swift; path = ../GameBoardContainerViewController.swift; sourceTree = "<group>"; };
+		792603841EE122A800A6EEDD /* GameBoard33ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard33ViewController.swift; path = ../GameBoard33ViewController.swift; sourceTree = "<group>"; };
+		792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard44ViewController.swift; path = ../GameBoard44ViewController.swift; sourceTree = "<group>"; };
+		7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = ../EmptySegue.swift; sourceTree = "<group>"; };
 		792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumLevelOfDifficulty.swift; sourceTree = "<group>"; };
 		792F88531ED0FC45006685CC /* EnumPlayMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumPlayMode.swift; sourceTree = "<group>"; };
 		79312C0C1ED675EC0054490C /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat.png; sourceTree = "<group>"; };
@@ -179,6 +191,10 @@
 		791C38021ED94EC600BA4F16 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */,
+				792603811EE109A500A6EEDD /* GameBoardContainerViewController.swift */,
+				792603841EE122A800A6EEDD /* GameBoard33ViewController.swift */,
+				792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */,
 				7964CA061ED7ADD300C8A92D /* GameTabBarController.swift */,
 				79F71AA01EBE81030067D98C /* GameViewController.swift */,
 				79F71A701EBD3BB60067D98C /* SettingsViewController.swift */,
@@ -234,11 +250,38 @@
 			name = art;
 			sourceTree = "<group>";
 		};
-		79F71A621EBD3BB60067D98C = {
+		79881CE61EE06F750086FA0D /* Subclass Views */ = {
+			isa = PBXGroup;
+			children = (
+				7964CA121ED887CD00C8A92D /* BoardUIView.swift */,
+				791C38081EDA1E3800BA4F16 /* WebView.swift */,
+			);
+			name = "Subclass Views";
+			sourceTree = "<group>";
+		};
+		79881CE71EE06FB20086FA0D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				79F71A741EBD3BB60067D98C /* Main.storyboard */,
+				79F71A791EBD3BB60067D98C /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		79881CE81EE06FF10086FA0D /* Web Content */ = {
 			isa = PBXGroup;
 			children = (
 				791C38111EDBA40E00BA4F16 /* FAQs.html */,
 				791C380B1EDA5D0800BA4F16 /* Help.html */,
+			);
+			name = "Web Content";
+			sourceTree = "<group>";
+		};
+		79F71A621EBD3BB60067D98C = {
+			isa = PBXGroup;
+			children = (
+				79881CE81EE06FF10086FA0D /* Web Content */,
+				79881CE71EE06FB20086FA0D /* Storyboards */,
 				79F71A6D1EBD3BB60067D98C /* PetsInARow */,
 				79F71A841EBD3BB70067D98C /* PetsInARowTests */,
 				79F71A8F1EBD3BB70067D98C /* PetsInARowUITests */,
@@ -263,14 +306,11 @@
 				791C38021ED94EC600BA4F16 /* controllers */,
 				79F71A6E1EBD3BB60067D98C /* AppDelegate.swift */,
 				791C38011ED94E7C00BA4F16 /* models */,
-				79F71A741EBD3BB60067D98C /* Main.storyboard */,
-				791C38081EDA1E3800BA4F16 /* WebView.swift */,
-				7964CA121ED887CD00C8A92D /* BoardUIView.swift */,
+				79881CE61EE06F750086FA0D /* Subclass Views */,
 				791C38071ED94FCB00BA4F16 /* boards */,
 				79B8A0F71EC7BC640005F98A /* Square.swift */,
 				79F71A771EBD3BB60067D98C /* Assets.xcassets */,
 				796C58D01EC6B5AA0034CF94 /* art */,
-				79F71A791EBD3BB60067D98C /* LaunchScreen.storyboard */,
 				79F71A7C1EBD3BB60067D98C /* Info.plist */,
 			);
 			path = PetsInARow;
@@ -453,18 +493,22 @@
 				7964CA071ED7ADD300C8A92D /* GameTabBarController.swift in Sources */,
 				79FD34901ECC07C4005DC940 /* EnumGameBoard.swift in Sources */,
 				79B8A0F81EC7BC640005F98A /* Square.swift in Sources */,
+				792603881EE123DF00A6EEDD /* GameBoard44ViewController.swift in Sources */,
 				79F71A731EBD3BB60067D98C /* StatisticsViewController.swift in Sources */,
 				79F71A6F1EBD3BB60067D98C /* AppDelegate.swift in Sources */,
 				792F88521ED0112B006685CC /* EnumLevelOfDifficulty.swift in Sources */,
 				79F71A9F1EBE7FEE0067D98C /* SupportViewController.swift in Sources */,
 				79FD34931ECC0A65005DC940 /* EnumOpponent.swift in Sources */,
+				792603821EE109A500A6EEDD /* GameBoardContainerViewController.swift in Sources */,
 				79FD34961ECC0A6F005DC940 /* EnumFirstMove.swift in Sources */,
 				791C38051ED94F5F00BA4F16 /* FFGameBoard.swift in Sources */,
 				79B8A0F21EC7BA950005F98A /* GameBoard.swift in Sources */,
 				792F88541ED0FC45006685CC /* EnumPlayMode.swift in Sources */,
 				79F71A711EBD3BB60067D98C /* SettingsViewController.swift in Sources */,
 				79F71AA11EBE81030067D98C /* GameViewController.swift in Sources */,
+				7926038B1EE1C21F00A6EEDD /* EmptySegue.swift in Sources */,
 				7964CA131ED887CD00C8A92D /* BoardUIView.swift in Sources */,
+				792603851EE122A800A6EEDD /* GameBoard33ViewController.swift in Sources */,
 				7964CA101ED7E0FA00C8A92D /* StatisticsModel.swift in Sources */,
 				791C38151EDBA54C00BA4F16 /* FaqsViewController.swift in Sources */,
 				79B8A0F51EC7BAE00005F98A /* TTGameBoard.swift in Sources */,
@@ -478,13 +522,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				792603861EE122A800A6EEDD /* GameBoard33ViewController.swift in Sources */,
 				7964CA0B1ED7AE1600C8A92D /* SettingsModel.swift in Sources */,
 				79FD34911ECC07C4005DC940 /* EnumGameBoard.swift in Sources */,
 				79FD34941ECC0A65005DC940 /* EnumOpponent.swift in Sources */,
+				7926038C1EE1C21F00A6EEDD /* EmptySegue.swift in Sources */,
 				79B8A0F91EC7BC640005F98A /* Square.swift in Sources */,
 				791C38061ED94F5F00BA4F16 /* FFGameBoard.swift in Sources */,
+				792603831EE109A500A6EEDD /* GameBoardContainerViewController.swift in Sources */,
 				791C380A1EDA1E3800BA4F16 /* WebView.swift in Sources */,
 				79FD34971ECC0A6F005DC940 /* EnumFirstMove.swift in Sources */,
+				792603891EE123DF00A6EEDD /* GameBoard44ViewController.swift in Sources */,
 				7964CA141ED887CD00C8A92D /* BoardUIView.swift in Sources */,
 				7964CA111ED7E0FA00C8A92D /* StatisticsModel.swift in Sources */,
 				7964CA0E1ED7E0D900C8A92D /* GameModel.swift in Sources */,
@@ -526,6 +574,7 @@
 				79F71A751EBD3BB60067D98C /* Base */,
 			);
 			name = Main.storyboard;
+			path = PetsInARow;
 			sourceTree = "<group>";
 		};
 		79F71A791EBD3BB60067D98C /* LaunchScreen.storyboard */ = {
@@ -534,6 +583,7 @@
 				79F71A7A1EBD3BB60067D98C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = PetsInARow;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
