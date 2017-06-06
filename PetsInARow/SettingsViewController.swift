@@ -193,7 +193,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             settingsModel?.board = .FFBoard
         default:
             break
-//            settingsModel?.board = .TTBoard
         }
 
         if isInitializedGameBoard {

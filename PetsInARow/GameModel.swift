@@ -10,4 +10,6 @@ import Foundation
 
 class GameModel {
     var computerPet: String = "computer"
+    
+    init() {}
 }

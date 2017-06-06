@@ -17,4 +17,6 @@ class StatisticsModel {
     // MultiPlayer wins
     var mp33Wins = 0
     var mp44Wins = 0
+    
+    init() {}
 }

@@ -21,4 +21,6 @@ class SettingsModel {
     
     // Pet property
     var yourPet = "Cat"
+    
+    init() {}
 }
