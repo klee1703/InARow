@@ -9,7 +9,9 @@
 import Foundation
 
 class GameModel {
-    var computerPet: String = "computer"
+    var computerPet: String
     
-    init() {}
+    init() {
+        computerPet = "computer"
+    }
 }

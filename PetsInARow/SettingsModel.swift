@@ -10,17 +10,27 @@ import Foundation
 
 class SettingsModel {
     // Properties
-    var enableSoundEffects = true
-    var enableGameCenter = true
+    var enableSoundEffects: Bool
+    var enableGameCenter: Bool
     
     // Properties
-    var board: EnumGameBoard = .TTBoard
-    var gamePlayMode: EnumPlayMode = .SinglePlayer
-    var gameFirstMove: EnumFirstMove = .Me    
-    var difficulty: EnumLevelOfDifficulty = .Easy
+    var board: EnumGameBoard
+    var gamePlayMode: EnumPlayMode
+    var gameFirstMove: EnumFirstMove
+    var difficulty: EnumLevelOfDifficulty
     
     // Pet property
-    var yourPet = "Cat"
+    var yourPet: String
     
-    init() {}
+    init() {
+        enableSoundEffects = true
+        enableGameCenter = true
+        
+        board = .TTBoard
+        gamePlayMode = .SinglePlayer
+        gameFirstMove = .Me
+        difficulty = .Easy
+        
+        yourPet = "Cat"
+    }
 }

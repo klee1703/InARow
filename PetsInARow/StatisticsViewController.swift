@@ -31,6 +31,9 @@ class StatisticsViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        // Persist statistics
+        PersistenceManager.archive(model: statisticsModel, filePath: StatisticsModel.filePath(), key: StatisticsModel.kStatisticsKey)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,27 +42,37 @@ class StatisticsViewController: UIViewController {
         // Do any additional setup after loading the view.
         statisticsModel = tbvc!.statistics
         gameModel = tbvc!.game
-        spEasyWins.text = "\(statisticsModel!.spEasyWins)"
-        spMediumWins.text = "\(statisticsModel!.spMediumWins)"
-        spHardWins.text = "\(statisticsModel!.spHardWins)"
+        spEasyWins.text = "\(statisticsModel!.singlePlayerEasyWins)"
+        spMediumWins.text = "\(statisticsModel!.singlePlayerMediumWins)"
+        spHardWins.text = "\(statisticsModel!.singlePlayerHardWins)"
         
-        multi33Wins.text = "\(statisticsModel!.mp33Wins)"
-        multi44Wins.text = "\(statisticsModel!.mp44Wins)"
+        multi33Wins.text = "\(statisticsModel!.multiPlayer3x3Wins)"
+        multi44Wins.text = "\(statisticsModel!.multiPlayer4x4Wins)"
     }
 
     @IBAction func resetSpEasyWins(_ sender: UIButton) {
+        statisticsModel!.singlePlayerEasyWins = 0
+        self.viewWillAppear(true)
     }
 
     @IBAction func resetSpMediumWins(_ sender: UIButton) {
+        statisticsModel!.singlePlayerMediumWins = 0
+        self.viewWillAppear(true)
     }
     
     @IBAction func resetSpHardWins(_ sender: UIButton) {
+        statisticsModel!.singlePlayerHardWins = 0
+        self.viewWillAppear(true)
     }
 
     @IBAction func resetMp33Wins(_ sender: UIButton) {
+        statisticsModel!.multiPlayer3x3Wins = 0
+        self.viewWillAppear(true)
     }
 
     @IBAction func resetMp44Wins(_ sender: UIButton) {
+        statisticsModel!.multiPlayer4x4Wins = 0
+        self.viewWillAppear(true)
     }
     
 }

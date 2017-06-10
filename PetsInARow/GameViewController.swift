@@ -59,7 +59,7 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func newGame(_ sender: UIButton) {
-        statisticsModel?.spEasyWins += 1
+        statisticsModel?.singlePlayerEasyWins += 1
     }
     
     @IBAction func beginGame(_ sender: UIButton) {
