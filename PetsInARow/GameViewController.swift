@@ -11,7 +11,6 @@ import UIKit
 class GameViewController: UIViewController {
 
     // Outlets
-    @IBOutlet weak var boardView: BoardUIView!
     @IBOutlet weak var resultsLabel: UILabel!
 
     // Variables
@@ -37,18 +36,12 @@ class GameViewController: UIViewController {
         settingsModel = appDelegate?.settings
         statisticsModel = appDelegate?.statistics
         gameModel = appDelegate?.game
-//        tbvc?.settings = settingsModel!
-//        tbvc?.statistics = statisticsModel!
-//        tbvc?.game = gameModel!
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Do any additional setup after loading the view.
- //       tbvc = (self.tabBarController as! GameTabBarController)
- //       settingsModel = tbvc!.settings
- //       statisticsModel = tbvc!.statistics
         
         resultsLabel.text = startLabel
     }

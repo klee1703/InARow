@@ -299,14 +299,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsE-AP-0fK">
-                                <rect key="frame" x="70" y="197" width="24" height="25"/>
+                                <rect key="frame" x="70" y="197" width="25" height="25"/>
                                 <state key="normal" image="clear.png"/>
                                 <connections>
                                     <action selector="resetSpEasyWins:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="uwX-JN-42o"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LnH-9J-TEb">
-                                <rect key="frame" x="175" y="197" width="25" height="25"/>
+                                <rect key="frame" x="176" y="197" width="25" height="25"/>
                                 <state key="normal" image="clear.png"/>
                                 <connections>
                                     <action selector="resetSpMediumWins:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="tMw-Yo-8qg"/>
@@ -354,7 +354,6 @@
                             <constraint firstAttribute="bottom" secondItem="NDk-cv-Gan" secondAttribute="bottom" constant="314" id="J6Y-Z2-gwS"/>
                             <constraint firstItem="kut-6y-Fxz" firstAttribute="centerX" secondItem="47N-Fk-9wG" secondAttribute="centerX" id="Jfi-G4-Kxx"/>
                             <constraint firstItem="vw1-3m-QQ1" firstAttribute="leading" secondItem="Acj-6Y-kOj" secondAttribute="trailing" constant="78" id="Lxv-Dc-myE"/>
-                            <constraint firstItem="LnH-9J-TEb" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Nxo-ET-a0n"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="53" id="Pop-Pd-GHS"/>
                             <constraint firstItem="S5w-gX-8Vc" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="QXL-BI-xky"/>
                             <constraint firstItem="S5w-gX-8Vc" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="RLY-ZL-XTg"/>
@@ -708,7 +707,7 @@
                     <view key="view" contentMode="scaleToFill" id="EWZ-KI-MJL">
                         <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -736,35 +735,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Chb-Tr-8tB" customClass="BoardUIView" customModule="PetsInARow" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TTT4x4.png" translatesAutoresizingMaskIntoConstraints="NO" id="Aog-H6-pw5">
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4x4 Game Board" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etO-us-pZq">
-                                <rect key="frame" x="107" y="100" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="etO-us-pZq" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="100" id="6g8-fc-KdM"/>
-                            <constraint firstAttribute="trailing" secondItem="Chb-Tr-8tB" secondAttribute="trailing" id="PTx-yv-CwN"/>
-                            <constraint firstItem="etO-us-pZq" firstAttribute="centerX" secondItem="zcD-x2-zBH" secondAttribute="centerX" id="PcD-4d-rVD"/>
-                            <constraint firstItem="yWv-lK-Iim" firstAttribute="top" secondItem="Chb-Tr-8tB" secondAttribute="bottom" id="Wew-3W-TwM"/>
-                            <constraint firstItem="Chb-Tr-8tB" firstAttribute="centerX" secondItem="zcD-x2-zBH" secondAttribute="centerX" id="fmX-nH-2mI"/>
-                            <constraint firstItem="Chb-Tr-8tB" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" id="iEw-NE-2kg"/>
-                            <constraint firstItem="Chb-Tr-8tB" firstAttribute="centerY" secondItem="zcD-x2-zBH" secondAttribute="centerY" id="wyJ-oF-2yW"/>
-                            <constraint firstItem="Chb-Tr-8tB" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" id="ztD-8Y-cxL"/>
+                            <constraint firstItem="Aog-H6-pw5" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" id="1TG-VQ-sGJ"/>
+                            <constraint firstItem="yWv-lK-Iim" firstAttribute="top" secondItem="Aog-H6-pw5" secondAttribute="bottom" id="Lq6-wo-SA1"/>
+                            <constraint firstAttribute="trailing" secondItem="Aog-H6-pw5" secondAttribute="trailing" id="Ls0-bW-gtJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Aog-H6-pw5" secondAttribute="trailing" id="Sto-x4-pz8"/>
+                            <constraint firstItem="Aog-H6-pw5" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" id="ZMD-4A-iN3"/>
+                            <constraint firstItem="yWv-lK-Iim" firstAttribute="top" secondItem="Aog-H6-pw5" secondAttribute="bottom" id="baY-ry-8Yb"/>
+                            <constraint firstItem="Aog-H6-pw5" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" id="svR-x3-mMx"/>
+                            <constraint firstItem="Aog-H6-pw5" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" id="t7V-Lk-jsP"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -786,36 +770,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orD-4p-ScL" customClass="BoardUIView" customModule="PetsInARow" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TTT3x3.png" translatesAutoresizingMaskIntoConstraints="NO" id="AvQ-Pw-9TD">
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3x3 Game Board" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvF-yF-jCf">
-                                <rect key="frame" x="107" y="100" width="129" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <rect key="contentStretch" x="1" y="1" width="0.5" height="0.5"/>
                         <constraints>
-                            <constraint firstItem="orD-4p-ScL" firstAttribute="centerY" secondItem="QpV-aP-2i1" secondAttribute="centerY" id="3Bo-ML-k38"/>
-                            <constraint firstAttribute="trailing" secondItem="orD-4p-ScL" secondAttribute="trailing" id="BQK-vA-lAR"/>
-                            <constraint firstItem="orD-4p-ScL" firstAttribute="centerX" secondItem="QpV-aP-2i1" secondAttribute="centerX" id="Bf7-2h-DeQ"/>
-                            <constraint firstItem="orD-4p-ScL" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" id="HYw-ML-cui"/>
-                            <constraint firstItem="UvF-yF-jCf" firstAttribute="centerX" secondItem="QpV-aP-2i1" secondAttribute="centerX" id="IUp-a3-h85"/>
-                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="orD-4p-ScL" secondAttribute="bottom" id="MzN-0k-Y16"/>
-                            <constraint firstItem="orD-4p-ScL" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" id="XYH-gS-3tc"/>
-                            <constraint firstItem="UvF-yF-jCf" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" constant="100" id="rVu-W9-DdH"/>
+                            <constraint firstAttribute="trailing" secondItem="AvQ-Pw-9TD" secondAttribute="trailing" id="J0W-uZ-tOQ"/>
+                            <constraint firstItem="AvQ-Pw-9TD" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" id="OSY-Mv-3ge"/>
+                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="AvQ-Pw-9TD" secondAttribute="bottom" id="ObW-Ze-B1v"/>
+                            <constraint firstItem="AvQ-Pw-9TD" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" id="QFd-3C-hEa"/>
+                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="AvQ-Pw-9TD" secondAttribute="bottom" id="QbF-Yw-fxM"/>
+                            <constraint firstAttribute="trailing" secondItem="AvQ-Pw-9TD" secondAttribute="trailing" id="SV6-bq-WWR"/>
+                            <constraint firstItem="AvQ-Pw-9TD" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" id="py4-Ne-IRA"/>
+                            <constraint firstItem="AvQ-Pw-9TD" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" id="zNG-TH-q70"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -827,6 +795,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="TTT3x3.png" width="300" height="300"/>
+        <image name="TTT4x4.png" width="302" height="302"/>
         <image name="clear.png" width="25" height="25"/>
         <image name="faq.png" width="25" height="25"/>
         <image name="stats.png" width="25" height="25"/>
