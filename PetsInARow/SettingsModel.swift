@@ -21,6 +21,7 @@ class SettingsModel {
     
     // Pet property
     var yourPet: String
+    var opponentsPet: String
     
     init() {
         enableSoundEffects = true
@@ -32,5 +33,6 @@ class SettingsModel {
         difficulty = .Easy
         
         yourPet = "Cat"
+        opponentsPet = "Dog"
     }
 }

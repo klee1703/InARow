@@ -8,8 +8,18 @@
 
 import UIKit
 
-class GameBoard33ViewController: UIViewController {
-
+class GameBoard33ViewController: GameBoardViewController {
+    // Cells
+    @IBOutlet weak var cell0: UIButton!
+    @IBOutlet weak var cell1: UIButton!
+    @IBOutlet weak var cell2: UIButton!
+    @IBOutlet weak var cell3: UIButton!
+    @IBOutlet weak var cell4: UIButton!
+    @IBOutlet weak var cell5: UIButton!
+    @IBOutlet weak var cell6: UIButton!
+    @IBOutlet weak var cell7: UIButton!
+    @IBOutlet weak var cell8: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +31,16 @@ class GameBoard33ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func cellPressed(_ sender: UIButton) {
+        print(sender.currentTitle! + " pressed!")
+    }
+    
+    override func clearBoard() {
+        // IMPLEMENT!
+        print("Clearing 3x3 board")
+    }
+    
+    
     /*
     // MARK: - Navigation
 

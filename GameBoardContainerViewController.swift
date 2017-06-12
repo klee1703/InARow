@@ -13,6 +13,7 @@ class GameBoardContainerViewController: UIViewController {
     let gameBoard44Segue = "Board44Segue"
     let widthHeight = 343
     var tbvc: GameTabBarController?
+    var gbvc: GameBoardViewController?
     var settingsModel: SettingsModel?
     
     var currentSegueIdentifier = ""
@@ -62,17 +63,17 @@ class GameBoardContainerViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == gameBoard33Segue {
+            gbvc = segue.destination as? GameBoard33ViewController
             if self.childViewControllers.count > 0 {
                 self.swap(from: self.childViewControllers[0], to: segue.destination)
             } else {
                 self.addChildViewController(segue.destination)
-//                var width = segue.destination.view.frame.size.width
-//                var height = segue.destination.view.frame.size.width
                 segue.destination.view.frame = CGRect(x:0, y:0, width:widthHeight, height:widthHeight)
                 self.view.addSubview(segue.destination.view)
                 segue.destination.didMove(toParentViewController: self)
             }
         } else if segue.identifier == gameBoard44Segue {
+            gbvc = segue.destination as? GameBoard44ViewController
             self.swap(from: self.childViewControllers[0], to: segue.destination)
         }
     }
@@ -88,7 +89,7 @@ class GameBoardContainerViewController: UIViewController {
     }
     
     func swap() {
-        self.currentSegueIdentifier = self.currentSegueIdentifier == gameBoard33Segue ? gameBoard44Segue : gameBoard44Segue
+        self.currentSegueIdentifier = self.currentSegueIdentifier == gameBoard33Segue ? gameBoard33Segue : gameBoard44Segue
         self.performSegue(withIdentifier: self.currentSegueIdentifier, sender: nil)
     }
 }

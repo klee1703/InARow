@@ -1,20 +1,15 @@
 //
-//  GameBoard44ViewController.swift
+//  GameBoardViewController.swift
 //  PetsInARow
 //
-//  Created by Keith Lee on 6/1/17.
+//  Created by Keith Lee on 6/10/17.
 //  Copyright © 2017 Keith Lee. All rights reserved.
 //
 
 import UIKit
 
-class GameBoard44ViewController: GameBoardViewController {
-    
-    @IBOutlet weak var cell0: UIButton!
-    @IBOutlet weak var cell1: UIButton!
-    @IBOutlet weak var cell2: UIButton!
-    @IBOutlet weak var cell3: UIButton!
-    
+class GameBoardViewController: UIViewController, GameBoardDelegate {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,16 +20,10 @@ class GameBoard44ViewController: GameBoardViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func cellPressed(_ sender: UIButton) {
-        print(sender.currentTitle! + " pressed!")
-    }
     
-    
-    override func clearBoard() {
+    func clearBoard() {
         // IMPLEMENT!
-        print("Clearing 4x4 board")
-    }
+    }    
 
     /*
     // MARK: - Navigation

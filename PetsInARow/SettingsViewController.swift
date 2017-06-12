@@ -48,6 +48,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // Initialize data
         petData = EnumPet.values()
         gamePlayData = EnumPlayMode.values()
+        settingsModel?.opponentsPet = getOpponentsPet(yourPet: (settingsModel?.yourPet)!)
         
         // Initialize components
         controlOpponent(opponent)
@@ -98,12 +99,32 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return petData[row]
     }
 
-    // 
+    // Get selected pet
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         // use the row to get the selected row from the picker view
         // using the row extract the value from your datasource (array[row])
         settingsModel?.yourPet = petData[row]
+        
+        // Now set the opponent's pet, not the same as your pet!
+        settingsModel?.opponentsPet = getOpponentsPet(yourPet: (settingsModel?.yourPet)!)
+    }
+    
+    func getOpponentsPet(yourPet: String) -> String {
+        // Retrieve pet collection
+        var temp = petData
+        
+        // Remove your pet from collection
+        if let index = petData.index(of: yourPet) {
+            temp.remove(at: index)
+            
+            // Randomly select from collection and return
+            let randomNum = arc4random_uniform(UInt32(temp.count))
+            return temp[Int(randomNum)]
+        }
+        
+        // Not found, return dummy pet
+        return "dummyPet"
     }
     
     // Set view for picker

@@ -11,13 +11,15 @@ import Foundation
 enum EnumPet: String {
     case Cat = "Cat"
     case Dog = "Dog"
+    case Crocodile = "Crocodile"
     case Owl = "Owl"
     case Giraffe = "Giraffe"
     case Elephant = "Elephant"
-    case Pig = "Pig"
-    case Shark = "Shark"
+    case Penguin = "Penguin"
+    case Tiger = "Tiger"
+    case Cyclops = "Cyclops"
     
     static func values() -> [String] {
-        return [Cat.rawValue, Dog.rawValue, Owl.rawValue, Giraffe.rawValue, Elephant.rawValue, Pig.rawValue, Shark.rawValue]
+        return [Cat.rawValue, Dog.rawValue, Owl.rawValue, Giraffe.rawValue, Elephant.rawValue, Crocodile.rawValue, Tiger.rawValue, Penguin.rawValue, Cyclops.rawValue]
     }
 }
