@@ -10,6 +10,10 @@ import UIKit
 import MessageUI
 
 class SupportViewController: UIViewController, UIWebViewDelegate, MFMailComposeViewControllerDelegate {
+    // Model data for settings
+    var settingsModel: SettingsModel?
+    var statisticsModel: StatisticsModel?
+    var gameModel: GameModel?
     
     @IBOutlet weak var webView: WebView!
 
@@ -23,6 +27,11 @@ class SupportViewController: UIViewController, UIWebViewDelegate, MFMailComposeV
         webView.delegate = self
         self.navigationController?.navigationBar.barTintColor = UIColor.black
         self.navigationController?.navigationBar.barStyle = UIBarStyle.black
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        settingsModel = appDelegate?.settings
+        statisticsModel = appDelegate?.statistics
+        gameModel = appDelegate?.game
     }
 
     override func didReceiveMemoryWarning() {

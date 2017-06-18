@@ -28,6 +28,8 @@ class GameViewController: UIViewController {
     
     var tbvc: GameTabBarController?
     var gbcvc: GameBoardContainerViewController?
+    
+    // Model variables
     var settingsModel: SettingsModel?
     var statisticsModel: StatisticsModel?
     var gameModel: GameModel?
@@ -37,13 +39,16 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Retrieve models.
         tbvc = (self.tabBarController as! GameTabBarController)
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         settingsModel = appDelegate?.settings
         statisticsModel = appDelegate?.statistics
         gameModel = appDelegate?.game
-        beginResumeGame.setTitle("Begin Game", for: .normal)
+        gameModel?.playLabel = activePet
+        
+        // Do any additional setup
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +56,8 @@ class GameViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         resultsLabel.text = startLabel
-        
+
+        // Set player label based on play mode and current player
         if EnumPlayMode.SinglePlayer == settingsModel?.gamePlayMode {
             if isCurrentPlayer {
                 setPlayerLabel(pet: (settingsModel?.yourPet)!)
@@ -62,7 +68,16 @@ class GameViewController: UIViewController {
         } else {
             if isCurrentPlayer {
                 setPlayerLabel(pet: (settingsModel?.yourPet)!)
+            } else {
+                //
             }
+        }
+        
+        // if settings
+        if (settingsModel?.setupGame)! {
+            setup()
+            doBegin()
+            settingsModel?.setupGame = false
         }
     }
     
@@ -72,39 +87,53 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func newGame(_ sender: UIButton) {
-        print("Begin Game")
-        statisticsModel?.singlePlayerEasyWins += 1
+        setup()
+    }
+
+    func setup() {
+        print("Setup for New Game")
+        // Initialize, game not started yet
         self.isGameInPlay = false
-        beginResumeGame.setTitle("Begin Game", for: .normal)
         
-        // Clear board
-        if let gbController = gbcvc {
-            gbController.gbvc?.clearBoard()
-        }
+        // TEST!
+        statisticsModel?.singlePlayerEasyWins += 1
     }
     
     @IBAction func beginGame(_ sender: UIButton) {
-        // Set game in play and update button
+        // Set game in play
+        doBegin()
+    }
+    
+    func doBegin() {
         print("Begin Game")
         self.isGameInPlay = true
-        beginResumeGame.setTitle("Resume Game", for: .normal)
-
+        
+        // If board present clear
+        if let board = gameModel?.board {
+            gbcvc?.gbvc?.clearBoard(cells: (board))
+        }
+        
         // If play mode is single make first move accordingly
         if EnumPlayMode.SinglePlayer == settingsModel?.gamePlayMode {
             // If you have first move
             if settingsModel?.gameFirstMove == EnumFirstMove.Me {
                 // Set to current player
                 isCurrentPlayer = true
+                gameModel?.playState = .PlayerTurn
                 
-                // Set move player label and make first move
-                setPlayerLabel(pet: (settingsModel?.yourPet)!)
+                // Set move player label and start game (make first move)
+                let yourPet = (settingsModel?.yourPet)!
+                setPlayerLabel(pet: yourPet)
+                gbcvc?.gbvc?.startGame(currentPlayer: isCurrentPlayer)
                 
             } else {
-                // Set opponent to current player and use AI to make first move
+                // Set opponent to current player
                 isCurrentPlayer = false
+                gameModel?.playState = .OpponentTurn
                 
-                // Set move player label and make first move
+                // Set move player label and use AI to start game
                 setPlayerLabel(pet: "Computer.png")
+                gbcvc?.gbvc?.startGame(currentPlayer: isCurrentPlayer)
             }
         } else {
             // Set move player label
@@ -123,11 +152,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    @IBAction func startGame(_ sender: UIButton) {
-        
-    }
-    
-    
     /*
     // MARK: - Navigation
 
@@ -137,7 +161,6 @@ class GameViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ContainerViewSegue" {

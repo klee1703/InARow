@@ -14,7 +14,11 @@ class GameBoardContainerViewController: UIViewController {
     let widthHeight = 343
     var tbvc: GameTabBarController?
     var gbvc: GameBoardViewController?
+    
+    // Model variables
     var settingsModel: SettingsModel?
+    var statisticsModel: StatisticsModel?
+    var gameModel: GameModel?
     
     var currentSegueIdentifier = ""
 
@@ -23,6 +27,7 @@ class GameBoardContainerViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         settingsModel = tbvc!.settings
+        /*
         switch settingsModel!.board {
         case EnumGameBoard.TTBoard:
             self.currentSegueIdentifier = gameBoard33Segue
@@ -30,6 +35,11 @@ class GameBoardContainerViewController: UIViewController {
             self.currentSegueIdentifier = gameBoard44Segue
         }
         self.performSegue(withIdentifier: self.currentSegueIdentifier, sender: nil)
+ */
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        settingsModel = appDelegate?.settings
+        statisticsModel = appDelegate?.statistics
+        gameModel = appDelegate?.game
     }
     
     override func viewWillAppear(_ animated: Bool) {

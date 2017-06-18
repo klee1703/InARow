@@ -38,8 +38,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmw-Cd-shq">
-                                <rect key="frame" x="284" y="40" width="75" height="30"/>
-                                <state key="normal" title="New Game"/>
+                                <rect key="frame" x="318" y="40" width="41" height="30"/>
+                                <state key="normal" title="Setup"/>
                                 <connections>
                                     <action selector="newGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Aj3-Pt-X5s"/>
                                 </connections>
@@ -55,7 +55,6 @@
                                 <state key="normal" title="Begin Game"/>
                                 <connections>
                                     <action selector="beginGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="oww-PO-x8B"/>
-                                    <action selector="startGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="A6a-82-mwX"/>
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4D-2K-FPJ">
@@ -746,92 +745,310 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TTT4x4.png" translatesAutoresizingMaskIntoConstraints="NO" id="Aog-H6-pw5">
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EI-Vn-w5V">
-                                <rect key="frame" x="5" y="4" width="74" height="74"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EI-Vn-w5V" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="8" y="6" width="69" height="69"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="8DZ-Bl-Y54"/>
+                                    <constraint firstAttribute="width" constant="69" id="8DZ-Bl-Y54"/>
+                                    <constraint firstAttribute="height" constant="69" id="NvF-VK-VCI"/>
                                     <constraint firstAttribute="width" secondItem="2EI-Vn-w5V" secondAttribute="height" multiplier="1:1" id="YSh-Qb-aWi"/>
-                                    <constraint firstAttribute="height" constant="74" id="mdh-S1-mqm"/>
                                 </constraints>
-                                <state key="normal" title="Cell 0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="LBI-Nz-xfb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05N-ae-ufs">
-                                <rect key="frame" x="91" y="4" width="74" height="74"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYC-5g-op4" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="180" y="6" width="69" height="69"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="49j-um-G40"/>
-                                    <constraint firstAttribute="width" secondItem="05N-ae-ufs" secondAttribute="height" multiplier="1:1" id="6SF-fI-F1d"/>
-                                    <constraint firstAttribute="width" constant="74" id="Ffb-iI-gq2"/>
+                                    <constraint firstAttribute="height" constant="69" id="Jms-dq-Ak1"/>
+                                    <constraint firstAttribute="width" constant="69" id="RXg-fn-GzP"/>
+                                    <constraint firstAttribute="width" secondItem="FYC-5g-op4" secondAttribute="height" multiplier="1:1" id="fzt-n3-uux"/>
                                 </constraints>
-                                <state key="normal" title="Cell 1"/>
-                                <connections>
-                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="qse-l4-WFE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYC-5g-op4">
-                                <rect key="frame" x="177" y="4" width="74" height="74"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="74" id="Jms-dq-Ak1"/>
-                                    <constraint firstAttribute="width" secondItem="FYC-5g-op4" secondAttribute="height" multiplier="1:1" id="Qli-cB-ZlP"/>
-                                    <constraint firstAttribute="width" constant="74" id="RXg-fn-GzP"/>
-                                </constraints>
-                                <state key="normal" title="Cell 2"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="Uxl-Qb-lub"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ox-Uy-Sk3">
-                                <rect key="frame" x="264" y="4" width="74" height="74"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ox-Uy-Sk3" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="266" y="6" width="69" height="69"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="GDi-Rm-uT3"/>
-                                    <constraint firstAttribute="height" constant="74" id="HId-qD-dP1"/>
+                                    <constraint firstAttribute="width" constant="69" id="GDi-Rm-uT3"/>
+                                    <constraint firstAttribute="height" constant="69" id="HId-qD-dP1"/>
                                     <constraint firstAttribute="width" secondItem="2Ox-Uy-Sk3" secondAttribute="height" multiplier="1:1" id="g3s-Z5-Wyn"/>
                                 </constraints>
-                                <state key="normal" title="Cell 3"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="XYe-rE-b4x"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zW6-fV-FIC" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="8" y="95" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="BI8-Wm-04z"/>
+                                    <constraint firstAttribute="height" constant="69" id="gJ1-f8-h4s"/>
+                                    <constraint firstAttribute="width" secondItem="zW6-fV-FIC" secondAttribute="height" multiplier="1:1" id="l03-se-J2j"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="KUJ-4d-O90"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgP-On-Gkz" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="180" y="95" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="J5c-dK-w9d"/>
+                                    <constraint firstAttribute="width" constant="69" id="Jik-OO-yLp"/>
+                                    <constraint firstAttribute="width" secondItem="wgP-On-Gkz" secondAttribute="height" multiplier="1:1" id="jhO-IK-RQ0"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="U1P-qe-MX0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yl-A0-Y0Q" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="266" y="95" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3Yl-A0-Y0Q" secondAttribute="height" multiplier="1:1" id="8lg-EB-rh5"/>
+                                    <constraint firstAttribute="height" constant="69" id="f2U-Pc-VEN"/>
+                                    <constraint firstAttribute="width" constant="69" id="pxL-QB-Wox"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="W0w-Ku-XTu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx3-lC-C40" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="8" y="180" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bx3-lC-C40" secondAttribute="height" multiplier="1:1" id="NOU-hg-N8m"/>
+                                    <constraint firstAttribute="height" constant="69" id="fPP-MN-XEq"/>
+                                    <constraint firstAttribute="width" constant="69" id="qHd-7t-z8j"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="Ybh-Gm-Daz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iku-eU-ue4" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="180" y="180" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Iku-eU-ue4" secondAttribute="height" multiplier="1:1" id="Goc-tS-cEg"/>
+                                    <constraint firstAttribute="width" constant="69" id="MHa-JA-HPc"/>
+                                    <constraint firstAttribute="height" constant="69" id="U6K-bY-aY5"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="hKQ-6C-99u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKG-cJ-g7k" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="266" y="180" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PKG-cJ-g7k" secondAttribute="height" multiplier="1:1" id="6WD-dm-EIJ"/>
+                                    <constraint firstAttribute="width" constant="69" id="BNz-33-Qv4"/>
+                                    <constraint firstAttribute="height" constant="69" id="WGt-GP-SAt"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="aa9-J1-Q6f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dm-Y2-NtH" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="8" y="265" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4dm-Y2-NtH" secondAttribute="height" multiplier="1:1" id="826-aJ-afy"/>
+                                    <constraint firstAttribute="width" constant="69" id="hGp-j8-fgZ"/>
+                                    <constraint firstAttribute="height" constant="69" id="xxE-RY-Jbk"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="eV1-6q-bxV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4p2-Dx-xai" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="180" y="265" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4p2-Dx-xai" secondAttribute="height" multiplier="1:1" id="BzE-7n-Pn2"/>
+                                    <constraint firstAttribute="height" constant="69" id="GSB-1X-1g0"/>
+                                    <constraint firstAttribute="width" constant="69" id="UJe-20-vrQ"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="yOp-gl-AVS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEJ-TW-bPc" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="266" y="265" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="55k-NF-2fm"/>
+                                    <constraint firstAttribute="width" secondItem="bEJ-TW-bPc" secondAttribute="height" multiplier="1:1" id="8Sx-8e-ZAt"/>
+                                    <constraint firstAttribute="width" constant="69" id="mJz-eJ-7qE"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="MdO-sY-tRj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05N-ae-ufs" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="94" y="6" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="49j-um-G40"/>
+                                    <constraint firstAttribute="width" secondItem="05N-ae-ufs" secondAttribute="height" multiplier="1:1" id="6SF-fI-F1d"/>
+                                    <constraint firstAttribute="width" constant="69" id="Ffb-iI-gq2"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="qse-l4-WFE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN6-NV-bGZ" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="94" y="95" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="EE4-bn-PYH"/>
+                                    <constraint firstAttribute="width" secondItem="hN6-NV-bGZ" secondAttribute="height" multiplier="1:1" id="SCR-dE-8Au"/>
+                                    <constraint firstAttribute="width" constant="69" id="xZa-RW-BUq"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="E4N-me-clg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFq-rx-mRy" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="94" y="180" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="Vm8-eT-Yy2"/>
+                                    <constraint firstAttribute="width" secondItem="LFq-rx-mRy" secondAttribute="height" multiplier="1:1" id="XuN-dz-Sqe"/>
+                                    <constraint firstAttribute="width" constant="69" id="s9b-G2-ack"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="MGN-Nc-NCx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgP-zU-AWK" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="94" y="265" width="69" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="6x9-LJ-mku"/>
+                                    <constraint firstAttribute="width" secondItem="lgP-zU-AWK" secondAttribute="height" multiplier="1:1" id="aM0-9M-WKU"/>
+                                    <constraint firstAttribute="width" constant="69" id="uRL-P7-yp2"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="BQ4-ED-nY1" eventType="touchUpInside" id="ZWJ-T9-5VJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="FYC-5g-op4" firstAttribute="leading" secondItem="05N-ae-ufs" secondAttribute="trailing" constant="17" id="1MP-MF-qX4"/>
                             <constraint firstItem="Aog-H6-pw5" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" id="1TG-VQ-sGJ"/>
-                            <constraint firstItem="2EI-Vn-w5V" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="4" id="1rb-RS-OmV"/>
-                            <constraint firstItem="2Ox-Uy-Sk3" firstAttribute="leading" secondItem="FYC-5g-op4" secondAttribute="trailing" constant="13" id="6CG-O9-dB4"/>
-                            <constraint firstItem="2EI-Vn-w5V" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" constant="5" id="EXC-Li-dqn"/>
-                            <constraint firstItem="2Ox-Uy-Sk3" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="4" id="Gdh-J6-Sp4"/>
-                            <constraint firstItem="FYC-5g-op4" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="4" id="IiJ-u6-fGi"/>
+                            <constraint firstItem="4p2-Dx-xai" firstAttribute="leading" secondItem="lgP-zU-AWK" secondAttribute="trailing" constant="17" id="938-hB-koO"/>
+                            <constraint firstItem="2Ox-Uy-Sk3" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="6" id="9ga-8B-26S"/>
+                            <constraint firstItem="3Yl-A0-Y0Q" firstAttribute="leading" secondItem="wgP-On-Gkz" secondAttribute="trailing" constant="17" id="9ja-VW-5GC"/>
+                            <constraint firstItem="zW6-fV-FIC" firstAttribute="top" secondItem="2EI-Vn-w5V" secondAttribute="bottom" constant="20" id="Cbd-Sa-va7"/>
+                            <constraint firstItem="lgP-zU-AWK" firstAttribute="top" secondItem="LFq-rx-mRy" secondAttribute="bottom" constant="16" id="HxP-yE-mPh"/>
+                            <constraint firstItem="bEJ-TW-bPc" firstAttribute="leading" secondItem="4p2-Dx-xai" secondAttribute="trailing" constant="17" id="JNu-aG-wJr"/>
                             <constraint firstItem="yWv-lK-Iim" firstAttribute="top" secondItem="Aog-H6-pw5" secondAttribute="bottom" id="Lq6-wo-SA1"/>
                             <constraint firstAttribute="trailing" secondItem="Aog-H6-pw5" secondAttribute="trailing" id="Ls0-bW-gtJ"/>
+                            <constraint firstItem="LFq-rx-mRy" firstAttribute="leading" secondItem="bx3-lC-C40" secondAttribute="trailing" constant="17" id="OOD-I2-odB"/>
+                            <constraint firstItem="2EI-Vn-w5V" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="6" id="OaX-VB-vsJ"/>
+                            <constraint firstItem="wgP-On-Gkz" firstAttribute="leading" secondItem="hN6-NV-bGZ" secondAttribute="trailing" constant="17" id="RXR-wp-wIg"/>
+                            <constraint firstItem="PKG-cJ-g7k" firstAttribute="leading" secondItem="Iku-eU-ue4" secondAttribute="trailing" constant="17" id="S75-tr-PQG"/>
+                            <constraint firstItem="FYC-5g-op4" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="6" id="SGa-De-zi8"/>
+                            <constraint firstItem="3Yl-A0-Y0Q" firstAttribute="top" secondItem="2Ox-Uy-Sk3" secondAttribute="bottom" constant="20" id="SL8-vu-13b"/>
+                            <constraint firstItem="PKG-cJ-g7k" firstAttribute="top" secondItem="3Yl-A0-Y0Q" secondAttribute="bottom" constant="16" id="SRk-IA-G1g"/>
                             <constraint firstAttribute="trailing" secondItem="Aog-H6-pw5" secondAttribute="trailing" id="Sto-x4-pz8"/>
-                            <constraint firstItem="FYC-5g-op4" firstAttribute="leading" secondItem="05N-ae-ufs" secondAttribute="trailing" constant="12" id="UVu-SR-vBt"/>
+                            <constraint firstItem="hN6-NV-bGZ" firstAttribute="top" secondItem="05N-ae-ufs" secondAttribute="bottom" constant="20" id="TKW-Rk-Jm4"/>
+                            <constraint firstItem="LFq-rx-mRy" firstAttribute="top" secondItem="hN6-NV-bGZ" secondAttribute="bottom" constant="16" id="Vhb-Zz-Io1"/>
+                            <constraint firstItem="Iku-eU-ue4" firstAttribute="top" secondItem="wgP-On-Gkz" secondAttribute="bottom" constant="16" id="WTc-N9-Jef"/>
+                            <constraint firstItem="wgP-On-Gkz" firstAttribute="top" secondItem="FYC-5g-op4" secondAttribute="bottom" constant="20" id="YcI-of-J2K"/>
+                            <constraint firstItem="2EI-Vn-w5V" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" constant="8" id="YcT-Xv-7kX"/>
                             <constraint firstItem="Aog-H6-pw5" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" id="ZMD-4A-iN3"/>
+                            <constraint firstItem="bEJ-TW-bPc" firstAttribute="top" secondItem="PKG-cJ-g7k" secondAttribute="bottom" constant="16" id="bFB-4s-qj1"/>
                             <constraint firstItem="yWv-lK-Iim" firstAttribute="top" secondItem="Aog-H6-pw5" secondAttribute="bottom" id="baY-ry-8Yb"/>
-                            <constraint firstItem="05N-ae-ufs" firstAttribute="leading" secondItem="2EI-Vn-w5V" secondAttribute="trailing" constant="12" id="dvb-oe-kLa"/>
+                            <constraint firstItem="2Ox-Uy-Sk3" firstAttribute="leading" secondItem="FYC-5g-op4" secondAttribute="trailing" constant="17" id="exr-Up-7e5"/>
+                            <constraint firstItem="05N-ae-ufs" firstAttribute="leading" secondItem="2EI-Vn-w5V" secondAttribute="trailing" constant="17" id="iiT-Q4-eyg"/>
+                            <constraint firstItem="4p2-Dx-xai" firstAttribute="top" secondItem="Iku-eU-ue4" secondAttribute="bottom" constant="16" id="jag-7T-CE1"/>
+                            <constraint firstItem="05N-ae-ufs" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="6" id="mcr-Kp-C79"/>
+                            <constraint firstItem="4dm-Y2-NtH" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" constant="8" id="nmi-MT-LTJ"/>
+                            <constraint firstItem="bx3-lC-C40" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" constant="8" id="pHC-F8-zTS"/>
+                            <constraint firstItem="zW6-fV-FIC" firstAttribute="leading" secondItem="zcD-x2-zBH" secondAttribute="leading" constant="8" id="qtl-RW-p5J"/>
+                            <constraint firstItem="4dm-Y2-NtH" firstAttribute="top" secondItem="bx3-lC-C40" secondAttribute="bottom" constant="16" id="r6Q-JY-V3s"/>
+                            <constraint firstItem="bx3-lC-C40" firstAttribute="top" secondItem="zW6-fV-FIC" secondAttribute="bottom" constant="16" id="smO-6u-GcY"/>
                             <constraint firstItem="Aog-H6-pw5" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" id="svR-x3-mMx"/>
                             <constraint firstItem="Aog-H6-pw5" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" id="t7V-Lk-jsP"/>
-                            <constraint firstItem="05N-ae-ufs" firstAttribute="top" secondItem="O2O-kF-NaP" secondAttribute="bottom" constant="4" id="ukZ-ja-61s"/>
+                            <constraint firstItem="lgP-zU-AWK" firstAttribute="leading" secondItem="4dm-Y2-NtH" secondAttribute="trailing" constant="17" id="taX-t0-eEK"/>
+                            <constraint firstItem="hN6-NV-bGZ" firstAttribute="leading" secondItem="zW6-fV-FIC" secondAttribute="trailing" constant="17" id="uo3-iS-DdP"/>
+                            <constraint firstItem="Iku-eU-ue4" firstAttribute="leading" secondItem="LFq-rx-mRy" secondAttribute="trailing" constant="17" id="vV4-VI-Yi0"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="1Mw-pa-9QV" appends="YES" id="n5B-Ve-P3t"/>
+                        </connections>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="343" height="343"/>
                     <connections>
                         <outlet property="cell0" destination="2EI-Vn-w5V" id="9mV-IK-ibP"/>
                         <outlet property="cell1" destination="05N-ae-ufs" id="Fpu-Gy-rM0"/>
+                        <outlet property="cell10" destination="Iku-eU-ue4" id="ZVE-q1-mmZ"/>
+                        <outlet property="cell11" destination="PKG-cJ-g7k" id="aPF-mS-ZdA"/>
+                        <outlet property="cell12" destination="4dm-Y2-NtH" id="Hqj-TF-M2v"/>
+                        <outlet property="cell13" destination="lgP-zU-AWK" id="KQO-jh-xxp"/>
+                        <outlet property="cell14" destination="4p2-Dx-xai" id="HuE-TH-bv4"/>
+                        <outlet property="cell15" destination="bEJ-TW-bPc" id="UvM-gp-wFq"/>
                         <outlet property="cell2" destination="FYC-5g-op4" id="aAy-BJ-dGg"/>
                         <outlet property="cell3" destination="2Ox-Uy-Sk3" id="YrB-pA-qXm"/>
+                        <outlet property="cell4" destination="zW6-fV-FIC" id="Pju-uD-aKn"/>
+                        <outlet property="cell5" destination="hN6-NV-bGZ" id="He6-kA-HWQ"/>
+                        <outlet property="cell6" destination="wgP-On-Gkz" id="fdw-Nf-Xmk"/>
+                        <outlet property="cell7" destination="3Yl-A0-Y0Q" id="g0J-hf-kec"/>
+                        <outlet property="cell8" destination="bx3-lC-C40" id="26K-GW-JqD"/>
+                        <outlet property="cell9" destination="LFq-rx-mRy" id="BQt-9c-qqC"/>
+                        <outlet property="gameBoard44View" destination="zcD-x2-zBH" id="VYA-uh-Iak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nut-7Q-CnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1Mw-pa-9QV"/>
             </objects>
             <point key="canvasLocation" x="2293.5999999999999" y="-1606.1469265367318"/>
         </scene>
         <!--Game Board33 View Controller-->
         <scene sceneID="kwy-ry-vls">
             <objects>
-                <viewController modalPresentationStyle="currentContext" id="95R-Km-OsH" customClass="GameBoard33ViewController" customModule="PetsInARow" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="95R-Km-OsH" customClass="GameBoard33ViewController" customModule="PetsInARow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OzE-sp-Jv3"/>
                         <viewControllerLayoutGuide type="bottom" id="cRR-uE-nH1"/>
@@ -843,141 +1060,168 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TTT3x3.png" translatesAutoresizingMaskIntoConstraints="NO" id="AvQ-Pw-9TD">
                                 <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRv-a6-6HU">
-                                <rect key="frame" x="5" y="6" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRv-a6-6HU" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="9" y="8" width="92" height="92"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SRv-a6-6HU" secondAttribute="height" multiplier="1:1" id="1oC-j1-QvR"/>
-                                    <constraint firstAttribute="height" constant="100" id="QQX-xL-AN0"/>
-                                    <constraint firstAttribute="width" constant="100" id="kEL-kg-nTM"/>
+                                    <constraint firstAttribute="height" constant="92" id="QQX-xL-AN0"/>
+                                    <constraint firstAttribute="width" constant="92" id="kEL-kg-nTM"/>
                                 </constraints>
-                                <state key="normal" title="Cell 0"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="cXq-LM-L4x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv8-E6-O2X">
-                                <rect key="frame" x="122" y="6" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv8-E6-O2X" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="126" y="8" width="92" height="92"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="M91-Ub-O5r"/>
-                                    <constraint firstAttribute="height" constant="100" id="ixU-QT-k41"/>
+                                    <constraint firstAttribute="width" constant="92" id="M91-Ub-O5r"/>
+                                    <constraint firstAttribute="height" constant="92" id="ixU-QT-k41"/>
                                     <constraint firstAttribute="width" secondItem="Tv8-E6-O2X" secondAttribute="height" multiplier="1:1" id="jMV-qh-beV"/>
                                 </constraints>
-                                <state key="normal" title="Cell 1"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="PMa-cH-hSE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7K-sv-w6c">
-                                <rect key="frame" x="238" y="6" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhs-HI-uJ2" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="9" y="126" width="92" height="92"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="2DU-zP-6fL"/>
-                                    <constraint firstAttribute="width" secondItem="c7K-sv-w6c" secondAttribute="height" multiplier="1:1" id="LDr-xI-qOJ"/>
-                                    <constraint firstAttribute="width" constant="100" id="xbD-mj-Az4"/>
+                                    <constraint firstAttribute="width" constant="92" id="ENm-jm-tiL"/>
+                                    <constraint firstAttribute="height" constant="92" id="Yr3-kb-sRw"/>
+                                    <constraint firstAttribute="width" secondItem="hhs-HI-uJ2" secondAttribute="height" multiplier="1:1" id="ZIg-2S-t57"/>
                                 </constraints>
-                                <state key="normal" title="Cell 2"/>
-                                <connections>
-                                    <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="kpC-ku-jRY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhs-HI-uJ2">
-                                <rect key="frame" x="5" y="123" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="ENm-jm-tiL"/>
-                                    <constraint firstAttribute="height" constant="100" id="Yr3-kb-sRw"/>
-                                </constraints>
-                                <state key="normal" title="Cell 3"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="jbW-Zh-cgj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bo-ki-3yj">
-                                <rect key="frame" x="121" y="123" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bo-ki-3yj" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="126" y="126" width="92" height="92"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="1xs-2u-gkX"/>
-                                    <constraint firstAttribute="height" constant="100" id="RzZ-tj-oph"/>
+                                    <constraint firstAttribute="width" constant="92" id="1xs-2u-gkX"/>
+                                    <constraint firstAttribute="height" constant="92" id="RzZ-tj-oph"/>
                                     <constraint firstAttribute="width" secondItem="4bo-ki-3yj" secondAttribute="height" multiplier="1:1" id="aGU-dW-VK9"/>
                                 </constraints>
-                                <state key="normal" title="Cell 4"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="X23-GB-jiA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-Bv-pT8">
-                                <rect key="frame" x="238" y="123" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEO-Bv-pT8" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="242" y="126" width="92" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TEO-Bv-pT8" secondAttribute="height" multiplier="1:1" id="4o5-iH-tMQ"/>
-                                    <constraint firstAttribute="height" constant="100" id="L7v-el-HPt"/>
-                                    <constraint firstAttribute="width" constant="100" id="m8f-gN-ka6"/>
+                                    <constraint firstAttribute="height" constant="92" id="L7v-el-HPt"/>
+                                    <constraint firstAttribute="width" constant="92" id="m8f-gN-ka6"/>
                                 </constraints>
-                                <state key="normal" title="Cell 5"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="hXX-sq-7Ob"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liD-vb-mMz">
-                                <rect key="frame" x="5" y="238" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liD-vb-mMz" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="9" y="242" width="92" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="liD-vb-mMz" secondAttribute="height" multiplier="1:1" id="179-UR-3oG"/>
-                                    <constraint firstAttribute="height" constant="100" id="2r1-p2-96S"/>
-                                    <constraint firstAttribute="width" constant="100" id="qtx-fL-cLz"/>
+                                    <constraint firstAttribute="height" constant="92" id="2r1-p2-96S"/>
+                                    <constraint firstAttribute="width" constant="92" id="qtx-fL-cLz"/>
                                 </constraints>
-                                <state key="normal" title="Cell 6"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="6AE-le-N9l"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncq-Gi-Ifd">
-                                <rect key="frame" x="121" y="238" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncq-Gi-Ifd" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="126.5" y="242" width="92" height="92"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="4eJ-16-BYC"/>
+                                    <constraint firstAttribute="height" constant="92" id="4eJ-16-BYC"/>
                                     <constraint firstAttribute="width" secondItem="ncq-Gi-Ifd" secondAttribute="height" multiplier="1:1" id="B0p-S5-bsS"/>
-                                    <constraint firstAttribute="width" constant="100" id="dkV-c1-qPy"/>
+                                    <constraint firstAttribute="width" constant="92" id="dkV-c1-qPy"/>
                                 </constraints>
-                                <state key="normal" title="Cell 7"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="YLN-4H-eBj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94B-Hr-5Pa">
-                                <rect key="frame" x="238" y="238" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94B-Hr-5Pa" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="242" y="242" width="92" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="94B-Hr-5Pa" secondAttribute="height" multiplier="1:1" id="GRv-jb-XMm"/>
-                                    <constraint firstAttribute="height" constant="100" id="Z50-MI-TZ8"/>
-                                    <constraint firstAttribute="width" constant="100" id="t15-Aa-vNv"/>
+                                    <constraint firstAttribute="height" constant="92" id="Z50-MI-TZ8"/>
+                                    <constraint firstAttribute="width" constant="92" id="t15-Aa-vNv"/>
                                 </constraints>
-                                <state key="normal" title="Cell 8"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="2xo-3H-g8d"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7K-sv-w6c" customClass="UICellButton" customModule="PetsInARow" customModuleProvider="target">
+                                <rect key="frame" x="242" y="8" width="92" height="92"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="2DU-zP-6fL"/>
+                                    <constraint firstAttribute="width" secondItem="c7K-sv-w6c" secondAttribute="height" multiplier="1:1" id="LDr-xI-qOJ"/>
+                                    <constraint firstAttribute="width" constant="92" id="xbD-mj-Az4"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cellPressed:" destination="95R-Km-OsH" eventType="touchUpInside" id="kpC-ku-jRY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="4bo-ki-3yj" firstAttribute="centerX" secondItem="AvQ-Pw-9TD" secondAttribute="centerX" id="4z6-Oj-Cun"/>
-                            <constraint firstItem="SRv-a6-6HU" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" constant="5" id="8Wt-ET-ySP"/>
-                            <constraint firstItem="Tv8-E6-O2X" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" constant="6" id="9BO-qQ-th5"/>
-                            <constraint firstItem="liD-vb-mMz" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" constant="5" id="9Uy-JR-1JA"/>
-                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="ncq-Gi-Ifd" secondAttribute="bottom" constant="5" id="Bik-32-2Bv"/>
+                            <constraint firstItem="SRv-a6-6HU" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" constant="9" id="8Wt-ET-ySP"/>
+                            <constraint firstItem="Tv8-E6-O2X" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" constant="8" id="9BO-qQ-th5"/>
+                            <constraint firstItem="liD-vb-mMz" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" constant="9" id="9Uy-JR-1JA"/>
+                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="ncq-Gi-Ifd" secondAttribute="bottom" constant="9" id="Bik-32-2Bv"/>
                             <constraint firstAttribute="trailing" secondItem="AvQ-Pw-9TD" secondAttribute="trailing" id="J0W-uZ-tOQ"/>
                             <constraint firstItem="4bo-ki-3yj" firstAttribute="baseline" secondItem="TEO-Bv-pT8" secondAttribute="baseline" id="Ll3-fM-2TD"/>
                             <constraint firstItem="AvQ-Pw-9TD" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" id="OSY-Mv-3ge"/>
                             <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="AvQ-Pw-9TD" secondAttribute="bottom" id="ObW-Ze-B1v"/>
-                            <constraint firstAttribute="trailing" secondItem="94B-Hr-5Pa" secondAttribute="trailing" constant="5" id="Pfb-rl-8GV"/>
+                            <constraint firstAttribute="trailing" secondItem="94B-Hr-5Pa" secondAttribute="trailing" constant="9" id="Pfb-rl-8GV"/>
                             <constraint firstItem="AvQ-Pw-9TD" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" id="QFd-3C-hEa"/>
                             <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="AvQ-Pw-9TD" secondAttribute="bottom" id="QbF-Yw-fxM"/>
+                            <constraint firstItem="TEO-Bv-pT8" firstAttribute="baseline" secondItem="4bo-ki-3yj" secondAttribute="baseline" id="Qe9-jA-fss"/>
+                            <constraint firstItem="TEO-Bv-pT8" firstAttribute="top" secondItem="4bo-ki-3yj" secondAttribute="top" id="SHe-ii-WcY"/>
                             <constraint firstAttribute="trailing" secondItem="AvQ-Pw-9TD" secondAttribute="trailing" id="SV6-bq-WWR"/>
                             <constraint firstItem="4bo-ki-3yj" firstAttribute="leading" secondItem="ncq-Gi-Ifd" secondAttribute="leading" id="T4p-k9-TSj"/>
-                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="94B-Hr-5Pa" secondAttribute="bottom" constant="5" id="TtO-rI-JOi"/>
-                            <constraint firstAttribute="trailing" secondItem="c7K-sv-w6c" secondAttribute="trailing" constant="5" id="WsG-ZA-Wom"/>
+                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="94B-Hr-5Pa" secondAttribute="bottom" constant="9" id="TtO-rI-JOi"/>
+                            <constraint firstAttribute="trailing" secondItem="c7K-sv-w6c" secondAttribute="trailing" constant="9" id="WsG-ZA-Wom"/>
                             <constraint firstItem="4bo-ki-3yj" firstAttribute="baseline" secondItem="hhs-HI-uJ2" secondAttribute="baseline" id="ZlR-56-2io"/>
-                            <constraint firstAttribute="trailing" secondItem="TEO-Bv-pT8" secondAttribute="trailing" constant="5" id="bF6-fh-Pu5"/>
-                            <constraint firstItem="hhs-HI-uJ2" firstAttribute="top" secondItem="SRv-a6-6HU" secondAttribute="bottom" constant="17" id="bYU-Ff-Hlq"/>
-                            <constraint firstItem="SRv-a6-6HU" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" constant="6" id="gCG-Bx-DLg"/>
+                            <constraint firstAttribute="trailing" secondItem="TEO-Bv-pT8" secondAttribute="trailing" constant="9" id="bF6-fh-Pu5"/>
+                            <constraint firstItem="hhs-HI-uJ2" firstAttribute="top" secondItem="SRv-a6-6HU" secondAttribute="bottom" constant="26" id="bYU-Ff-Hlq"/>
+                            <constraint firstItem="SRv-a6-6HU" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" constant="8" id="gCG-Bx-DLg"/>
+                            <constraint firstItem="TEO-Bv-pT8" firstAttribute="firstBaseline" secondItem="hhs-HI-uJ2" secondAttribute="firstBaseline" id="gFK-Ho-oN7"/>
+                            <constraint firstItem="TEO-Bv-pT8" firstAttribute="top" secondItem="hhs-HI-uJ2" secondAttribute="top" id="iFU-Hd-Vfg"/>
                             <constraint firstItem="Tv8-E6-O2X" firstAttribute="centerX" secondItem="AvQ-Pw-9TD" secondAttribute="centerX" id="iTp-bH-ckA"/>
-                            <constraint firstItem="c7K-sv-w6c" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" constant="6" id="ld1-ka-r2r"/>
-                            <constraint firstItem="hhs-HI-uJ2" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" constant="5" id="mXU-6p-PGQ"/>
+                            <constraint firstItem="c7K-sv-w6c" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" constant="8" id="ld1-ka-r2r"/>
+                            <constraint firstItem="hhs-HI-uJ2" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" constant="9" id="mXU-6p-PGQ"/>
                             <constraint firstItem="AvQ-Pw-9TD" firstAttribute="top" secondItem="OzE-sp-Jv3" secondAttribute="bottom" id="py4-Ne-IRA"/>
-                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="liD-vb-mMz" secondAttribute="bottom" constant="5" id="z30-SA-lXR"/>
+                            <constraint firstItem="TEO-Bv-pT8" firstAttribute="baseline" secondItem="hhs-HI-uJ2" secondAttribute="baseline" id="tjf-Bp-AuQ"/>
+                            <constraint firstItem="TEO-Bv-pT8" firstAttribute="firstBaseline" secondItem="4bo-ki-3yj" secondAttribute="firstBaseline" id="ttw-12-BJU"/>
+                            <constraint firstItem="cRR-uE-nH1" firstAttribute="top" secondItem="liD-vb-mMz" secondAttribute="bottom" constant="9" id="z30-SA-lXR"/>
                             <constraint firstItem="AvQ-Pw-9TD" firstAttribute="leading" secondItem="QpV-aP-2i1" secondAttribute="leading" id="zNG-TH-q70"/>
                         </constraints>
                     </view>
@@ -993,6 +1237,7 @@
                         <outlet property="cell6" destination="liD-vb-mMz" id="9UU-O6-QlP"/>
                         <outlet property="cell7" destination="ncq-Gi-Ifd" id="8WP-xP-ga0"/>
                         <outlet property="cell8" destination="94B-Hr-5Pa" id="9pF-ZZ-JdG"/>
+                        <outlet property="gameBoard33View" destination="QpV-aP-2i1" id="WCd-4o-gyu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpt-IM-mab" userLabel="First Responder" sceneMemberID="firstResponder"/>

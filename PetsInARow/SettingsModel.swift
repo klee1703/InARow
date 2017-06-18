@@ -12,6 +12,7 @@ class SettingsModel {
     // Properties
     var enableSoundEffects: Bool
     var enableGameCenter: Bool
+    var setupGame: Bool
     
     // Properties
     var board: EnumGameBoard
@@ -26,6 +27,7 @@ class SettingsModel {
     init() {
         enableSoundEffects = true
         enableGameCenter = true
+        setupGame = false
         
         board = .TTBoard
         gamePlayMode = .SinglePlayer

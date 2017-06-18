@@ -10,20 +10,35 @@ import UIKit
 
 class GameBoard33ViewController: GameBoardViewController {
     // Cells
-    @IBOutlet weak var cell0: UIButton!
-    @IBOutlet weak var cell1: UIButton!
-    @IBOutlet weak var cell2: UIButton!
-    @IBOutlet weak var cell3: UIButton!
-    @IBOutlet weak var cell4: UIButton!
-    @IBOutlet weak var cell5: UIButton!
-    @IBOutlet weak var cell6: UIButton!
-    @IBOutlet weak var cell7: UIButton!
-    @IBOutlet weak var cell8: UIButton!
+    @IBOutlet weak var cell0: UICellButton!
+    @IBOutlet weak var cell1: UICellButton!
+    @IBOutlet weak var cell2: UICellButton!
+    @IBOutlet weak var cell3: UICellButton!
+    @IBOutlet weak var cell4: UICellButton!
+    @IBOutlet weak var cell5: UICellButton!
+    @IBOutlet weak var cell6: UICellButton!
+    @IBOutlet weak var cell7: UICellButton!
+    @IBOutlet weak var cell8: UICellButton!
+    
+    @IBOutlet var gameBoard33View: UIView!
+    
+    var cells: [UICellButton] = []
+    var labelPetImage = UIImage()
+    var labelOpponentImage = UIImage()
+    var labelComputerImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
+        gameModel?.board = cells
+        
+        // Clear board
+        gameBoard33View.isUserInteractionEnabled = true
+        labelPetImage = UIImage(named: (settingsModel?.yourPet)! + ".png")!
+        labelOpponentImage = UIImage(named: (settingsModel?.opponentsPet)! + ".png")!
+        labelComputerImage = UIImage(named: "Computer.png")!
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,14 +47,63 @@ class GameBoard33ViewController: GameBoardViewController {
     }
     
     @IBAction func cellPressed(_ sender: UIButton) {
-        print(sender.currentTitle! + " pressed!")
+        print("Cell pressed!")
+        // Set cell image
+        let petImage = UIImage(named: (settingsModel?.yourPet)! + ".png")
+        sender.setImage(petImage, for: .normal)
+        
+        // Disable interaction with cell (can't be pressed again!)
+        sender.isUserInteractionEnabled = false
+        
+        // Disable interaction on board (can't press another cell until after move by opponent!)
+        gameBoard33View.isUserInteractionEnabled = false
+        
+        // Update the board cell state
+        let cell = sender as! UICellButton
+        cell.cellState = EnumCellState.Player
+        
+        // Check if tic-tac-toe
+        if checkForTicTacToe(cells: cells, cellState: cell.cellState) {
+            print("Player has Tic Tac Toe!")
+            
+            // Display win message
+            
+        } else {
+            // If Single Player next perform AI play
+            if super.settingsModel?.gamePlayMode == .SinglePlayer {
+                aiMarkCell(cells: cells)
+                
+                // Check if tic-tac-toe
+                if checkForTicTacToe(cells: cells, cellState: EnumCellState.Opponent) {
+                    print("Computer has Tic Tac Toe!")
+                    
+                    // Display win message
+                }
+            }
+        }
     }
     
-    override func clearBoard() {
-        // IMPLEMENT!
-        print("Clearing 3x3 board")
+    override func startGame(currentPlayer: Bool) {
+        super.startGame(currentPlayer: currentPlayer)
+        print("Start game")
+        super.gameModel?.board = cells
+        gameBoard33View.isUserInteractionEnabled = true
     }
     
+    func aiMarkCell(cells: [UICellButton]) {
+        super.playLabel?.image = self.labelComputerImage
+        let randomNum = DispatchTimeInterval.seconds(Int(arc4random_uniform(9)+1))
+        let when = DispatchTime.now() + randomNum // change to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+            // Use AI engine to mark best available cell
+            print("AI marked cell")
+            
+            // Re-enable play on board
+            self.gameBoard33View.isUserInteractionEnabled = true
+            self.playLabel?.image = self.labelPetImage
+        }
+    }
     
     /*
     // MARK: - Navigation

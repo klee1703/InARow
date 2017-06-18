@@ -11,8 +11,10 @@ import UIKit
 class StatisticsViewController: UIViewController {
     
     var tbvc: GameTabBarController?
-    var gameModel: GameModel?
+    // Model data for settings
+    var settingsModel: SettingsModel?
     var statisticsModel: StatisticsModel?
+    var gameModel: GameModel?
 
     @IBOutlet weak var spEasyWins: UILabel!
     @IBOutlet weak var spMediumWins: UILabel!
@@ -25,7 +27,10 @@ class StatisticsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tbvc = (self.tabBarController as! GameTabBarController)
-        statisticsModel = tbvc!.statistics
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        settingsModel = appDelegate?.settings
+        statisticsModel = appDelegate?.statistics
+        gameModel = appDelegate?.game
     }
 
     override func didReceiveMemoryWarning() {

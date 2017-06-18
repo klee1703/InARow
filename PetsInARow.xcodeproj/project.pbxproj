@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		79144E1A1EECE26F006B71F0 /* TTT4x4.png in Resources */ = {isa = PBXBuildFile; fileRef = 79144E191EECE26F006B71F0 /* TTT4x4.png */; };
 		79144E1C1EECE4D1006B71F0 /* TTT3x3.png in Resources */ = {isa = PBXBuildFile; fileRef = 79144E1B1EECE4D1006B71F0 /* TTT3x3.png */; };
-		79144E1E1EECE8EB006B71F0 /* GameBoardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79144E1D1EECE8EB006B71F0 /* GameBoardDelegate.swift */; };
 		79144E201EECFD09006B71F0 /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79144E1F1EECFD09006B71F0 /* GameBoardViewController.swift */; };
 		79144E211EECFD09006B71F0 /* GameBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79144E1F1EECFD09006B71F0 /* GameBoardViewController.swift */; };
 		79144E2F1EEDE1AA006B71F0 /* Cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 79144E251EEDE1AA006B71F0 /* Cat.png */; };
@@ -77,6 +76,11 @@
 		796C58CD1EC6B2770034CF94 /* stats.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58C41EC6B2770034CF94 /* stats.png */; };
 		796C58CE1EC6B2770034CF94 /* stats@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58C51EC6B2770034CF94 /* stats@2x.png */; };
 		796C58CF1EC6B2770034CF94 /* stats@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 796C58C61EC6B2770034CF94 /* stats@3x.png */; };
+		796D08201EF0400E00EE131D /* EnumPlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796D081F1EF0400E00EE131D /* EnumPlayState.swift */; };
+		796D08221EF0C9BA00EE131D /* EnumCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796D08211EF0C9BA00EE131D /* EnumCellState.swift */; };
+		796D08231EF0C9BA00EE131D /* EnumCellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796D08211EF0C9BA00EE131D /* EnumCellState.swift */; };
+		796D08251EF0CAA200EE131D /* UICellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796D08241EF0CAA200EE131D /* UICellButton.swift */; };
+		796D08261EF0CAA200EE131D /* UICellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796D08241EF0CAA200EE131D /* UICellButton.swift */; };
 		79B8A0F21EC7BA950005F98A /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8A0F11EC7BA950005F98A /* GameBoard.swift */; };
 		79B8A0F31EC7BA950005F98A /* GameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8A0F11EC7BA950005F98A /* GameBoard.swift */; };
 		79B8A0F51EC7BAE00005F98A /* TTGameBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B8A0F41EC7BAE00005F98A /* TTGameBoard.swift */; };
@@ -86,7 +90,6 @@
 		79E5940D1EEC650000003250 /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 79E5940A1EEC650000003250 /* clear.png */; };
 		79E5940E1EEC650000003250 /* clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79E5940B1EEC650000003250 /* clear@2x.png */; };
 		79E5940F1EEC650000003250 /* clear@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79E5940C1EEC650000003250 /* clear@3x.png */; };
-		79E594161EEC90A500003250 /* TTT4x4.png in Resources */ = {isa = PBXBuildFile; fileRef = 79E594141EEC90A500003250 /* TTT4x4.png */; };
 		79E594171EEC90A500003250 /* TTT4x4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79E594151EEC90A500003250 /* TTT4x4@2x.png */; };
 		79E5941F1EEC9CD400003250 /* TTT3x3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79E5941D1EEC9CD400003250 /* TTT3x3@2x.png */; };
 		79F71A6F1EBD3BB60067D98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71A6E1EBD3BB60067D98C /* AppDelegate.swift */; };
@@ -127,7 +130,6 @@
 /* Begin PBXFileReference section */
 		79144E191EECE26F006B71F0 /* TTT4x4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TTT4x4.png; path = ../TTT4x4.png; sourceTree = "<group>"; };
 		79144E1B1EECE4D1006B71F0 /* TTT3x3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TTT3x3.png; path = ../TTT3x3.png; sourceTree = "<group>"; };
-		79144E1D1EECE8EB006B71F0 /* GameBoardDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardDelegate.swift; sourceTree = "<group>"; };
 		79144E1F1EECFD09006B71F0 /* GameBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardViewController.swift; sourceTree = "<group>"; };
 		79144E251EEDE1AA006B71F0 /* Cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cat.png; path = animals/Cat.png; sourceTree = "<group>"; };
 		79144E261EEDE1AA006B71F0 /* Computer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Computer.png; path = animals/Computer.png; sourceTree = "<group>"; };
@@ -168,13 +170,15 @@
 		796C58C41EC6B2770034CF94 /* stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stats.png; sourceTree = "<group>"; };
 		796C58C51EC6B2770034CF94 /* stats@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stats@2x.png"; sourceTree = "<group>"; };
 		796C58C61EC6B2770034CF94 /* stats@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stats@3x.png"; sourceTree = "<group>"; };
+		796D081F1EF0400E00EE131D /* EnumPlayState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumPlayState.swift; sourceTree = "<group>"; };
+		796D08211EF0C9BA00EE131D /* EnumCellState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCellState.swift; sourceTree = "<group>"; };
+		796D08241EF0CAA200EE131D /* UICellButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICellButton.swift; sourceTree = "<group>"; };
 		79B8A0F11EC7BA950005F98A /* GameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoard.swift; sourceTree = "<group>"; };
 		79B8A0F41EC7BAE00005F98A /* TTGameBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTGameBoard.swift; sourceTree = "<group>"; };
 		79B8A0F71EC7BC640005F98A /* Square.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
 		79E5940A1EEC650000003250 /* clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clear.png; path = ../clear.png; sourceTree = "<group>"; };
 		79E5940B1EEC650000003250 /* clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clear@2x.png"; path = "../clear@2x.png"; sourceTree = "<group>"; };
 		79E5940C1EEC650000003250 /* clear@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clear@3x.png"; path = "../clear@3x.png"; sourceTree = "<group>"; };
-		79E594141EEC90A500003250 /* TTT4x4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TTT4x4.png; path = ../TTT4x4.png; sourceTree = "<group>"; };
 		79E594151EEC90A500003250 /* TTT4x4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TTT4x4@2x.png"; path = "../TTT4x4@2x.png"; sourceTree = "<group>"; };
 		79E5941D1EEC9CD400003250 /* TTT3x3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TTT3x3@2x.png"; path = "../TTT3x3@2x.png"; sourceTree = "<group>"; };
 		79F71A6B1EBD3BB60067D98C /* PetsInARow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsInARow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,12 +263,12 @@
 				79144E1F1EECFD09006B71F0 /* GameBoardViewController.swift */,
 				792603841EE122A800A6EEDD /* GameBoard33ViewController.swift */,
 				792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */,
-				79144E1D1EECE8EB006B71F0 /* GameBoardDelegate.swift */,
 				7964CA061ED7ADD300C8A92D /* GameTabBarController.swift */,
 				79F71A701EBD3BB60067D98C /* SettingsViewController.swift */,
 				79F71A721EBD3BB60067D98C /* StatisticsViewController.swift */,
 				79F71A9E1EBE7FEE0067D98C /* SupportViewController.swift */,
 				791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */,
+				796D08241EF0CAA200EE131D /* UICellButton.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -278,6 +282,8 @@
 				792F88531ED0FC45006685CC /* EnumPlayMode.swift */,
 				79FD34921ECC0A65005DC940 /* EnumOpponent.swift */,
 				79FD34951ECC0A6F005DC940 /* EnumFirstMove.swift */,
+				796D081F1EF0400E00EE131D /* EnumPlayState.swift */,
+				796D08211EF0C9BA00EE131D /* EnumCellState.swift */,
 			);
 			name = enums;
 			sourceTree = "<group>";
@@ -285,7 +291,6 @@
 		791C38071ED94FCB00BA4F16 /* boards */ = {
 			isa = PBXGroup;
 			children = (
-				79E594141EEC90A500003250 /* TTT4x4.png */,
 				79B8A0F71EC7BC640005F98A /* Square.swift */,
 				79B8A0F11EC7BA950005F98A /* GameBoard.swift */,
 				791C38041ED94F5F00BA4F16 /* FFGameBoard.swift */,
@@ -525,7 +530,6 @@
 				79144E411EEDE1AA006B71F0 /* Tiger.png in Resources */,
 				796C58C91EC6B2770034CF94 /* faq@3x.png in Resources */,
 				791C380C1EDA5D0800BA4F16 /* Help.html in Resources */,
-				79E594161EEC90A500003250 /* TTT4x4.png in Resources */,
 				79144E2F1EEDE1AA006B71F0 /* Cat.png in Resources */,
 				791C38241EDFC6D200BA4F16 /* settings@2x.png in Resources */,
 				79144E1C1EECE4D1006B71F0 /* TTT3x3.png in Resources */,
@@ -595,6 +599,7 @@
 			files = (
 				7964CA0A1ED7AE1600C8A92D /* SettingsModel.swift in Sources */,
 				7964CA071ED7ADD300C8A92D /* GameTabBarController.swift in Sources */,
+				796D08251EF0CAA200EE131D /* UICellButton.swift in Sources */,
 				79FD34901ECC07C4005DC940 /* EnumGameBoard.swift in Sources */,
 				79B8A0F81EC7BC640005F98A /* Square.swift in Sources */,
 				792603881EE123DF00A6EEDD /* GameBoard44ViewController.swift in Sources */,
@@ -607,6 +612,7 @@
 				79FD34961ECC0A6F005DC940 /* EnumFirstMove.swift in Sources */,
 				791C38051ED94F5F00BA4F16 /* FFGameBoard.swift in Sources */,
 				79B8A0F21EC7BA950005F98A /* GameBoard.swift in Sources */,
+				796D08221EF0C9BA00EE131D /* EnumCellState.swift in Sources */,
 				792F88541ED0FC45006685CC /* EnumPlayMode.swift in Sources */,
 				79F71A711EBD3BB60067D98C /* SettingsViewController.swift in Sources */,
 				79F71AA11EBE81030067D98C /* GameViewController.swift in Sources */,
@@ -615,7 +621,7 @@
 				795252111EE8650300FE651E /* PersistenceManager.swift in Sources */,
 				7964CA101ED7E0FA00C8A92D /* StatisticsModel.swift in Sources */,
 				791C38151EDBA54C00BA4F16 /* FaqsViewController.swift in Sources */,
-				79144E1E1EECE8EB006B71F0 /* GameBoardDelegate.swift in Sources */,
+				796D08201EF0400E00EE131D /* EnumPlayState.swift in Sources */,
 				79B8A0F51EC7BAE00005F98A /* TTGameBoard.swift in Sources */,
 				796C58BD1EC524A20034CF94 /* EnumPet.swift in Sources */,
 				79144E201EECFD09006B71F0 /* GameBoardViewController.swift in Sources */,
@@ -639,9 +645,11 @@
 				795252121EE8650300FE651E /* PersistenceManager.swift in Sources */,
 				791C380A1EDA1E3800BA4F16 /* WebView.swift in Sources */,
 				79FD34971ECC0A6F005DC940 /* EnumFirstMove.swift in Sources */,
+				796D08261EF0CAA200EE131D /* UICellButton.swift in Sources */,
 				792603891EE123DF00A6EEDD /* GameBoard44ViewController.swift in Sources */,
 				7964CA111ED7E0FA00C8A92D /* StatisticsModel.swift in Sources */,
 				79144E211EECFD09006B71F0 /* GameBoardViewController.swift in Sources */,
+				796D08231EF0C9BA00EE131D /* EnumCellState.swift in Sources */,
 				7964CA0E1ED7E0D900C8A92D /* GameModel.swift in Sources */,
 				79B8A0F61EC7BAE00005F98A /* TTGameBoard.swift in Sources */,
 				79B8A0F31EC7BA950005F98A /* GameBoard.swift in Sources */,

@@ -34,6 +34,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     // Model data for settings
     var settingsModel: SettingsModel?
+    var statisticsModel: StatisticsModel?
+    var gameModel: GameModel?
+    
+    // Set messages
+    let gameCenterMessage = "Are you sure you want to enable/disable Game Center and begin a new game?"
+    let gameBoardMessage = "Are you sure you want to update the Game Board and begin a new game?"
+    let playModeMessage = "Are you sure you want to update the Play Mode and begin a new game?"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +51,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // Connect outlet
         self.pickerViewPet.delegate = self
         self.pickerViewPet.dataSource = self
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        settingsModel = appDelegate?.settings
+        statisticsModel = appDelegate?.statistics
+        gameModel = appDelegate?.game
         
         // Initialize data
         petData = EnumPet.values()
@@ -158,9 +170,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func switchGameCenter(_ sender: UISwitch) {
         // Present alert if necessary
         if isInitializedGameCenter {
-            let alert = UIAlertController(title: "Game Center", message: "Are you sure you want to enable/disable Game Center?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Game Center", message: gameCenterMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default) {action in
                 self.doUpdateGameCenter(true, isEnabled: sender.isOn)
+                self.settingsModel?.setupGame = true
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .default) {action in
                 self.doUpdateGameCenter(false, isEnabled: sender.isOn)
@@ -217,9 +230,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
 
         if isInitializedGameBoard {
-            let alert = UIAlertController(title: "Game Board", message: "Are you sure you want to update the Game Board?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Game Board", message: gameBoardMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default) {action in
                 self.doUpdateGameBoard(true)
+                self.settingsModel?.setupGame = true
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .default) {action in
                 self.doUpdateGameBoard(false)
@@ -269,9 +283,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
         if isInitializedPlayMode {
             isInitializedGameBoard = true
-            let alert = UIAlertController(title: "Game Play Mode", message: "Are you sure you want to update the Play Mode?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Game Play Mode", message: playModeMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default) {action in
                 self.doUpdatePlayMode(true)
+                self.settingsModel?.setupGame = true
+                
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .default) {action in
                 self.doUpdatePlayMode(false)
