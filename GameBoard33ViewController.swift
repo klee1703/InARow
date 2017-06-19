@@ -27,6 +27,8 @@ class GameBoard33ViewController: GameBoardViewController {
     var labelOpponentImage = UIImage()
     var labelComputerImage = UIImage()
     
+    var gameEngine = GameEngine33()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,8 +36,9 @@ class GameBoard33ViewController: GameBoardViewController {
         cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
         gameModel?.board = cells
         
-        // Clear board
+        // Interaction enable
         gameBoard33View.isUserInteractionEnabled = true
+        
         labelPetImage = UIImage(named: (settingsModel?.yourPet)! + ".png")!
         labelOpponentImage = UIImage(named: (settingsModel?.opponentsPet)! + ".png")!
         labelComputerImage = UIImage(named: "Computer.png")!
@@ -63,22 +66,17 @@ class GameBoard33ViewController: GameBoardViewController {
         cell.cellState = EnumCellState.Player
         
         // Check if tic-tac-toe
-        if checkForTicTacToe(cells: cells, cellState: cell.cellState) {
+        if gameEngine.isTicTacToe(cells: cells, cellState: EnumCellState.Player) {
             print("Player has Tic Tac Toe!")
+            gameModel?.resultsLabel?.text = gameModel?.winLabel
             
             // Display win message
             
         } else {
             // If Single Player next perform AI play
             if super.settingsModel?.gamePlayMode == .SinglePlayer {
+                print("Computer play")
                 aiMarkCell(cells: cells)
-                
-                // Check if tic-tac-toe
-                if checkForTicTacToe(cells: cells, cellState: EnumCellState.Opponent) {
-                    print("Computer has Tic Tac Toe!")
-                    
-                    // Display win message
-                }
             }
         }
     }
@@ -92,16 +90,27 @@ class GameBoard33ViewController: GameBoardViewController {
     
     func aiMarkCell(cells: [UICellButton]) {
         super.playLabel?.image = self.labelComputerImage
-        let randomNum = DispatchTimeInterval.seconds(Int(arc4random_uniform(9)+1))
-        let when = DispatchTime.now() + randomNum // change to desired number of seconds
+        let randomNum = Int(arc4random_uniform(3)+2)
+        let when = DispatchTime.now() + .seconds(randomNum)
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
             // Use AI engine to mark best available cell
             print("AI marked cell")
+            self.gameEngine.markCell(cells: cells)
+            super.playLabel?.image = self.labelPetImage
             
-            // Re-enable play on board
-            self.gameBoard33View.isUserInteractionEnabled = true
-            self.playLabel?.image = self.labelPetImage
+            // Check if tic-tac-toe
+            if self.gameEngine.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent) {
+                print("Computer has Tic Tac Toe!")
+                self.gameModel?.resultsLabel?.text = self.gameModel?.lossLabel
+                
+                // Display win message
+            } else {
+                
+                // Re-enable play on board
+                self.gameBoard33View.isUserInteractionEnabled = true
+                self.playLabel?.image = self.labelPetImage
+            }
         }
     }
     

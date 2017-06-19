@@ -16,11 +16,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var beginResumeGame: UIButton!
     @IBOutlet weak var activePet: UIImageView!
     
-    // Constants
-    let startLabel: String = "Let's Begin"
-    let resultWin: String = "Congratulations on the Win!"
-    let resultLoss: String = "Too bad, better luck next time"
-    
     // Variables
     var isGameInPlay = false
     var gameBoard3x3: [String] = [String]()
@@ -46,16 +41,15 @@ class GameViewController: UIViewController {
         statisticsModel = appDelegate?.statistics
         gameModel = appDelegate?.game
         gameModel?.playLabel = activePet
+        gameModel?.resultsLabel = resultsLabel
         
         // Do any additional setup
         setup()
+        resultsLabel.text = gameModel?.startGame
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Do any additional setup after loading the view.
-        resultsLabel.text = startLabel
 
         // Set player label based on play mode and current player
         if EnumPlayMode.SinglePlayer == settingsModel?.gamePlayMode {
@@ -107,6 +101,7 @@ class GameViewController: UIViewController {
     func doBegin() {
         print("Begin Game")
         self.isGameInPlay = true
+        resultsLabel.text = gameModel?.startGame
         
         // If board present clear
         if let board = gameModel?.board {

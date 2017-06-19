@@ -10,15 +10,45 @@ import UIKit
 
 class GameBoard44ViewController: GameBoardViewController {
     
-    @IBOutlet weak var cell0: UIButton!
-    @IBOutlet weak var cell1: UIButton!
-    @IBOutlet weak var cell2: UIButton!
-    @IBOutlet weak var cell3: UIButton!
+    @IBOutlet weak var cell0: UICellButton!
+    @IBOutlet weak var cell1: UICellButton!
+    @IBOutlet weak var cell2: UICellButton!
+    @IBOutlet weak var cell3: UICellButton!
+    @IBOutlet weak var cell4: UICellButton!
+    @IBOutlet weak var cell5: UICellButton!
+    @IBOutlet weak var cell6: UICellButton!
+    @IBOutlet weak var cell7: UICellButton!
+    @IBOutlet weak var cell8: UICellButton!
+    @IBOutlet weak var cell9: UICellButton!
+    @IBOutlet weak var cell10: UICellButton!
+    @IBOutlet weak var cell11: UICellButton!
+    @IBOutlet weak var cell12: UICellButton!
+    @IBOutlet weak var cell13: UICellButton!
+    @IBOutlet weak var cell14: UICellButton!
+    @IBOutlet weak var cell15: UICellButton!
+
+    @IBOutlet var gameBoard44View: UIView!
+    
+    var cells: [UICellButton] = []
+    var labelPetImage: UIImage?
+    var labelOpponentImage: UIImage?
+    var cellPetImage: UIImage?
+    
+    var gameEngine = GameEngine44()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, cell10, cell11, cell12, cell13, cell14, cell15]
+        gameModel?.board = cells
+        
+        // Interaction initially enabled
+        gameBoard44View.isUserInteractionEnabled = true
+
+        labelPetImage = UIImage(named: (settingsModel?.yourPet)! + ".png")
+        labelOpponentImage = UIImage(named: (settingsModel?.opponentsPet)! + ".png")!
+        cellPetImage = UIImage(named: (settingsModel?.yourPet)! + ".png")
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,13 +57,54 @@ class GameBoard44ViewController: GameBoardViewController {
     }
 
     @IBAction func cellPressed(_ sender: UIButton) {
-        print(sender.currentTitle! + " pressed!")
+        print("Cell pressed!")
+        sender.setImage(cellPetImage, for: .normal)
+        
+        // Disable interaction with cell (can't be pressed again!)
+        sender.isUserInteractionEnabled = false
+        
+        // Disable interaction on board (can't press another cell until after move by opponent!)
+        gameBoard44View.isUserInteractionEnabled = false
+        print(gameBoard44View.isUserInteractionEnabled)
+        
+        // Update the board cell state
+        let cell = sender as! UICellButton
+        cell.cellState = EnumCellState.Player
+        
+        // Check if tic-tac-toe
+        if gameEngine.isTicTacToe(cells: cells, cellState: cell.cellState) {
+            // Display win message and prompt for a new game
+            print("Player has Tic Tac Toe!")
+            gameModel?.resultsLabel?.text = gameModel?.winLabel
+        } else {
+            // Send message to enable move by opponent
+            send()
+        }
     }
     
+    override func startGame(currentPlayer: Bool) {
+        super.startGame(currentPlayer: currentPlayer)
+        print("Start game")
+        super.gameModel?.board = cells
+        gameBoard44View.isUserInteractionEnabled = true
+    }
     
-    override func clearBoard() {
-        // IMPLEMENT!
-        print("Clearing 4x4 board")
+    func send() {
+        self.playLabel?.image = self.labelOpponentImage
+        let randomNum = DispatchTimeInterval.seconds(Int(arc4random_uniform(3)+2))
+        let when = DispatchTime.now() + randomNum // change to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+            // Use AI engine to mark best available cell
+            print("Opponent marked cell")
+            
+            // Re-enable play on board
+            self.gameBoard44View.isUserInteractionEnabled = true
+            print(self.gameBoard44View.isUserInteractionEnabled)
+            print(self.cell1.isUserInteractionEnabled)
+            self.cell1.isUserInteractionEnabled = true
+            self.playLabel?.image = self.labelPetImage
+        }
     }
 
     /*
