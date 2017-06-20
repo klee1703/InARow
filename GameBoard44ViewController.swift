@@ -68,7 +68,7 @@ class GameBoard44ViewController: GameBoardViewController {
         print(gameBoard44View.isUserInteractionEnabled)
         
         // Update the board cell state
-        let cell = sender as! UICellButton
+        let cell: UICellButton = sender as! UICellButton
         cell.cellState = EnumCellState.Player
         
         // Check if tic-tac-toe
@@ -77,8 +77,8 @@ class GameBoard44ViewController: GameBoardViewController {
             print("Player has Tic Tac Toe!")
             gameModel?.resultsLabel?.text = gameModel?.winLabel
         } else {
-            // Send message to enable move by opponent
-            send()
+            // MultiPlayer, send message to enable move by opponent
+            send(cell: cell, petImage: labelPetImage, opponentImage: labelOpponentImage, boardView: gameBoard44View)
         }
     }
     
@@ -88,24 +88,22 @@ class GameBoard44ViewController: GameBoardViewController {
         super.gameModel?.board = cells
         gameBoard44View.isUserInteractionEnabled = true
     }
-    
-    func send() {
+/*
+    func send(cell: UICellButton, labelOpponentImage: UIImage?) {
         self.playLabel?.image = self.labelOpponentImage
+        
+        // Delay to simulate opponent's move
         let randomNum = DispatchTimeInterval.seconds(Int(arc4random_uniform(3)+2))
         let when = DispatchTime.now() + randomNum // change to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
-            // Your code with delay
-            // Use AI engine to mark best available cell
+            // Opponent made move, now re-enable play on board
             print("Opponent marked cell")
-            
-            // Re-enable play on board
             self.gameBoard44View.isUserInteractionEnabled = true
-            print(self.gameBoard44View.isUserInteractionEnabled)
-            print(self.cell1.isUserInteractionEnabled)
-            self.cell1.isUserInteractionEnabled = true
+            cell.isUserInteractionEnabled = true
             self.playLabel?.image = self.labelPetImage
         }
     }
+ */
 
     /*
     // MARK: - Navigation

@@ -325,11 +325,11 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBAction func controlFirstMove(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            settingsModel?.gameFirstMove = .Me
+            settingsModel?.gameFirstMove = .Player
         case 1:
             settingsModel?.gameFirstMove = .Opponent
         default:
-            settingsModel?.gameFirstMove = .Me
+            settingsModel?.gameFirstMove = .Player
         }
     }
 

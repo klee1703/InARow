@@ -69,14 +69,14 @@ class GameBoard33ViewController: GameBoardViewController {
         if gameEngine.isTicTacToe(cells: cells, cellState: EnumCellState.Player) {
             print("Player has Tic Tac Toe!")
             gameModel?.resultsLabel?.text = gameModel?.winLabel
-            
-            // Display win message
-            
         } else {
             // If Single Player next perform AI play
             if super.settingsModel?.gamePlayMode == .SinglePlayer {
                 print("Computer play")
                 aiMarkCell(cells: cells)
+            } else {
+                // MultiPlayer, send message to enable move by opponent
+                send(cell: cell, petImage: labelPetImage, opponentImage: labelOpponentImage, boardView: gameBoard33View)
             }
         }
     }
@@ -103,10 +103,7 @@ class GameBoard33ViewController: GameBoardViewController {
             if self.gameEngine.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent) {
                 print("Computer has Tic Tac Toe!")
                 self.gameModel?.resultsLabel?.text = self.gameModel?.lossLabel
-                
-                // Display win message
-            } else {
-                
+            } else {                
                 // Re-enable play on board
                 self.gameBoard33View.isUserInteractionEnabled = true
                 self.playLabel?.image = self.labelPetImage

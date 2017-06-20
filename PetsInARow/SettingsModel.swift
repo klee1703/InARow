@@ -31,7 +31,7 @@ class SettingsModel {
         
         board = .TTBoard
         gamePlayMode = .SinglePlayer
-        gameFirstMove = .Me
+        gameFirstMove = .Player
         difficulty = .Easy
         
         yourPet = "Cat"

@@ -62,8 +62,6 @@ class GameViewController: UIViewController {
         } else {
             if isCurrentPlayer {
                 setPlayerLabel(pet: (settingsModel?.yourPet)!)
-            } else {
-                //
             }
         }
         
@@ -111,7 +109,7 @@ class GameViewController: UIViewController {
         // If play mode is single make first move accordingly
         if EnumPlayMode.SinglePlayer == settingsModel?.gamePlayMode {
             // If you have first move
-            if settingsModel?.gameFirstMove == EnumFirstMove.Me {
+            if settingsModel?.gameFirstMove == EnumFirstMove.Player {
                 // Set to current player
                 isCurrentPlayer = true
                 gameModel?.playState = .PlayerTurn
@@ -139,7 +137,7 @@ class GameViewController: UIViewController {
     }
     
     func setPlayerLabel(pet: String) {
-        if settingsModel?.gameFirstMove == EnumFirstMove.Me {
+        if settingsModel?.gameFirstMove == EnumFirstMove.Player {
             activePet.image = UIImage(named: (settingsModel?.yourPet)! + ".png")
         } else {
             activePet.image = UIImage(named: (settingsModel?.opponentsPet)! + ".png")

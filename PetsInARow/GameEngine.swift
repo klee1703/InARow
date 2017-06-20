@@ -45,7 +45,7 @@ class GameEngine {
     // Animate the buttons
     func animateButtons(cells: [UICellButton], range: CountableClosedRange<Int>) {
         for index in range {
-            UIView.animate(withDuration: kDuration, delay: kDelay, options: UIViewAnimationOptions.repeat, animations: {
+            UIView.animate(withDuration: kDuration, delay: kDelay, options: [UIViewAnimationOptions.repeat, UIViewAnimationOptions.allowUserInteraction], animations: {
                 cells[index].alpha = self.kAlpha
             }, completion: nil)
         }

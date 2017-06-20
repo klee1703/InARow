@@ -9,6 +9,6 @@
 import Foundation
 
 enum EnumFirstMove: Int {
-    case Me = 0
+    case Player = 0
     case Opponent = 1
 }

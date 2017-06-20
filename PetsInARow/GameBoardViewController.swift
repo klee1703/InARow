@@ -45,10 +45,26 @@ class GameBoardViewController: UIViewController {
             cell.cellState = EnumCellState.None
             
             // Enable the cells
+            cell.imageView?.stopAnimating()
             cell.isUserInteractionEnabled = true
             
             // Clear cell image
             cell.setImage(nil, for: .normal)
+        }
+    }
+    
+    func send(cell: UICellButton, petImage: UIImage?, opponentImage: UIImage?, boardView: UIView) {
+        self.playLabel?.image = opponentImage
+        
+        // Delay to simulate opponent's move
+        let randomNum = DispatchTimeInterval.seconds(Int(arc4random_uniform(3)+2))
+        let when = DispatchTime.now() + randomNum // change to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Opponent made move, now re-enable play on board
+            print("Opponent marked cell")
+            boardView.isUserInteractionEnabled = true
+//            cell.isUserInteractionEnabled = true
+            self.playLabel?.image = petImage
         }
     }
 
