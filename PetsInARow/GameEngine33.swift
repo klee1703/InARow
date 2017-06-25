@@ -6,11 +6,22 @@
 //  Copyright © 2017 Keith Lee. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class GameEngine33: GameEngine, GameEngineProtocol, GameAIProtocol {
-    func markCell(cells: [UICellButton]) {
-        // IMPLEMENT!
+    var cells: [UICellButton]?
+    var gameEngineAI: GameEngineAI?
+    
+    init(cells: [UICellButton], settings: SettingsModel, statistics: StatisticsModel) {
+        super.init(settings: settings, statistics: statistics)
+        
+        self.cells = cells
+        gameEngineAI = GameEngineAI(cells: cells, settings: settings, statistics: statistics)
+    }
+    
+    func markCell(image: UIImage) {
+        // Mark grid board cell using AI engine
+        gameEngineAI?.markBoardCell(image: image)
     }
     
     func isTicTacToe(cells: [UICellButton], cellState: EnumCellState) -> Bool {

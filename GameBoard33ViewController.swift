@@ -27,7 +27,8 @@ class GameBoard33ViewController: GameBoardViewController {
     var labelOpponentImage = UIImage()
     var labelComputerImage = UIImage()
     
-    var gameEngine = GameEngine33()
+    var gameEngine: GameEngine33?
+    var gameEngineAI: GameEngineAI?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +36,15 @@ class GameBoard33ViewController: GameBoardViewController {
         // Do any additional setup after loading the view.
         cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
         gameModel?.board = cells
+        gameEngine = GameEngine33(cells: cells, settings: settingsModel!, statistics: statisticsModel!)
+        gameEngineAI = GameEngineAI(cells: cells, settings: settingsModel!, statistics: statisticsModel!)
         
         // Interaction enable
         gameBoard33View.isUserInteractionEnabled = true
         
         labelPetImage = UIImage(named: (settingsModel?.yourPet)! + ".png")!
         labelOpponentImage = UIImage(named: (settingsModel?.opponentsPet)! + ".png")!
-        labelComputerImage = UIImage(named: "Computer.png")!
+        labelComputerImage = UIImage(named: Constants.kComputerImageFile)!
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,14 +64,20 @@ class GameBoard33ViewController: GameBoardViewController {
         // Disable interaction on board (can't press another cell until after move by opponent!)
         gameBoard33View.isUserInteractionEnabled = false
         
-        // Update the board cell state
+        // Update the board cell state (including number of moves played)
         let cell = sender as! UICellButton
         cell.cellState = EnumCellState.Player
+        gameEngineAI?.incrementMovesPlayed()
         
-        // Check if tic-tac-toe
-        if gameEngine.isTicTacToe(cells: cells, cellState: EnumCellState.Player) {
+        // Check if tic-tac-toe or draw condition
+        if (gameEngine?.isTicTacToe(cells: cells, cellState: EnumCellState.Player))! {
             print("Player has Tic Tac Toe!")
-            gameModel?.resultsLabel?.text = gameModel?.winLabel
+            gameModel?.resultsLabel?.text = Constants.kPlayerWinLabel
+            gameBoard33View.isUserInteractionEnabled = false
+        } else if (gameEngineAI?.isDrawCondition())! {
+            // Draw condition, display message
+            gameModel?.resultsLabel?.text = Constants.kDrawLabel
+            gameBoard33View.isUserInteractionEnabled = false
         } else {
             // If Single Player next perform AI play
             if super.settingsModel?.gamePlayMode == .SinglePlayer {
@@ -77,33 +86,51 @@ class GameBoard33ViewController: GameBoardViewController {
             } else {
                 // MultiPlayer, send message to enable move by opponent
                 send(cell: cell, petImage: labelPetImage, opponentImage: labelOpponentImage, boardView: gameBoard33View)
+                if (gameEngine?.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent))! {
+                    gameModel?.resultsLabel?.text = Constants.kOpponentWinLabel
+                    gameBoard33View.isUserInteractionEnabled = false
+                }
             }
         }
     }
     
     override func startGame(currentPlayer: Bool) {
         super.startGame(currentPlayer: currentPlayer)
+        
         print("Start game")
         super.gameModel?.board = cells
         gameBoard33View.isUserInteractionEnabled = true
+        gameEngineAI?.resetMovesPlayed()
+        
+        if !currentPlayer && (settingsModel?.gamePlayMode == .SinglePlayer) {
+            // First move for opponent in Single Player mode, use AI for first move
+            aiMarkCell(cells: cells)
+        }
     }
     
     func aiMarkCell(cells: [UICellButton]) {
         super.playLabel?.image = self.labelComputerImage
-        let randomNum = Int(arc4random_uniform(3)+2)
+        let randomNum = Int(arc4random_uniform(1)+2)
         let when = DispatchTime.now() + .seconds(randomNum)
         DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay
             // Use AI engine to mark best available cell
             print("AI marked cell")
-            self.gameEngine.markCell(cells: cells)
+            self.gameEngine?.markCell(image: self.labelComputerImage)
             super.playLabel?.image = self.labelPetImage
             
+            // Increment number of marks on board
+            self.gameEngineAI?.incrementMovesPlayed()
+            
             // Check if tic-tac-toe
-            if self.gameEngine.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent) {
+            if (self.gameEngine?.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent))! {
                 print("Computer has Tic Tac Toe!")
-                self.gameModel?.resultsLabel?.text = self.gameModel?.lossLabel
-            } else {                
+                self.gameModel?.resultsLabel?.text = Constants.kComputerWinLabel
+                self.gameBoard33View.isUserInteractionEnabled = false
+            } else if (self.gameEngineAI?.isDrawCondition())! {
+                self.gameModel?.resultsLabel?.text = Constants.kDrawLabel
+                self.gameBoard33View.isUserInteractionEnabled = false
+            } else {
                 // Re-enable play on board
                 self.gameBoard33View.isUserInteractionEnabled = true
                 self.playLabel?.image = self.labelPetImage

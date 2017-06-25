@@ -9,6 +9,9 @@
 import Foundation
 
 class GameEngine44: GameEngine, GameEngineProtocol {
+    override init(settings: SettingsModel, statistics: StatisticsModel) {
+        super.init(settings: settings, statistics: statistics)
+    }
     
     func isTicTacToe(cells: [UICellButton], cellState: EnumCellState) -> Bool {
         // Check for horizontal match

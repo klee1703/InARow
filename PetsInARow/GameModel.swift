@@ -9,11 +9,6 @@
 import UIKit
 
 class GameModel {
-    // Constants
-    let startGame: String = "Let's Begin"
-    let winLabel: String = "Tic-Tac-Toe,You Win!"
-    let lossLabel: String = "Too bad, better luck next time"
-
     // Variables
     var computerPet: String
     var playState: EnumPlayState

@@ -51,8 +51,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWK-tE-XBQ">
-                                <rect key="frame" x="146" y="520" width="83" height="30"/>
-                                <state key="normal" title="Begin Game"/>
+                                <rect key="frame" x="150" y="520" width="75" height="30"/>
+                                <state key="normal" title="New Game"/>
                                 <connections>
                                     <action selector="beginGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="oww-PO-x8B"/>
                                 </connections>
@@ -87,7 +87,7 @@
                             <constraint firstItem="ept-ax-hAh" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="r8U-ef-dU4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Game" image="stats.png" id="acW-dT-cKf" userLabel="Game"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="cat1.png" id="acW-dT-cKf" userLabel="Game"/>
                     <connections>
                         <outlet property="activePet" destination="xUP-pF-z3r" id="ixy-Ej-VEi"/>
                         <outlet property="beginResumeGame" destination="KWK-tE-XBQ" id="M0q-6J-rqh"/>
@@ -1248,6 +1248,7 @@
     <resources>
         <image name="TTT3x3.png" width="300" height="300"/>
         <image name="TTT4x4.png" width="302" height="302"/>
+        <image name="cat1.png" width="25" height="25"/>
         <image name="clear.png" width="25" height="25"/>
         <image name="faq.png" width="25" height="25"/>
         <image name="stats.png" width="25" height="25"/>

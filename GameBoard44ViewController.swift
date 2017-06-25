@@ -34,7 +34,7 @@ class GameBoard44ViewController: GameBoardViewController {
     var labelOpponentImage: UIImage?
     var cellPetImage: UIImage?
     
-    var gameEngine = GameEngine44()
+    var gameEngine: GameEngine44?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +42,7 @@ class GameBoard44ViewController: GameBoardViewController {
         // Do any additional setup after loading the view.
         cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, cell10, cell11, cell12, cell13, cell14, cell15]
         gameModel?.board = cells
+        gameEngine = GameEngine44(settings: settingsModel!, statistics: statisticsModel!)
         
         // Interaction initially enabled
         gameBoard44View.isUserInteractionEnabled = true
@@ -72,13 +73,17 @@ class GameBoard44ViewController: GameBoardViewController {
         cell.cellState = EnumCellState.Player
         
         // Check if tic-tac-toe
-        if gameEngine.isTicTacToe(cells: cells, cellState: cell.cellState) {
+        if (gameEngine?.isTicTacToe(cells: cells, cellState: cell.cellState))! {
             // Display win message and prompt for a new game
             print("Player has Tic Tac Toe!")
-            gameModel?.resultsLabel?.text = gameModel?.winLabel
+            gameModel?.resultsLabel?.text = Constants.kPlayerWinLabel
         } else {
             // MultiPlayer, send message to enable move by opponent
             send(cell: cell, petImage: labelPetImage, opponentImage: labelOpponentImage, boardView: gameBoard44View)
+            if (gameEngine?.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent))! {
+                gameModel?.resultsLabel?.text = Constants.kOpponentWinLabel
+                gameBoard44View.isUserInteractionEnabled = false
+            }
         }
     }
     
@@ -88,22 +93,6 @@ class GameBoard44ViewController: GameBoardViewController {
         super.gameModel?.board = cells
         gameBoard44View.isUserInteractionEnabled = true
     }
-/*
-    func send(cell: UICellButton, labelOpponentImage: UIImage?) {
-        self.playLabel?.image = self.labelOpponentImage
-        
-        // Delay to simulate opponent's move
-        let randomNum = DispatchTimeInterval.seconds(Int(arc4random_uniform(3)+2))
-        let when = DispatchTime.now() + randomNum // change to desired number of seconds
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            // Opponent made move, now re-enable play on board
-            print("Opponent marked cell")
-            self.gameBoard44View.isUserInteractionEnabled = true
-            cell.isUserInteractionEnabled = true
-            self.playLabel?.image = self.labelPetImage
-        }
-    }
- */
 
     /*
     // MARK: - Navigation

@@ -47,6 +47,7 @@ class GameBoardViewController: UIViewController {
             // Enable the cells
             cell.imageView?.stopAnimating()
             cell.isUserInteractionEnabled = true
+            cell.isEnabled = true
             
             // Clear cell image
             cell.setImage(nil, for: .normal)
@@ -63,7 +64,6 @@ class GameBoardViewController: UIViewController {
             // Opponent made move, now re-enable play on board
             print("Opponent marked cell")
             boardView.isUserInteractionEnabled = true
-//            cell.isUserInteractionEnabled = true
             self.playLabel?.image = petImage
         }
     }

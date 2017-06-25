@@ -1,5 +1,5 @@
 //
-//  EnumWinningRow.swift
+//  EnumWinningElements.swift
 //  PetsInARow
 //
 //  Created by Keith Lee on 6/19/17.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum EnumWinningRow: Int {
+enum EnumWinningElements: Int {
     case None = 0
     case Row = 1
     case Column = 2

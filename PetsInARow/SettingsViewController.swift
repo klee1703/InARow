@@ -117,6 +117,12 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // use the row to get the selected row from the picker view
         // using the row extract the value from your datasource (array[row])
         settingsModel?.yourPet = petData[row]
+        let alert = UIAlertController(title: "New Player Pet", message: "Begins a New Game", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default) {action in
+            print("Pet changed")
+            self.settingsModel?.setupGame = true
+        })
+        present(alert, animated: true, completion: nil)
         
         // Now set the opponent's pet, not the same as your pet!
         settingsModel?.opponentsPet = getOpponentsPet(yourPet: (settingsModel?.yourPet)!)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UICellButton: UIButton {
+class UICellButton: UIButton, CAAnimationDelegate {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -19,5 +19,6 @@ class UICellButton: UIButton {
     */
     
     var cellState = EnumCellState.None
+    var animation = CABasicAnimation(keyPath: "opacity")
 
 }

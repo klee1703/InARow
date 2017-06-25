@@ -45,7 +45,7 @@ class GameViewController: UIViewController {
         
         // Do any additional setup
         setup()
-        resultsLabel.text = gameModel?.startGame
+        resultsLabel.text = Constants.kStartGame
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,7 +99,7 @@ class GameViewController: UIViewController {
     func doBegin() {
         print("Begin Game")
         self.isGameInPlay = true
-        resultsLabel.text = gameModel?.startGame
+        resultsLabel.text = Constants.kStartGame
         
         // If board present clear
         if let board = gameModel?.board {

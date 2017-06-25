@@ -6,8 +6,8 @@
 //  Copyright © 2017 Keith Lee. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol GameAIProtocol {
-    func markCell(cells: [UICellButton])    
+    func markCell(image: UIImage)
 }
