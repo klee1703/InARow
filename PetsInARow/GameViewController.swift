@@ -157,8 +157,11 @@ class GameViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ContainerViewSegue" {
-            // Add tab bar controller to container view controller
+            // Initialize container view controller and its width/height
             gbcvc = segue.destination as? GameBoardContainerViewController
+            gbcvc?.widthHeight = CGFloat(containerView.layer.frame.width)
+
+            // Add tab bar controller to container view controller
             gbcvc?.tbvc = (self.tabBarController as! GameTabBarController)
         }
     }

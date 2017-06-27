@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Begin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ept-ax-hAh">
-                                <rect key="frame" x="149" y="97" width="77" height="19"/>
+                                <rect key="frame" x="149" y="102" width="77" height="19"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                                 </connections>
                             </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUP-pF-z3r">
-                                <rect key="frame" x="16" y="73" width="32" height="32"/>
+                                <rect key="frame" x="16" y="64" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -77,17 +77,17 @@
                             <constraint firstItem="KWK-tE-XBQ" firstAttribute="top" secondItem="F4D-2K-FPJ" secondAttribute="bottom" constant="26" id="IcZ-Cu-MKW"/>
                             <constraint firstItem="F4D-2K-FPJ" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="U4y-zl-qjx"/>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="UXw-xV-Y1i"/>
-                            <constraint firstItem="ept-ax-hAh" firstAttribute="top" secondItem="1aG-Z2-fUL" secondAttribute="bottom" constant="50" id="V8y-bI-i3d"/>
+                            <constraint firstItem="ept-ax-hAh" firstAttribute="top" secondItem="1aG-Z2-fUL" secondAttribute="bottom" constant="55" id="V8y-bI-i3d"/>
                             <constraint firstItem="1aG-Z2-fUL" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="Y3q-g4-mSi"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="KWK-tE-XBQ" secondAttribute="bottom" constant="68" id="ddm-9d-dd8"/>
                             <constraint firstItem="ept-ax-hAh" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="ezW-C1-R7O"/>
                             <constraint firstItem="KWK-tE-XBQ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="mJd-CK-sP7"/>
                             <constraint firstItem="Pmw-Cd-shq" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="nCW-ND-rEN"/>
-                            <constraint firstItem="F4D-2K-FPJ" firstAttribute="top" secondItem="ept-ax-hAh" secondAttribute="bottom" constant="35" id="poK-r9-d5D"/>
+                            <constraint firstItem="F4D-2K-FPJ" firstAttribute="top" secondItem="ept-ax-hAh" secondAttribute="bottom" constant="30" id="poK-r9-d5D"/>
                             <constraint firstItem="ept-ax-hAh" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="r8U-ef-dU4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Game" image="cat1.png" id="acW-dT-cKf" userLabel="Game"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="tictactoe.png" id="acW-dT-cKf" userLabel="Game"/>
                     <connections>
                         <outlet property="activePet" destination="xUP-pF-z3r" id="ixy-Ej-VEi"/>
                         <outlet property="beginResumeGame" destination="KWK-tE-XBQ" id="M0q-6J-rqh"/>
@@ -646,7 +646,7 @@
                             <constraint firstItem="6wB-n6-gnC" firstAttribute="centerX" secondItem="FPV-JO-BYx" secondAttribute="centerX" id="xlh-qS-l0K"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Settings" image="faq.png" id="DBD-9F-0f5" userLabel="Settings"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Settings" image="settings-icon.png" id="DBD-9F-0f5" userLabel="Settings"/>
                     <connections>
                         <outlet property="firstMove" destination="foI-AU-XTn" id="LBL-mb-RTR"/>
                         <outlet property="gameBoard" destination="blW-60-AgA" id="F7s-7W-b6U"/>
@@ -1248,9 +1248,10 @@
     <resources>
         <image name="TTT3x3.png" width="300" height="300"/>
         <image name="TTT4x4.png" width="302" height="302"/>
-        <image name="cat1.png" width="25" height="25"/>
         <image name="clear.png" width="25" height="25"/>
         <image name="faq.png" width="25" height="25"/>
+        <image name="settings-icon.png" width="25" height="25"/>
         <image name="stats.png" width="25" height="25"/>
+        <image name="tictactoe.png" width="25" height="25"/>
     </resources>
 </document>

@@ -55,6 +55,12 @@
 		792603891EE123DF00A6EEDD /* GameBoard44ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */; };
 		7926038B1EE1C21F00A6EEDD /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */; };
 		7926038C1EE1C21F00A6EEDD /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */; };
+		792D80821F018AC900A0CCAE /* settings-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D807F1F018AC900A0CCAE /* settings-icon.png */; };
+		792D80831F018AC900A0CCAE /* settings-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D80801F018AC900A0CCAE /* settings-icon@2x.png */; };
+		792D80841F018AC900A0CCAE /* settings-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D80811F018AC900A0CCAE /* settings-icon@3x.png */; };
+		792D808E1F018D5A00A0CCAE /* tictactoe.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D808B1F018D5A00A0CCAE /* tictactoe.png */; };
+		792D808F1F018D5A00A0CCAE /* tictactoe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D808C1F018D5A00A0CCAE /* tictactoe@2x.png */; };
+		792D80901F018D5A00A0CCAE /* tictactoe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D808D1F018D5A00A0CCAE /* tictactoe@3x.png */; };
 		792F88521ED0112B006685CC /* EnumLevelOfDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */; };
 		792F88541ED0FC45006685CC /* EnumPlayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88531ED0FC45006685CC /* EnumPlayMode.swift */; };
 		7948C5911ED673510028C062 /* wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 7948C5901ED673510028C062 /* wrench.png */; };
@@ -172,6 +178,12 @@
 		792603841EE122A800A6EEDD /* GameBoard33ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard33ViewController.swift; path = ../GameBoard33ViewController.swift; sourceTree = "<group>"; };
 		792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard44ViewController.swift; path = ../GameBoard44ViewController.swift; sourceTree = "<group>"; };
 		7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = ../EmptySegue.swift; sourceTree = "<group>"; };
+		792D807F1F018AC900A0CCAE /* settings-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon.png"; sourceTree = "<group>"; };
+		792D80801F018AC900A0CCAE /* settings-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon@2x.png"; sourceTree = "<group>"; };
+		792D80811F018AC900A0CCAE /* settings-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon@3x.png"; sourceTree = "<group>"; };
+		792D808B1F018D5A00A0CCAE /* tictactoe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tictactoe.png; sourceTree = "<group>"; };
+		792D808C1F018D5A00A0CCAE /* tictactoe@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tictactoe@2x.png"; sourceTree = "<group>"; };
+		792D808D1F018D5A00A0CCAE /* tictactoe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tictactoe@3x.png"; sourceTree = "<group>"; };
 		792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumLevelOfDifficulty.swift; sourceTree = "<group>"; };
 		792F88531ED0FC45006685CC /* EnumPlayMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumPlayMode.swift; sourceTree = "<group>"; };
 		7948C5901ED673510028C062 /* wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrench.png; sourceTree = "<group>"; };
@@ -342,6 +354,12 @@
 		796C58D01EC6B5AA0034CF94 /* art */ = {
 			isa = PBXGroup;
 			children = (
+				792D808B1F018D5A00A0CCAE /* tictactoe.png */,
+				792D808C1F018D5A00A0CCAE /* tictactoe@2x.png */,
+				792D808D1F018D5A00A0CCAE /* tictactoe@3x.png */,
+				792D807F1F018AC900A0CCAE /* settings-icon.png */,
+				792D80801F018AC900A0CCAE /* settings-icon@2x.png */,
+				792D80811F018AC900A0CCAE /* settings-icon@3x.png */,
 				79AA384E1EFF82AC00BDEE61 /* cat1.png */,
 				79AA384F1EFF82AC00BDEE61 /* cat1@2x.png */,
 				79AA38501EFF82AC00BDEE61 /* cat1@3x.png */,
@@ -577,6 +595,7 @@
 				79144E3D1EEDE1AA006B71F0 /* Owl.png in Resources */,
 				79144E331EEDE1AA006B71F0 /* Crocodile.png in Resources */,
 				79144E411EEDE1AA006B71F0 /* Tiger.png in Resources */,
+				792D80821F018AC900A0CCAE /* settings-icon.png in Resources */,
 				796C58C91EC6B2770034CF94 /* faq@3x.png in Resources */,
 				791C380C1EDA5D0800BA4F16 /* Help.html in Resources */,
 				79AA38531EFF82AC00BDEE61 /* cat1@3x.png in Resources */,
@@ -586,7 +605,9 @@
 				796C58CF1EC6B2770034CF94 /* stats@3x.png in Resources */,
 				79AA38521EFF82AC00BDEE61 /* cat1@2x.png in Resources */,
 				791C38221EDFC6D200BA4F16 /* settings.png in Resources */,
+				792D808E1F018D5A00A0CCAE /* tictactoe.png in Resources */,
 				79E594171EEC90A500003250 /* TTT4x4@2x.png in Resources */,
+				792D808F1F018D5A00A0CCAE /* tictactoe@2x.png in Resources */,
 				796C58CC1EC6B2770034CF94 /* settings@3x.png in Resources */,
 				79E5940D1EEC650000003250 /* clear.png in Resources */,
 				79144E311EEDE1AA006B71F0 /* Computer.png in Resources */,
@@ -598,6 +619,7 @@
 				79144E1A1EECE26F006B71F0 /* TTT4x4.png in Resources */,
 				7948C5941ED673690028C062 /* wrench@2x.png in Resources */,
 				79E5940F1EEC650000003250 /* clear@3x.png in Resources */,
+				792D80841F018AC900A0CCAE /* settings-icon@3x.png in Resources */,
 				7948C5911ED673510028C062 /* wrench.png in Resources */,
 				79144E3B1EEDE1AA006B71F0 /* Giraffe.png in Resources */,
 				79E5940E1EEC650000003250 /* clear@2x.png in Resources */,
@@ -609,8 +631,10 @@
 				796C58C71EC6B2770034CF94 /* faq.png in Resources */,
 				79AA38511EFF82AC00BDEE61 /* cat1.png in Resources */,
 				796C58CE1EC6B2770034CF94 /* stats@2x.png in Resources */,
+				792D80901F018D5A00A0CCAE /* tictactoe@3x.png in Resources */,
 				79F71A761EBD3BB60067D98C /* Main.storyboard in Resources */,
 				796C58CD1EC6B2770034CF94 /* stats.png in Resources */,
+				792D80831F018AC900A0CCAE /* settings-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,6 +896,7 @@
 				DEVELOPMENT_TEAM = U823YHXB73;
 				INFOPLIST_FILE = PetsInARow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellago.PetsInARow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -886,6 +911,7 @@
 				DEVELOPMENT_TEAM = U823YHXB73;
 				INFOPLIST_FILE = PetsInARow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellago.PetsInARow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;

@@ -45,7 +45,7 @@ class GameBoardViewController: UIViewController {
             cell.cellState = EnumCellState.None
             
             // Enable the cells
-            cell.imageView?.stopAnimating()
+            stopAnimation(cell: cell)
             cell.isUserInteractionEnabled = true
             cell.isEnabled = true
             
@@ -66,6 +66,12 @@ class GameBoardViewController: UIViewController {
             boardView.isUserInteractionEnabled = true
             self.playLabel?.image = petImage
         }
+    }
+    
+    func stopAnimation(cell: UICellButton) {
+        UIView.animate(withDuration: 0.0, delay: 0.0, options: .allowUserInteraction, animations: {
+            cell.alpha = 1.0
+        }, completion: nil)
     }
 
     /*

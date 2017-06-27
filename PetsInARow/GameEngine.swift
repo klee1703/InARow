@@ -12,7 +12,7 @@ class GameEngine {
     // Constants
     let kDuration = 0.6
     let kDelay = 0.0
-    let kAlpha: CGFloat = 0.0
+    let kAlpha: CGFloat = 0.02
     
     var settings: SettingsModel
     var statistics: StatisticsModel
@@ -64,37 +64,27 @@ class GameEngine {
     // Animate the buttons
     func animateButtons(cells: [UICellButton], range: CountableClosedRange<Int>) {
         for index in range {
-            UIView.animate(withDuration: kDuration, delay: kDelay, options: [.repeat, .allowUserInteraction, .autoreverse], animations: {
+            UIView.animate(withDuration: kDuration, delay: kDelay, options: [.repeat, .allowUserInteraction], animations: {
                 cells[index].alpha = self.kAlpha
             }, completion: nil)
         }
     }
-/*
-    func animateButtons(cells: [UICellButton], range: CountableClosedRange<Int>) {
-        for index in range {
-     
-            UIView.animate(withDuration: kDuration, delay: kDelay, options: [UIViewAnimationOptions.repeat, UIViewAnimationOptions.allowUserInteraction], animations: {
-                cells[index].alpha = self.kAlpha
-            }, completion: nil)
- 
-            cells[index].layer.add(animation, forKey: "opaque")
-        }
-    }
-*/ 
     
     func animateButtons(cells: [UICellButton], initialValue: Int, max: Int, step: Int) {
         for index in stride(from: initialValue, to: max+1, by: step) {
-            UIView.animate(withDuration: kDuration, delay: kDelay, options: UIViewAnimationOptions.repeat, animations: {
+            UIView.animate(withDuration: kDuration, delay: kDelay, options: [.repeat, .allowUserInteraction], animations: {
                 cells[index].alpha = self.kAlpha
             }, completion: nil)
+ 
         }
     }
     
     func animateButtons(cells: [UICellButton], values: [Int]) {
         for index in values {
-            UIView.animate(withDuration: kDuration, delay: kDelay, options: UIViewAnimationOptions.repeat, animations: {
+            UIView.animate(withDuration: kDuration, delay: kDelay, options: [.repeat, .allowUserInteraction], animations: {
                 cells[index].alpha = self.kAlpha
             }, completion: nil)
+ 
         }
     }
 }
