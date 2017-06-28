@@ -77,6 +77,7 @@ class GameBoard44ViewController: GameBoardViewController {
             // Display win message and prompt for a new game
             print("Player has Tic Tac Toe!")
             gameModel?.resultsLabel?.text = Constants.kPlayerWinLabel
+            gameEngine?.addWin(board: (settingsModel?.board)!)
         } else {
             // MultiPlayer, send message to enable move by opponent
             send(cell: cell, petImage: labelPetImage, opponentImage: labelOpponentImage, boardView: gameBoard44View)

@@ -9,28 +9,13 @@
 import UIKit
 
 class GameEngine {
-    // Constants
-    let kDuration = 0.6
-    let kDelay = 0.0
-    let kAlpha: CGFloat = 0.02
-    
+    // Models
     var settings: SettingsModel
     var statistics: StatisticsModel
-    
-    var animation: CABasicAnimation
 
     init(settings: SettingsModel, statistics: StatisticsModel) {
         self.settings = settings
         self.statistics = statistics
-        
-        self.animation = CABasicAnimation(keyPath: "opaque")
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.duration = 1.0
-        let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        animation.timingFunction = timingFunction
-        animation.autoreverses = true
-        animation.repeatCount = Float.greatestFiniteMagnitude
     }
     
     func isTTTHorizontalMatch(cells: [UICellButton], range: CountableClosedRange<Int>, cellState: EnumCellState) -> Bool {
@@ -64,16 +49,16 @@ class GameEngine {
     // Animate the buttons
     func animateButtons(cells: [UICellButton], range: CountableClosedRange<Int>) {
         for index in range {
-            UIView.animate(withDuration: kDuration, delay: kDelay, options: [.repeat, .allowUserInteraction], animations: {
-                cells[index].alpha = self.kAlpha
+            UIView.animate(withDuration: Constants.kDuration, delay: Constants.kDelay, options: [.repeat, .allowUserInteraction], animations: {
+                cells[index].alpha = Constants.kAlpha
             }, completion: nil)
         }
     }
     
     func animateButtons(cells: [UICellButton], initialValue: Int, max: Int, step: Int) {
         for index in stride(from: initialValue, to: max+1, by: step) {
-            UIView.animate(withDuration: kDuration, delay: kDelay, options: [.repeat, .allowUserInteraction], animations: {
-                cells[index].alpha = self.kAlpha
+            UIView.animate(withDuration: Constants.kDuration, delay: Constants.kDelay, options: [.repeat, .allowUserInteraction], animations: {
+                cells[index].alpha = Constants.kAlpha
             }, completion: nil)
  
         }
@@ -81,10 +66,40 @@ class GameEngine {
     
     func animateButtons(cells: [UICellButton], values: [Int]) {
         for index in values {
-            UIView.animate(withDuration: kDuration, delay: kDelay, options: [.repeat, .allowUserInteraction], animations: {
-                cells[index].alpha = self.kAlpha
+            UIView.animate(withDuration: Constants.kDuration, delay: Constants.kDelay, options: [.repeat, .allowUserInteraction], animations: {
+                cells[index].alpha = Constants.kAlpha
             }, completion: nil)
  
+        }
+    }
+    
+    func addWin(difficulty: EnumLevelOfDifficulty, board: EnumGameBoard, playMode: EnumPlayMode) {
+        switch playMode {
+        case .SinglePlayer:
+            switch difficulty {
+            case .Easy:
+                statistics.singlePlayerEasyWins += 1
+            case .Medium:
+                statistics.singlePlayerMediumWins += 1
+            case .Hard:
+                statistics.singlePlayerHardWins += 1
+            }
+        case .MultiPlayer:
+            switch board {
+            case .TTBoard:
+                statistics.multiPlayer3x3Wins += 1
+            case .FFBoard:
+                statistics.multiPlayer4x4Wins += 1                
+            }
+        }
+    }
+    
+    func addWin(board: EnumGameBoard) {
+        switch board {
+        case .TTBoard:
+            statistics.multiPlayer3x3Wins += 1
+        case .FFBoard:
+            statistics.multiPlayer4x4Wins += 1
         }
     }
 }

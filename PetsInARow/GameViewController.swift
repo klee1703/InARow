@@ -45,7 +45,7 @@ class GameViewController: UIViewController {
         
         // Do any additional setup
         setup()
-        resultsLabel.text = Constants.kStartGame
+        resultsLabel.text = Constants.kStartGameLabel
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,9 +86,6 @@ class GameViewController: UIViewController {
         print("Setup for New Game")
         // Initialize, game not started yet
         self.isGameInPlay = false
-        
-        // TEST!
-        statisticsModel?.singlePlayerEasyWins += 1
     }
     
     @IBAction func beginGame(_ sender: UIButton) {
@@ -99,7 +96,7 @@ class GameViewController: UIViewController {
     func doBegin() {
         print("Begin Game")
         self.isGameInPlay = true
-        resultsLabel.text = Constants.kStartGame
+        resultsLabel.text = Constants.kStartGameLabel
         
         // If board present clear
         if let board = gameModel?.board {

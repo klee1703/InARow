@@ -55,6 +55,20 @@
 		792603891EE123DF00A6EEDD /* GameBoard44ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */; };
 		7926038B1EE1C21F00A6EEDD /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */; };
 		7926038C1EE1C21F00A6EEDD /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */; };
+		7926FEC31F02B67A002DC70F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926FEC21F02B67A002DC70F /* AudioManager.swift */; };
+		7926FEC41F02B67A002DC70F /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7926FEC21F02B67A002DC70F /* AudioManager.swift */; };
+		7926FECB1F02B721002DC70F /* clapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC51F02B721002DC70F /* clapping.wav */; };
+		7926FECC1F02B721002DC70F /* clapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC51F02B721002DC70F /* clapping.wav */; };
+		7926FECD1F02B721002DC70F /* boing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC61F02B721002DC70F /* boing.wav */; };
+		7926FECE1F02B721002DC70F /* boing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC61F02B721002DC70F /* boing.wav */; };
+		7926FECF1F02B721002DC70F /* oh_no.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC71F02B721002DC70F /* oh_no.wav */; };
+		7926FED01F02B721002DC70F /* oh_no.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC71F02B721002DC70F /* oh_no.wav */; };
+		7926FED11F02B721002DC70F /* clapping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC81F02B721002DC70F /* clapping.mp3 */; };
+		7926FED21F02B721002DC70F /* clapping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC81F02B721002DC70F /* clapping.mp3 */; };
+		7926FED31F02B721002DC70F /* BrassPlate1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC91F02B721002DC70F /* BrassPlate1.wav */; };
+		7926FED41F02B721002DC70F /* BrassPlate1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC91F02B721002DC70F /* BrassPlate1.wav */; };
+		7926FED51F02B721002DC70F /* GlassPlate1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FECA1F02B721002DC70F /* GlassPlate1.wav */; };
+		7926FED61F02B721002DC70F /* GlassPlate1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FECA1F02B721002DC70F /* GlassPlate1.wav */; };
 		792D80821F018AC900A0CCAE /* settings-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D807F1F018AC900A0CCAE /* settings-icon.png */; };
 		792D80831F018AC900A0CCAE /* settings-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D80801F018AC900A0CCAE /* settings-icon@2x.png */; };
 		792D80841F018AC900A0CCAE /* settings-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D80811F018AC900A0CCAE /* settings-icon@3x.png */; };
@@ -178,6 +192,13 @@
 		792603841EE122A800A6EEDD /* GameBoard33ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard33ViewController.swift; path = ../GameBoard33ViewController.swift; sourceTree = "<group>"; };
 		792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard44ViewController.swift; path = ../GameBoard44ViewController.swift; sourceTree = "<group>"; };
 		7926038A1EE1C21F00A6EEDD /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptySegue.swift; path = ../EmptySegue.swift; sourceTree = "<group>"; };
+		7926FEC21F02B67A002DC70F /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		7926FEC51F02B721002DC70F /* clapping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = clapping.wav; sourceTree = "<group>"; };
+		7926FEC61F02B721002DC70F /* boing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boing.wav; sourceTree = "<group>"; };
+		7926FEC71F02B721002DC70F /* oh_no.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oh_no.wav; sourceTree = "<group>"; };
+		7926FEC81F02B721002DC70F /* clapping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clapping.mp3; sourceTree = "<group>"; };
+		7926FEC91F02B721002DC70F /* BrassPlate1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BrassPlate1.wav; sourceTree = "<group>"; };
+		7926FECA1F02B721002DC70F /* GlassPlate1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GlassPlate1.wav; sourceTree = "<group>"; };
 		792D807F1F018AC900A0CCAE /* settings-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon.png"; sourceTree = "<group>"; };
 		792D80801F018AC900A0CCAE /* settings-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon@2x.png"; sourceTree = "<group>"; };
 		792D80811F018AC900A0CCAE /* settings-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon@3x.png"; sourceTree = "<group>"; };
@@ -284,6 +305,7 @@
 				79144E2E1EEDE1AA006B71F0 /* Tiger.png */,
 			);
 			name = animals;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		791C38011ED94E7C00BA4F16 /* models */ = {
@@ -341,6 +363,20 @@
 				79B8A0F41EC7BAE00005F98A /* TTGameBoard.swift */,
 			);
 			name = boards;
+			sourceTree = "<group>";
+		};
+		7926FED81F02B829002DC70F /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				7926FEC21F02B67A002DC70F /* AudioManager.swift */,
+				7926FEC51F02B721002DC70F /* clapping.wav */,
+				7926FEC61F02B721002DC70F /* boing.wav */,
+				7926FEC71F02B721002DC70F /* oh_no.wav */,
+				7926FEC81F02B721002DC70F /* clapping.mp3 */,
+				7926FEC91F02B721002DC70F /* BrassPlate1.wav */,
+				7926FECA1F02B721002DC70F /* GlassPlate1.wav */,
+			);
+			name = audio;
 			sourceTree = "<group>";
 		};
 		796A51DA1EE8C8C500EED8D5 /* persistence */ = {
@@ -401,6 +437,7 @@
 				79F71A791EBD3BB60067D98C /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		79881CE81EE06FF10086FA0D /* Web Content */ = {
@@ -410,6 +447,7 @@
 				791C380B1EDA5D0800BA4F16 /* Help.html */,
 			);
 			name = "Web Content";
+			path = ..;
 			sourceTree = "<group>";
 		};
 		79C657BB1EF64E6B00D199AF /* GameEngine */ = {
@@ -428,9 +466,6 @@
 		79F71A621EBD3BB60067D98C = {
 			isa = PBXGroup;
 			children = (
-				79144E431EEDE1C4006B71F0 /* animals */,
-				79881CE81EE06FF10086FA0D /* Web Content */,
-				79881CE71EE06FB20086FA0D /* Storyboards */,
 				79F71A6D1EBD3BB60067D98C /* PetsInARow */,
 				79F71A841EBD3BB70067D98C /* PetsInARowTests */,
 				79F71A8F1EBD3BB70067D98C /* PetsInARowUITests */,
@@ -451,6 +486,7 @@
 		79F71A6D1EBD3BB60067D98C /* PetsInARow */ = {
 			isa = PBXGroup;
 			children = (
+				79881CE71EE06FB20086FA0D /* Storyboards */,
 				791C38031ED94EF600BA4F16 /* enums */,
 				791C38021ED94EC600BA4F16 /* controllers */,
 				79F71A6E1EBD3BB60067D98C /* AppDelegate.swift */,
@@ -459,7 +495,10 @@
 				79881CE61EE06F750086FA0D /* Subclass Views */,
 				791C38071ED94FCB00BA4F16 /* boards */,
 				79F71A771EBD3BB60067D98C /* Assets.xcassets */,
+				79144E431EEDE1C4006B71F0 /* animals */,
 				796C58D01EC6B5AA0034CF94 /* art */,
+				7926FED81F02B829002DC70F /* audio */,
+				79881CE81EE06FF10086FA0D /* Web Content */,
 				79F71A7C1EBD3BB60067D98C /* Info.plist */,
 				79726F901EFE31E100C66E61 /* Constants.swift */,
 			);
@@ -605,6 +644,7 @@
 				796C58CF1EC6B2770034CF94 /* stats@3x.png in Resources */,
 				79AA38521EFF82AC00BDEE61 /* cat1@2x.png in Resources */,
 				791C38221EDFC6D200BA4F16 /* settings.png in Resources */,
+				7926FED31F02B721002DC70F /* BrassPlate1.wav in Resources */,
 				792D808E1F018D5A00A0CCAE /* tictactoe.png in Resources */,
 				79E594171EEC90A500003250 /* TTT4x4@2x.png in Resources */,
 				792D808F1F018D5A00A0CCAE /* tictactoe@2x.png in Resources */,
@@ -613,6 +653,7 @@
 				79144E311EEDE1AA006B71F0 /* Computer.png in Resources */,
 				79144E451EEDE339006B71F0 /* Dog.png in Resources */,
 				7948C5951ED673690028C062 /* wrench@3x.png in Resources */,
+				7926FED11F02B721002DC70F /* clapping.mp3 in Resources */,
 				79F71A7B1EBD3BB60067D98C /* LaunchScreen.storyboard in Resources */,
 				791C38121EDBA40E00BA4F16 /* FAQs.html in Resources */,
 				79F71A781EBD3BB60067D98C /* Assets.xcassets in Resources */,
@@ -620,15 +661,19 @@
 				7948C5941ED673690028C062 /* wrench@2x.png in Resources */,
 				79E5940F1EEC650000003250 /* clear@3x.png in Resources */,
 				792D80841F018AC900A0CCAE /* settings-icon@3x.png in Resources */,
+				7926FED51F02B721002DC70F /* GlassPlate1.wav in Resources */,
 				7948C5911ED673510028C062 /* wrench.png in Resources */,
 				79144E3B1EEDE1AA006B71F0 /* Giraffe.png in Resources */,
 				79E5940E1EEC650000003250 /* clear@2x.png in Resources */,
 				79144E391EEDE1AA006B71F0 /* Elephant.png in Resources */,
 				79144E3F1EEDE1AA006B71F0 /* Penguin.png in Resources */,
 				79E5941F1EEC9CD400003250 /* TTT3x3@2x.png in Resources */,
+				7926FECF1F02B721002DC70F /* oh_no.wav in Resources */,
+				7926FECB1F02B721002DC70F /* clapping.wav in Resources */,
 				796C58C81EC6B2770034CF94 /* faq@2x.png in Resources */,
 				79144E351EEDE1AA006B71F0 /* Cyclops.png in Resources */,
 				796C58C71EC6B2770034CF94 /* faq.png in Resources */,
+				7926FECD1F02B721002DC70F /* boing.wav in Resources */,
 				79AA38511EFF82AC00BDEE61 /* cat1.png in Resources */,
 				796C58CE1EC6B2770034CF94 /* stats@2x.png in Resources */,
 				792D80901F018D5A00A0CCAE /* tictactoe@3x.png in Resources */,
@@ -642,9 +687,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7926FED01F02B721002DC70F /* oh_no.wav in Resources */,
 				79144E3E1EEDE1AA006B71F0 /* Owl.png in Resources */,
+				7926FECC1F02B721002DC70F /* clapping.wav in Resources */,
 				79144E301EEDE1AA006B71F0 /* Cat.png in Resources */,
+				7926FED61F02B721002DC70F /* GlassPlate1.wav in Resources */,
 				79144E461EEDE339006B71F0 /* Dog.png in Resources */,
+				7926FECE1F02B721002DC70F /* boing.wav in Resources */,
+				7926FED21F02B721002DC70F /* clapping.mp3 in Resources */,
 				79144E401EEDE1AA006B71F0 /* Penguin.png in Resources */,
 				79144E421EEDE1AA006B71F0 /* Tiger.png in Resources */,
 				791C38231EDFC6D200BA4F16 /* settings.png in Resources */,
@@ -654,6 +704,7 @@
 				791C38251EDFC6D200BA4F16 /* settings@2x.png in Resources */,
 				79144E3A1EEDE1AA006B71F0 /* Elephant.png in Resources */,
 				791C380D1EDA5D0800BA4F16 /* Help.html in Resources */,
+				7926FED41F02B721002DC70F /* BrassPlate1.wav in Resources */,
 				79144E341EEDE1AA006B71F0 /* Crocodile.png in Resources */,
 				791C38131EDBA40E00BA4F16 /* FAQs.html in Resources */,
 			);
@@ -685,6 +736,7 @@
 				79F71A6F1EBD3BB60067D98C /* AppDelegate.swift in Sources */,
 				792F88521ED0112B006685CC /* EnumLevelOfDifficulty.swift in Sources */,
 				79F71A9F1EBE7FEE0067D98C /* SupportViewController.swift in Sources */,
+				7926FEC31F02B67A002DC70F /* AudioManager.swift in Sources */,
 				79B54CA21EF8A4A8008282F6 /* GameEngineAI.swift in Sources */,
 				79FD34931ECC0A65005DC940 /* EnumOpponent.swift in Sources */,
 				792603821EE109A500A6EEDD /* GameBoardContainerViewController.swift in Sources */,
@@ -743,6 +795,7 @@
 				796D08231EF0C9BA00EE131D /* EnumCellState.swift in Sources */,
 				7964CA0E1ED7E0D900C8A92D /* GameModel.swift in Sources */,
 				79B8A0F61EC7BAE00005F98A /* TTGameBoard.swift in Sources */,
+				7926FEC41F02B67A002DC70F /* AudioManager.swift in Sources */,
 				79B8A0F31EC7BA950005F98A /* GameBoard.swift in Sources */,
 				79F71A861EBD3BB70067D98C /* PetsInARowTests.swift in Sources */,
 				79C657BA1EF64E3C00D199AF /* GameAIProtocol.swift in Sources */,
