@@ -11,12 +11,13 @@ import UIKit
 class GameEngine33: GameEngine, GameEngineProtocol, GameAIProtocol {
     var cells: [UICellButton]?
     var gameEngineAI: GameEngineAI?
+    var movesPlayed: Int
     
     init(cells: [UICellButton], settings: SettingsModel, statistics: StatisticsModel) {
-        super.init(settings: settings, statistics: statistics)
-        
+        self.movesPlayed = 0
         self.cells = cells
         gameEngineAI = GameEngineAI(cells: cells, settings: settings, statistics: statistics)
+        super.init(settings: settings, statistics: statistics)
     }
     
     func markCell(image: UIImage) {
@@ -69,5 +70,36 @@ class GameEngine33: GameEngine, GameEngineProtocol, GameAIProtocol {
         
         // No match found on board, return false
         return false
+    }
+    
+    func isDrawCondition(cells: [UICellButton]) -> Bool {
+        var isDraw = false
+        var playerMarks = 0
+        var opponentMarks = 0
+        var noMarks = 0
+        for cell in cells {
+            switch cell.cellState {
+            case .None:
+                noMarks += 1
+            case .Player:
+                playerMarks += 1
+            case .Opponent:
+                opponentMarks += 1
+            }
+        }
+        
+        if noMarks > 5 {
+            // No marks greater than 5, a win is still possible
+            isDraw = false
+        } else if playerMarks + opponentMarks == 9 {
+            // Board completely marked and no win, thus a draw
+            isDraw = true
+        }
+        
+        return isDraw
+    }
+    
+    func incrementMovesPlayed() {
+        self.movesPlayed += 1
     }
 }

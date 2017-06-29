@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import GameKit
 
 class SupportViewController: UIViewController, UIWebViewDelegate, MFMailComposeViewControllerDelegate {
     // Model data for settings

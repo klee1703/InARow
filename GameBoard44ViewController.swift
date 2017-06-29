@@ -59,7 +59,15 @@ class GameBoard44ViewController: GameBoardViewController {
 
     @IBAction func cellPressed(_ sender: UIButton) {
         print("Cell pressed!")
-        sender.setImage(cellPetImage, for: .normal)
+        
+        // Set cell image
+        let petImage = UIImage(named: (settingsModel?.yourPet)! + ".png")
+        sender.setImage(petImage, for: .normal)
+        
+        // Play mark sound
+        if (settingsModel?.enableSoundEffects)! {
+            AudioManager.INSTANCE()?.playerMark?.play()
+        }
         
         // Disable interaction with cell (can't be pressed again!)
         sender.isUserInteractionEnabled = false
@@ -68,21 +76,57 @@ class GameBoard44ViewController: GameBoardViewController {
         gameBoard44View.isUserInteractionEnabled = false
         print(gameBoard44View.isUserInteractionEnabled)
         
-        // Update the board cell state
+        // Update the board cell state (including number of moves played)
         let cell: UICellButton = sender as! UICellButton
         cell.cellState = EnumCellState.Player
+        gameEngine?.incrementMovesPlayed()
         
         // Check if tic-tac-toe
         if (gameEngine?.isTicTacToe(cells: cells, cellState: cell.cellState))! {
             // Display win message and prompt for a new game
             print("Player has Tic Tac Toe!")
+            // Play win sound
+            if (settingsModel?.enableSoundEffects)! {
+                AudioManager.INSTANCE()?.playerWin?.play()
+            }
+            
+            // Display on view and disable user interaction
             gameModel?.resultsLabel?.text = Constants.kPlayerWinLabel
             gameEngine?.addWin(board: (settingsModel?.board)!)
+        } else if (gameEngine?.isDrawCondition(cells: cells))! {
+            // Play draw sound
+            if (settingsModel?.enableSoundEffects)! {
+                AudioManager.INSTANCE()?.draw?.play()
+            }
+            
+            // Draw condition, display on view and disable user interaction
+            gameModel?.resultsLabel?.text = Constants.kDrawLabel
+            gameBoard44View.isUserInteractionEnabled = false
         } else {
             // MultiPlayer, send message to enable move by opponent
             send(cell: cell, petImage: labelPetImage, opponentImage: labelOpponentImage, boardView: gameBoard44View)
+            
+            // Update the board state for opponent's move
+            gameEngine?.incrementMovesPlayed()
+            
+            // Now check for Tic Tac Toe
             if (gameEngine?.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent))! {
+                // Play loss sound
+                if (settingsModel?.enableSoundEffects)! {
+                    AudioManager.INSTANCE()?.opponentWin?.play()
+                }
+                
+                // Display on view and disable user interaction
                 gameModel?.resultsLabel?.text = Constants.kOpponentWinLabel
+                gameBoard44View.isUserInteractionEnabled = false
+            } else if (gameEngine?.isDrawCondition(cells: cells))! {
+                // Play draw sound
+                if (settingsModel?.enableSoundEffects)! {
+                    AudioManager.INSTANCE()?.draw?.play()
+                }
+                
+                // Draw condition, display on view and disable user interaction
+                gameModel?.resultsLabel?.text = Constants.kDrawLabel
                 gameBoard44View.isUserInteractionEnabled = false
             }
         }

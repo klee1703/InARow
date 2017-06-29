@@ -19,8 +19,8 @@ class GameEngineAI {
     // Variables
     var movesPlayed = 0
     var isFirstCounterMove = false
-    var isPlayerWith2Marks = false
-    var isOpponenWith2Marks = false
+    var isPlayerWith2MarksOpponent0Marks = false
+    var isOpponenWith2MarksPlayer0Marks = false
     var playerFactor = 3
     var opponentFactor = 3
     var winningElements: EnumWinningElements = .None
@@ -116,7 +116,7 @@ class GameEngineAI {
 
     // Increment number of moves played on the board
     func incrementMovesPlayed() {
-        movesPlayed = movesPlayed + 1
+        movesPlayed += 1
         
         let isPlayerFirst = settings.gameFirstMove == .Player
         if movesPlayed > 2 {
@@ -145,20 +145,23 @@ class GameEngineAI {
         winningIndex = -1
     }
 
-    // Return true if the game has reached a draw condition
+    // Return true if the game has reached a draw condition.
+    // Determined using info for each row/column/diagonal.  If player
+    // has 2 marks and opponent has 0 marks (or vice-versa), the logic
+    // can determine draws.
     func isDrawCondition() -> Bool {
         let isPlayerFirst = settings.gameFirstMove == .Player
         if movesPlayed < 7 {
             // Draw condition requires at least 7 moves
             return false
-        } else if ((movesPlayed == 7) && (isPlayerWith2Marks || isOpponenWith2Marks)) {
-            // Player or opponent with 2 marks, draw condition still possible (return false)
+        } else if ((movesPlayed == 7) && (isPlayerWith2MarksOpponent0Marks || isOpponenWith2MarksPlayer0Marks)) {
+            // Player or opponent with 2 marks, a win is still possible (return false)
             return false
         } else if movesPlayed == 8 {
-            if isPlayerFirst && isPlayerWith2Marks {
+            if isPlayerFirst && isPlayerWith2MarksOpponent0Marks {
                 // Player with 2 marks, a win is still possible!
                 return false
-            } else if !isPlayerFirst && isOpponenWith2Marks {
+            } else if !isPlayerFirst && isOpponenWith2MarksPlayer0Marks {
                 // Opponent with 2 marks, a win is still possible!
                 return false
             } else {
@@ -184,8 +187,8 @@ class GameEngineAI {
      *
      */
     func evaluatePosition() -> Int {
-        isPlayerWith2Marks = false
-        isOpponenWith2Marks = false
+        isPlayerWith2MarksOpponent0Marks = false
+        isOpponenWith2MarksPlayer0Marks = false
         var wins: Int
         switch settings.difficulty {
         case .Easy:
@@ -210,10 +213,10 @@ class GameEngineAI {
             
             // If board indicates x2o0 (pm2) or o2x0 (cm2), set condition
             if (player2Marks > 0) {
-                isPlayerWith2Marks = true
+                isPlayerWith2MarksOpponent0Marks = true
             }
             if (opponent2Marks > 0) {
-                isOpponenWith2Marks = true
+                isOpponenWith2MarksPlayer0Marks = true
             }
             
             // Compute and return position value

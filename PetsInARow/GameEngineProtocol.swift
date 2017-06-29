@@ -10,4 +10,6 @@ import Foundation
 
 protocol GameEngineProtocol {
     func isTicTacToe(cells: [UICellButton], cellState: EnumCellState) -> Bool
+    func isDrawCondition(cells: [UICellButton]) -> Bool
+    func incrementMovesPlayed()
 }

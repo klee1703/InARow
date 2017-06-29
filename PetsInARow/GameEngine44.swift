@@ -9,7 +9,10 @@
 import Foundation
 
 class GameEngine44: GameEngine, GameEngineProtocol {
+    var movesPlayed: Int
+    
     override init(settings: SettingsModel, statistics: StatisticsModel) {
+        self.movesPlayed = 0
         super.init(settings: settings, statistics: statistics)
     }
     
@@ -80,5 +83,36 @@ class GameEngine44: GameEngine, GameEngineProtocol {
         
         // No match found on board, return false
         return false
+    }
+    
+    func isDrawCondition(cells: [UICellButton]) -> Bool {
+        var isDraw = false
+        var playerMarks = 0
+        var opponentMarks = 0
+        var noMarks = 0
+        for cell in cells {
+            switch cell.cellState {
+            case .None:
+                noMarks += 1
+            case .Player:
+                playerMarks += 1
+            case .Opponent:
+                opponentMarks += 1
+            }
+        }
+        
+        if noMarks > 5 {
+            // No marks greater than 5, a win is still possible
+            isDraw = false
+        } else if playerMarks + opponentMarks == 16 {
+            // Board completely marked and no win, thus a draw
+            isDraw = true
+        }
+        
+        return isDraw
+    }
+    
+    func incrementMovesPlayed() {
+        self.movesPlayed += 1
     }
 }

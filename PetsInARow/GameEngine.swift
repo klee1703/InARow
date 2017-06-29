@@ -59,8 +59,7 @@ class GameEngine {
         for index in stride(from: initialValue, to: max+1, by: step) {
             UIView.animate(withDuration: Constants.kDuration, delay: Constants.kDelay, options: [.repeat, .allowUserInteraction], animations: {
                 cells[index].alpha = Constants.kAlpha
-            }, completion: nil)
- 
+            }, completion: nil) 
         }
     }
     
@@ -69,7 +68,6 @@ class GameEngine {
             UIView.animate(withDuration: Constants.kDuration, delay: Constants.kDelay, options: [.repeat, .allowUserInteraction], animations: {
                 cells[index].alpha = Constants.kAlpha
             }, completion: nil)
- 
         }
     }
     

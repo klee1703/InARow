@@ -54,12 +54,15 @@ class GameBoard33ViewController: GameBoardViewController {
     
     @IBAction func cellPressed(_ sender: UIButton) {
         print("Cell pressed!")
+        
         // Set cell image
         let petImage = UIImage(named: (settingsModel?.yourPet)! + ".png")
         sender.setImage(petImage, for: .normal)
         
         // Play mark sound
-        AudioManager.INSTANCE()?.playerMark?.play()
+        if (settingsModel?.enableSoundEffects)! {
+            AudioManager.INSTANCE()?.playerMark?.play()
+        }
         
         // Disable interaction with cell (can't be pressed again!)
         sender.isUserInteractionEnabled = false
@@ -70,13 +73,15 @@ class GameBoard33ViewController: GameBoardViewController {
         // Update the board cell state (including number of moves played)
         let cell = sender as! UICellButton
         cell.cellState = EnumCellState.Player
-        gameEngineAI?.incrementMovesPlayed()
+        gameEngine?.incrementMovesPlayed()
         
         // Check if tic-tac-toe or draw condition
         if (gameEngine?.isTicTacToe(cells: cells, cellState: EnumCellState.Player))! {
             print("Player has Tic Tac Toe!")
             // Play win sound
-            AudioManager.INSTANCE()?.playerWin?.play()
+            if (settingsModel?.enableSoundEffects)! {
+                AudioManager.INSTANCE()?.playerWin?.play()
+            }
             
             // Display on view and disable user interaction
             gameModel?.resultsLabel?.text = Constants.kPlayerWinLabel
@@ -84,27 +89,51 @@ class GameBoard33ViewController: GameBoardViewController {
             
             // Update statistics - add win
             gameEngine?.addWin(difficulty: (settingsModel?.difficulty)!, board: (settingsModel?.board)!, playMode: (settingsModel?.gamePlayMode)!)
-        } else if (gameEngineAI?.isDrawCondition())! {
+        } else if (gameEngine?.isDrawCondition(cells: cells))! {
             // Play draw sound
-            AudioManager.INSTANCE()?.draw?.play()
+            if (settingsModel?.enableSoundEffects)! {
+                AudioManager.INSTANCE()?.draw?.play()
+            }
 
             // Draw condition, display on view and disable user interaction
             gameModel?.resultsLabel?.text = Constants.kDrawLabel
             gameBoard33View.isUserInteractionEnabled = false
         } else {
-            // If Single Player next perform AI play
+            // Now let the opponent mark the board - single player or multiplayer
+            
+            // If Single Player next mark board using AI engine
             if super.settingsModel?.gamePlayMode == .SinglePlayer {
                 print("Computer play")
+                // First update number of moves played
+                gameEngineAI?.incrementMovesPlayed()
+
+                // Then mark the board using AI engine
                 aiMarkCell(cells: cells)
             } else {
-                // MultiPlayer, send message to enable move by opponent
+                // MultiPlayer, send message to enable opponent to mark board
                 send(cell: cell, petImage: labelPetImage, opponentImage: labelOpponentImage, boardView: gameBoard33View)
+                
+                // Update the board state
+                gameEngine?.incrementMovesPlayed()
+                
+                // Now check for Tic Tac Toe
                 if (gameEngine?.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent))! {
                     // Play loss sound
-                    AudioManager.INSTANCE()?.opponentWin?.play()
+                    if (settingsModel?.enableSoundEffects)! {
+                        AudioManager.INSTANCE()?.opponentWin?.play()
+                    }
                     
                     // Display on view and disable user interaction
                     gameModel?.resultsLabel?.text = Constants.kOpponentWinLabel
+                    gameBoard33View.isUserInteractionEnabled = false
+                } else if (gameEngine?.isDrawCondition(cells: cells))! {
+                    // Play draw sound
+                    if (settingsModel?.enableSoundEffects)! {
+                        AudioManager.INSTANCE()?.draw?.play()
+                    }
+                    
+                    // Draw condition, display on view and disable user interaction
+                    gameModel?.resultsLabel?.text = Constants.kDrawLabel
                     gameBoard33View.isUserInteractionEnabled = false
                 }
             }
@@ -137,7 +166,9 @@ class GameBoard33ViewController: GameBoardViewController {
             super.playLabel?.image = self.labelPetImage
             
             // Play mark sound
-            AudioManager.INSTANCE()?.opponentMark?.play()
+            if (self.settingsModel?.enableSoundEffects)! {
+                AudioManager.INSTANCE()?.opponentMark?.play()
+            }
             
             // Increment number of marks on board
             self.gameEngineAI?.incrementMovesPlayed()
@@ -146,20 +177,24 @@ class GameBoard33ViewController: GameBoardViewController {
             if (self.gameEngine?.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent))! {
                 print("Computer has Tic Tac Toe!")
                 // Play loss sound
-                AudioManager.INSTANCE()?.opponentWin?.play()
+                if (self.settingsModel?.enableSoundEffects)! {
+                    AudioManager.INSTANCE()?.opponentWin?.play()
+                }
                 
                 // Display on view and disable user interaction
                 self.gameModel?.resultsLabel?.text = Constants.kComputerWinLabel
                 self.gameBoard33View.isUserInteractionEnabled = false
             } else if (self.gameEngineAI?.isDrawCondition())! {
                 // Play draw sound
-                AudioManager.INSTANCE()?.draw?.play()
+                if (self.settingsModel?.enableSoundEffects)! {
+                    AudioManager.INSTANCE()?.draw?.play()
+                }
                 
                 // Draw condition, display on view and disable user interaction
                 self.gameModel?.resultsLabel?.text = Constants.kDrawLabel
                 self.gameBoard33View.isUserInteractionEnabled = false
             } else {
-                // Re-enable play on board
+                // No loss or draw, game continues, re-enable play on board
                 self.gameBoard33View.isUserInteractionEnabled = true
                 self.playLabel?.image = self.labelPetImage
             }
