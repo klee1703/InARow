@@ -74,6 +74,8 @@ class GameEngine33: GameEngine, GameEngineProtocol, GameAIProtocol {
     
     func isDrawCondition(cells: [UICellButton]) -> Bool {
         var isDraw = false
+        
+        /*
         var playerMarks = 0
         var opponentMarks = 0
         var noMarks = 0
@@ -93,6 +95,10 @@ class GameEngine33: GameEngine, GameEngineProtocol, GameAIProtocol {
             isDraw = false
         } else if playerMarks + opponentMarks == 9 {
             // Board completely marked and no win, thus a draw
+            isDraw = true
+        }
+ */
+        if movesPlayed == Constants.kMaxMoves3x3 {
             isDraw = true
         }
         

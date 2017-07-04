@@ -24,9 +24,10 @@ struct Constants {
     static let k4x4BoardSegue = "Board44Segue"
 
     // Alert messages
-    static let gameCenterMessage = "Are you sure you want to enable/disable Game Center and begin a new game?"
-    static let gameBoardMessage = "Are you sure you want to update the Game Board and begin a new game?"
-    static let playModeMessage = "Are you sure you want to update the Play Mode and begin a new game?"
+    static let kGameCenterMessage = "Are you sure you want to enable/disable Game Center and begin a new game?"
+    static let kGameBoardMessage = "Are you sure you want to update the Game Board and begin a new game?"
+    static let kPlayModeMessage = "Are you sure you want to update the Play Mode and begin a new game?"
+    static let kLevelOfDifficultyMessage = "Are you sure you want to update the Level-of-Difficulty and begin a new game?"
 
     // Game Engine Constants
     static let kDuration = 0.8
@@ -40,5 +41,18 @@ struct Constants {
     static let kOpponentWinSound = "oh_no"
     static let kPlayerWinSound = "clapping"
     static let kDrawSound = "boing"
+    
+    // Max moves on board grid
+    static let kMaxMoves3x3 = 9
+    static let kMaxMoves4x4 = 16
+
+    // Game Center Messages
+    static let kGCLoginRequiredTitle = "Login Required for Game Center Access"
+    static let kGCLoginRequiredMessage = "Please Login to Enable Game Center Functionality"
+    static let kGCLoginErrorTitle = "Error Logging in for Game Center Access"
+    static let kGCResetAchievementsErrorTitle = "Error resetting achievements"
+    static let kGCReportAchievementsErrorTitle = "Error reporting achievements"
+    static let kGCSubmitAchievementErrorTitle = "Error submitting achievements"
+    static let kGCReportAchievementErrorTitle = "Error reporting achievements"
 
 }

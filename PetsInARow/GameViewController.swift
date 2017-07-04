@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GameKit
+
 
 class GameViewController: UIViewController {
 
@@ -20,9 +22,11 @@ class GameViewController: UIViewController {
     var isGameInPlay = false
     var gameBoard3x3: [String] = [String]()
     var gameBoard4x4: [String] = [String]()
-    
+
     var tbvc: GameTabBarController?
     var gbcvc: GameBoardContainerViewController?
+    var loginAlert: UIAlertController?
+    var displayName = ""
     
     // Model variables
     var settingsModel: SettingsModel?
@@ -43,13 +47,24 @@ class GameViewController: UIViewController {
         gameModel?.playLabel = activePet
         gameModel?.resultsLabel = resultsLabel
         
+        // Authenticate
+        GameCenterManager.INSTANCE(view: self, settings: settingsModel!)?.authenticateLocalPlayer()
+        
+        // Instantiate login player
+        loginAlert = UIAlertController(title: Constants.kGCLoginRequiredTitle, message: Constants.kGCLoginRequiredMessage, preferredStyle: .actionSheet)
+        loginAlert?.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
         // Do any additional setup
         setup()
+        settingsModel?.setupGame = false
         resultsLabel.text = Constants.kStartGameLabel
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Authenticate
+        GameCenterManager.INSTANCE(view: self, settings: settingsModel!)?.authenticateLocalPlayer()
 
         // Set player label based on play mode and current player
         if EnumPlayMode.SinglePlayer == settingsModel?.gamePlayMode {
@@ -132,7 +147,8 @@ class GameViewController: UIViewController {
             }
         }
     }
-    
+
+    // Set label for the player's pet
     func setPlayerLabel(pet: String) {
         if settingsModel?.gameFirstMove == EnumFirstMove.Player {
             activePet.image = UIImage(named: (settingsModel?.yourPet)! + ".png")

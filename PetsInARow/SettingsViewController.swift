@@ -28,6 +28,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var isInitializedGameBoard = false
     var isInitializedGameCenter = false
     var isInitializedPlayMode = false
+    var isInitializedLevelOfDifficulty = false
 
     // Tab bar controller
     var tbvc: GameTabBarController?
@@ -169,14 +170,16 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
     @IBAction func switchGameCenter(_ sender: UISwitch) {
         // Present alert if necessary
+        let previousSetting = !sender.isOn
         if isInitializedGameCenter {
-            let alert = UIAlertController(title: "Game Center", message: Constants.gameCenterMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Game Center", message: Constants.kGameCenterMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default) {action in
                 self.doUpdateGameCenter(true, isEnabled: sender.isOn)
                 self.settingsModel?.setupGame = true
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .default) {action in
                 self.doUpdateGameCenter(false, isEnabled: sender.isOn)
+                sender.setOn(previousSetting, animated: false)
             })
             present(alert, animated: true, completion: nil)
         } else {
@@ -258,7 +261,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         if isInitializedPlayMode {
             isInitializedGameBoard = true
-            let alert = UIAlertController(title: "Game Play Mode", message: Constants.playModeMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Game Play Mode", message: Constants.kPlayModeMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default) {action in
                 self.doUpdatePlayMode(true)
                 self.settingsModel?.setupGame = true
@@ -314,7 +317,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
 
         if isInitializedGameBoard {
-            let alert = UIAlertController(title: "Game Board", message: Constants.gameBoardMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Game Board", message: Constants.kGameBoardMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default) {action in
                 self.doUpdateGameBoard(true)
                 self.settingsModel?.setupGame = true
@@ -371,15 +374,30 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
     // Set level-of-difficulty selection for model
     @IBAction func controlLevelOfDifficulty(_ sender: UISegmentedControl) {
+        if isInitializedLevelOfDifficulty {
+            let alert = UIAlertController(title: "Level of Difficulty", message: Constants.kLevelOfDifficultyMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default) {action in
+                self.doUpdateLevelOfDifficulty(sender)
+            })
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default) {action in
+            })
+            present(alert, animated: true, completion: nil)
+        } else {
+            // Past initialization, from now on present alerts
+            isInitializedLevelOfDifficulty = true
+        }
+    }
+    
+    func doUpdateLevelOfDifficulty(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            settingsModel?.difficulty = .Easy
+            self.settingsModel?.difficulty = .Easy
         case 1:
-            settingsModel?.difficulty = .Medium
+            self.settingsModel?.difficulty = .Medium
         case 2:
-            settingsModel?.difficulty = .Hard
+            self.settingsModel?.difficulty = .Hard
         default:
-            settingsModel?.difficulty = .Easy
+            self.settingsModel?.difficulty = .Easy
         }
     }
     

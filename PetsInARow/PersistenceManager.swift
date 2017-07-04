@@ -28,6 +28,20 @@ class PersistenceManager {
             print ("FILE NOT FOUND")
         }
     }
+    
+    class func unarchiveStatistics(model: StatisticsModel, filePath: String, key: String) {
+        if (FileManager.default.fileExists(atPath: filePath)) {
+            let data = NSMutableData(contentsOfFile: filePath)
+            let unarchiver = NSKeyedUnarchiver(forReadingWith: data! as Data)
+            let unarchive = unarchiver.decodeObject(forKey: key) as? StatisticsModel
+            unarchiver.finishDecoding()
+            if let temp = unarchive {
+                model.update(temp)
+            }
+        } else {
+            print ("FILE NOT FOUND")
+        }
+    }
 
     class func archive<T>(model: T, filePath: String, key: String) {
         if !FileManager.default.fileExists(atPath: filePath) {

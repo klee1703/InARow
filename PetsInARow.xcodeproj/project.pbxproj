@@ -77,6 +77,8 @@
 		792D80901F018D5A00A0CCAE /* tictactoe@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D808D1F018D5A00A0CCAE /* tictactoe@3x.png */; };
 		792F88521ED0112B006685CC /* EnumLevelOfDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */; };
 		792F88541ED0FC45006685CC /* EnumPlayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88531ED0FC45006685CC /* EnumPlayMode.swift */; };
+		7940343B1F08206B0047A64D /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7940343A1F08206B0047A64D /* GameCenterManager.swift */; };
+		7940343C1F08206B0047A64D /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7940343A1F08206B0047A64D /* GameCenterManager.swift */; };
 		7948C5911ED673510028C062 /* wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = 7948C5901ED673510028C062 /* wrench.png */; };
 		7948C5941ED673690028C062 /* wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7948C5921ED673690028C062 /* wrench@2x.png */; };
 		7948C5951ED673690028C062 /* wrench@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7948C5931ED673690028C062 /* wrench@3x.png */; };
@@ -207,6 +209,7 @@
 		792D808D1F018D5A00A0CCAE /* tictactoe@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tictactoe@3x.png"; sourceTree = "<group>"; };
 		792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumLevelOfDifficulty.swift; sourceTree = "<group>"; };
 		792F88531ED0FC45006685CC /* EnumPlayMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumPlayMode.swift; sourceTree = "<group>"; };
+		7940343A1F08206B0047A64D /* GameCenterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
 		7948C5901ED673510028C062 /* wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrench.png; sourceTree = "<group>"; };
 		7948C5921ED673690028C062 /* wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wrench@2x.png"; sourceTree = "<group>"; };
 		7948C5931ED673690028C062 /* wrench@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wrench@3x.png"; sourceTree = "<group>"; };
@@ -379,6 +382,14 @@
 			name = audio;
 			sourceTree = "<group>";
 		};
+		7940343D1F0820790047A64D /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+				7940343A1F08206B0047A64D /* GameCenterManager.swift */,
+			);
+			name = GameCenter;
+			sourceTree = "<group>";
+		};
 		796A51DA1EE8C8C500EED8D5 /* persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +497,7 @@
 		79F71A6D1EBD3BB60067D98C /* PetsInARow */ = {
 			isa = PBXGroup;
 			children = (
+				7940343D1F0820790047A64D /* GameCenter */,
 				79881CE71EE06FB20086FA0D /* Storyboards */,
 				791C38031ED94EF600BA4F16 /* enums */,
 				791C38021ED94EC600BA4F16 /* controllers */,
@@ -732,6 +744,7 @@
 				79B54CA51EF8BD09008282F6 /* EnumWinningElements.swift in Sources */,
 				79C657B91EF64E3C00D199AF /* GameAIProtocol.swift in Sources */,
 				792603881EE123DF00A6EEDD /* GameBoard44ViewController.swift in Sources */,
+				7940343B1F08206B0047A64D /* GameCenterManager.swift in Sources */,
 				79F71A731EBD3BB60067D98C /* StatisticsViewController.swift in Sources */,
 				79F71A6F1EBD3BB60067D98C /* AppDelegate.swift in Sources */,
 				792F88521ED0112B006685CC /* EnumLevelOfDifficulty.swift in Sources */,
@@ -778,6 +791,7 @@
 				79FD34941ECC0A65005DC940 /* EnumOpponent.swift in Sources */,
 				7926038C1EE1C21F00A6EEDD /* EmptySegue.swift in Sources */,
 				79B8A0F91EC7BC640005F98A /* Square.swift in Sources */,
+				7940343C1F08206B0047A64D /* GameCenterManager.swift in Sources */,
 				79726F921EFE31E100C66E61 /* Constants.swift in Sources */,
 				7919B7FB1EF754F600FF15D5 /* GameEngine.swift in Sources */,
 				791C38061ED94F5F00BA4F16 /* FFGameBoard.swift in Sources */,

@@ -137,6 +137,9 @@ class GameBoard44ViewController: GameBoardViewController {
         print("Start game")
         super.gameModel?.board = cells
         gameBoard44View.isUserInteractionEnabled = true
+        
+        // Reset moves played
+        gameEngine?.movesPlayed = 0
     }
 
     /*

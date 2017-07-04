@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit
 
 class GameEngine {
     // Models
@@ -77,17 +78,22 @@ class GameEngine {
             switch difficulty {
             case .Easy:
                 statistics.singlePlayerEasyWins += 1
+                GameCenterManager.instance?.submitAchievement(identifier: "spWinsEasy", percentComplete: Double(statistics.singlePlayerEasyWins) * 10.0)
             case .Medium:
                 statistics.singlePlayerMediumWins += 1
+                GameCenterManager.instance?.submitAchievement(identifier: "spWinsMedium", percentComplete: Double(statistics.singlePlayerMediumWins) * 10.0)
             case .Hard:
                 statistics.singlePlayerHardWins += 1
+                GameCenterManager.instance?.submitAchievement(identifier: "spWinsHard", percentComplete: Double(statistics.singlePlayerHardWins) * 10.0)
             }
         case .MultiPlayer:
             switch board {
             case .TTBoard:
                 statistics.multiPlayer3x3Wins += 1
+                GameCenterManager.instance?.submitAchievement(identifier: "mpWins3x3", percentComplete: Double(statistics.multiPlayer3x3Wins) * 10.0)
             case .FFBoard:
                 statistics.multiPlayer4x4Wins += 1                
+                GameCenterManager.instance?.submitAchievement(identifier: "mpWins4x4", percentComplete: Double(statistics.multiPlayer4x4Wins) * 10.0)
             }
         }
     }
@@ -96,8 +102,10 @@ class GameEngine {
         switch board {
         case .TTBoard:
             statistics.multiPlayer3x3Wins += 1
+            GameCenterManager.instance?.submitAchievement(identifier: "mpWins3x3", percentComplete: Double(statistics.multiPlayer3x3Wins) * 10.0)
         case .FFBoard:
             statistics.multiPlayer4x4Wins += 1
+            GameCenterManager.instance?.submitAchievement(identifier: "mpWins4x4", percentComplete: Double(statistics.multiPlayer4x4Wins) * 10.0)
         }
     }
 }

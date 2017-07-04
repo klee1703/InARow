@@ -83,6 +83,9 @@ class GameBoard33ViewController: GameBoardViewController {
                 AudioManager.INSTANCE()?.playerWin?.play()
             }
             
+            // New game on transition to game board
+            settingsModel?.setupGame = true
+            
             // Display on view and disable user interaction
             gameModel?.resultsLabel?.text = Constants.kPlayerWinLabel
             gameBoard33View.isUserInteractionEnabled = false
@@ -94,6 +97,9 @@ class GameBoard33ViewController: GameBoardViewController {
             if (settingsModel?.enableSoundEffects)! {
                 AudioManager.INSTANCE()?.draw?.play()
             }
+            
+            // New game on transition to game board
+            settingsModel?.setupGame = true
 
             // Draw condition, display on view and disable user interaction
             gameModel?.resultsLabel?.text = Constants.kDrawLabel
@@ -104,7 +110,7 @@ class GameBoard33ViewController: GameBoardViewController {
             // If Single Player next mark board using AI engine
             if super.settingsModel?.gamePlayMode == .SinglePlayer {
                 print("Computer play")
-                // First update number of moves played
+                // First update number of moves played for the AI engine
                 gameEngineAI?.incrementMovesPlayed()
 
                 // Then mark the board using AI engine
@@ -146,7 +152,10 @@ class GameBoard33ViewController: GameBoardViewController {
         print("Start game")
         super.gameModel?.board = cells
         gameBoard33View.isUserInteractionEnabled = true
+        
+        // Reset moves played (for both Single and multiplayer modes)
         gameEngineAI?.resetMovesPlayed()
+        gameEngine?.movesPlayed = 0
         
         if !currentPlayer && (settingsModel?.gamePlayMode == .SinglePlayer) {
             // First move for opponent in Single Player mode, use AI for first move
@@ -172,6 +181,7 @@ class GameBoard33ViewController: GameBoardViewController {
             
             // Increment number of marks on board
             self.gameEngineAI?.incrementMovesPlayed()
+            self.gameEngine?.incrementMovesPlayed()
             
             // Check if tic-tac-toe
             if (self.gameEngine?.isTicTacToe(cells: cells, cellState: EnumCellState.Opponent))! {

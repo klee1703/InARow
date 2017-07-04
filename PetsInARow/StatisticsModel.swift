@@ -65,4 +65,13 @@ class StatisticsModel: NSObject, NSCoding {
         let filePath = url.appendingPathComponent(kStatisticsFilePath)
         return (filePath?.path)!
     }
+    
+    func update(_ model: StatisticsModel) {
+        self.singlePlayerEasyWins = model.singlePlayerEasyWins
+        self.singlePlayerMediumWins = model.singlePlayerMediumWins
+        self.singlePlayerHardWins = model.singlePlayerHardWins
+        
+        self.multiPlayer3x3Wins = model.multiPlayer3x3Wins
+        self.multiPlayer4x4Wins = model.multiPlayer4x4Wins
+    }
 }
