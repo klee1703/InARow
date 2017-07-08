@@ -36,7 +36,7 @@ class GameBoard33ViewController: GameBoardViewController {
         // Do any additional setup after loading the view.
         cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8]
         gameModel?.board = cells
-        gameEngine = GameEngine33(cells: cells, settings: settingsModel!, statistics: statisticsModel!)
+        gameEngine = GameEngine33(movesPlayed: 0, cells: cells, settings: settingsModel!, statistics: statisticsModel!)
         gameEngineAI = GameEngineAI(cells: cells, settings: settingsModel!, statistics: statisticsModel!)
         
         // Interaction enable
@@ -92,7 +92,7 @@ class GameBoard33ViewController: GameBoardViewController {
             
             // Update statistics - add win
             gameEngine?.addWin(difficulty: (settingsModel?.difficulty)!, board: (settingsModel?.board)!, playMode: (settingsModel?.gamePlayMode)!)
-        } else if (gameEngine?.isDrawCondition(cells: cells))! {
+        } else if (gameEngine?.isDrawCondition())! {
             // Play draw sound
             if (settingsModel?.enableSoundEffects)! {
                 AudioManager.INSTANCE()?.draw?.play()
@@ -132,7 +132,7 @@ class GameBoard33ViewController: GameBoardViewController {
                     // Display on view and disable user interaction
                     gameModel?.resultsLabel?.text = Constants.kOpponentWinLabel
                     gameBoard33View.isUserInteractionEnabled = false
-                } else if (gameEngine?.isDrawCondition(cells: cells))! {
+                } else if (gameEngine?.isDrawCondition())! {
                     // Play draw sound
                     if (settingsModel?.enableSoundEffects)! {
                         AudioManager.INSTANCE()?.draw?.play()

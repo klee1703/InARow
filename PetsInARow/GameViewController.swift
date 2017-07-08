@@ -154,7 +154,6 @@ class GameViewController: UIViewController {
             activePet.image = UIImage(named: (settingsModel?.yourPet)! + ".png")
         } else {
             activePet.image = UIImage(named: (settingsModel?.opponentsPet)! + ".png")
-            
         }
     }
     

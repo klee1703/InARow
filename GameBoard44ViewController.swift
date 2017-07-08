@@ -42,7 +42,7 @@ class GameBoard44ViewController: GameBoardViewController {
         // Do any additional setup after loading the view.
         cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, cell10, cell11, cell12, cell13, cell14, cell15]
         gameModel?.board = cells
-        gameEngine = GameEngine44(settings: settingsModel!, statistics: statisticsModel!)
+        gameEngine = GameEngine44(movesPlayed: 0, settings: settingsModel!, statistics: statisticsModel!)
         
         // Interaction initially enabled
         gameBoard44View.isUserInteractionEnabled = true
@@ -93,7 +93,7 @@ class GameBoard44ViewController: GameBoardViewController {
             // Display on view and disable user interaction
             gameModel?.resultsLabel?.text = Constants.kPlayerWinLabel
             gameEngine?.addWin(board: (settingsModel?.board)!)
-        } else if (gameEngine?.isDrawCondition(cells: cells))! {
+        } else if (gameEngine?.isDrawCondition())! {
             // Play draw sound
             if (settingsModel?.enableSoundEffects)! {
                 AudioManager.INSTANCE()?.draw?.play()
@@ -119,7 +119,7 @@ class GameBoard44ViewController: GameBoardViewController {
                 // Display on view and disable user interaction
                 gameModel?.resultsLabel?.text = Constants.kOpponentWinLabel
                 gameBoard44View.isUserInteractionEnabled = false
-            } else if (gameEngine?.isDrawCondition(cells: cells))! {
+            } else if (gameEngine?.isDrawCondition())! {
                 // Play draw sound
                 if (settingsModel?.enableSoundEffects)! {
                     AudioManager.INSTANCE()?.draw?.play()

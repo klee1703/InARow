@@ -13,10 +13,12 @@ class GameEngine {
     // Models
     var settings: SettingsModel
     var statistics: StatisticsModel
+    var movesPlayed = 0
 
-    init(settings: SettingsModel, statistics: StatisticsModel) {
+    init(movesPlayed: Int, settings: SettingsModel, statistics: StatisticsModel) {
         self.settings = settings
         self.statistics = statistics
+        self.movesPlayed = movesPlayed
     }
     
     func isTTTHorizontalMatch(cells: [UICellButton], range: CountableClosedRange<Int>, cellState: EnumCellState) -> Bool {
@@ -107,5 +109,22 @@ class GameEngine {
             statistics.multiPlayer4x4Wins += 1
             GameCenterManager.instance?.submitAchievement(identifier: "mpWins4x4", percentComplete: Double(statistics.multiPlayer4x4Wins) * 10.0)
         }
+    }
+    
+    func isDrawForRow(_ row: [UICellButton], player: EnumCellState, opponent: EnumCellState) -> Bool {
+        var cellStates: [EnumCellState] = []
+        for index in 0..<row.count {
+            cellStates.insert(row[index].cellState, at: index)
+        }
+        
+        if cellStates.contains(player) && cellStates.contains(opponent) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func incrementMovesPlayed() {
+        self.movesPlayed += 1
     }
 }

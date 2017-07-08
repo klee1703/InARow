@@ -11,13 +11,13 @@ import UIKit
 class GameEngine33: GameEngine, GameEngineProtocol, GameAIProtocol {
     var cells: [UICellButton]?
     var gameEngineAI: GameEngineAI?
-    var movesPlayed: Int
+    var rows: [Int:[UICellButton]] = [:]
     
-    init(cells: [UICellButton], settings: SettingsModel, statistics: StatisticsModel) {
-        self.movesPlayed = 0
+    init(movesPlayed: Int, cells: [UICellButton], settings: SettingsModel, statistics: StatisticsModel) {
         self.cells = cells
         gameEngineAI = GameEngineAI(cells: cells, settings: settings, statistics: statistics)
-        super.init(settings: settings, statistics: statistics)
+        super.init(movesPlayed: movesPlayed, settings: settings, statistics: statistics)
+        rows = initializeRows(cells: self.cells!)
     }
     
     func markCell(image: UIImage) {
@@ -72,40 +72,37 @@ class GameEngine33: GameEngine, GameEngineProtocol, GameAIProtocol {
         return false
     }
     
-    func isDrawCondition(cells: [UICellButton]) -> Bool {
-        var isDraw = false
+    func isDrawConditionForBoard() -> Bool {
+        var isDraw = true
         
-        /*
-        var playerMarks = 0
-        var opponentMarks = 0
-        var noMarks = 0
-        for cell in cells {
-            switch cell.cellState {
-            case .None:
-                noMarks += 1
-            case .Player:
-                playerMarks += 1
-            case .Opponent:
-                opponentMarks += 1
+        // If all moves made then draw condition by definitionui
+        if movesPlayed == rows.count {
+            isDraw = true
+        } else {
+            for row in 0..<rows.count {
+                // Check all rows
+                if !isDrawForRow(rows[row]!, player: EnumCellState.Player, opponent: EnumCellState.Opponent) {
+                    // Not a draw condition, only need one row in this condition, set to 
+                    // false and exit loop
+                    isDraw = false
+                    break
+                }
             }
         }
-        
-        if noMarks > 5 {
-            // No marks greater than 5, a win is still possible
-            isDraw = false
-        } else if playerMarks + opponentMarks == 9 {
-            // Board completely marked and no win, thus a draw
-            isDraw = true
-        }
- */
-        if movesPlayed == Constants.kMaxMoves3x3 {
-            isDraw = true
-        }
-        
         return isDraw
     }
     
-    func incrementMovesPlayed() {
-        self.movesPlayed += 1
+    func initializeRows(cells: [UICellButton]) -> [Int:[UICellButton]] {
+        var temp: [Int:[UICellButton]] = [:]
+        temp[0] = [cells[0], cells[1], cells[2]]
+        temp[1] = [cells[3], cells[4], cells[5]]
+        temp[2] = [cells[6], cells[7], cells[8]]
+        temp[3] = [cells[0], cells[3], cells[6]]
+        temp[4] = [cells[1], cells[4], cells[7]]
+        temp[5] = [cells[2], cells[5], cells[8]]
+        temp[6] = [cells[0], cells[4], cells[8]]
+        temp[7] = [cells[2], cells[4], cells[6]]
+        
+        return temp
     }
 }
