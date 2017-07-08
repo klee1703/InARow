@@ -92,7 +92,7 @@ class GameBoard33ViewController: GameBoardViewController {
             
             // Update statistics - add win
             gameEngine?.addWin(difficulty: (settingsModel?.difficulty)!, board: (settingsModel?.board)!, playMode: (settingsModel?.gamePlayMode)!)
-        } else if (gameEngine?.isDrawCondition())! {
+        } else if (gameEngine?.isDrawConditionForBoard())! {
             // Play draw sound
             if (settingsModel?.enableSoundEffects)! {
                 AudioManager.INSTANCE()?.draw?.play()
@@ -132,7 +132,7 @@ class GameBoard33ViewController: GameBoardViewController {
                     // Display on view and disable user interaction
                     gameModel?.resultsLabel?.text = Constants.kOpponentWinLabel
                     gameBoard33View.isUserInteractionEnabled = false
-                } else if (gameEngine?.isDrawCondition())! {
+                } else if (gameEngine?.isDrawConditionForBoard())! {
                     // Play draw sound
                     if (settingsModel?.enableSoundEffects)! {
                         AudioManager.INSTANCE()?.draw?.play()

@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol GameEngineProtocol {
     func isTicTacToe(cells: [UICellButton], cellState: EnumCellState) -> Bool
     func isDrawConditionForBoard() -> Bool
+    func isDrawConditionForRow(_ row: [UICellButton], player: EnumCellState, opponent: EnumCellState) -> Bool
     func incrementMovesPlayed()
 }

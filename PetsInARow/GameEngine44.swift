@@ -112,7 +112,7 @@ class GameEngine44: GameEngine, GameEngineProtocol {
             isDraw = true
         } else {
             for row in 0..<rows.count {
-                if !isDrawForRow(rows[row]!, player: EnumCellState.Player, opponent: EnumCellState.Opponent) {
+                if !isDrawConditionForRow(rows[row]!, player: EnumCellState.Player, opponent: EnumCellState.Opponent) {
                     isDraw = false
                     break
                 }

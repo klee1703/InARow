@@ -81,7 +81,7 @@ class GameEngine33: GameEngine, GameEngineProtocol, GameAIProtocol {
         } else {
             for row in 0..<rows.count {
                 // Check all rows
-                if !isDrawForRow(rows[row]!, player: EnumCellState.Player, opponent: EnumCellState.Opponent) {
+                if !isDrawConditionForRow(rows[row]!, player: EnumCellState.Player, opponent: EnumCellState.Opponent) {
                     // Not a draw condition, only need one row in this condition, set to 
                     // false and exit loop
                     isDraw = false

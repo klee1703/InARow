@@ -111,7 +111,7 @@ class GameEngine {
         }
     }
     
-    func isDrawForRow(_ row: [UICellButton], player: EnumCellState, opponent: EnumCellState) -> Bool {
+    func isDrawConditionForRow(_ row: [UICellButton], player: EnumCellState, opponent: EnumCellState) -> Bool {
         var cellStates: [EnumCellState] = []
         for index in 0..<row.count {
             cellStates.insert(row[index].cellState, at: index)
