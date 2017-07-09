@@ -93,7 +93,7 @@ class GameBoard44ViewController: GameBoardViewController {
             // Display on view and disable user interaction
             gameModel?.resultsLabel?.text = Constants.kPlayerWinLabel
             gameEngine?.addWin(board: (settingsModel?.board)!)
-        } else if (gameEngine?.isDrawCondition())! {
+        } else if (gameEngine?.isDrawConditionForBoard())! {
             // Play draw sound
             if (settingsModel?.enableSoundEffects)! {
                 AudioManager.INSTANCE()?.draw?.play()
@@ -119,7 +119,7 @@ class GameBoard44ViewController: GameBoardViewController {
                 // Display on view and disable user interaction
                 gameModel?.resultsLabel?.text = Constants.kOpponentWinLabel
                 gameBoard44View.isUserInteractionEnabled = false
-            } else if (gameEngine?.isDrawCondition())! {
+            } else if (gameEngine?.isDrawConditionForBoard())! {
                 // Play draw sound
                 if (settingsModel?.enableSoundEffects)! {
                     AudioManager.INSTANCE()?.draw?.play()
