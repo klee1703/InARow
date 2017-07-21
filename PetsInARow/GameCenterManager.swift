@@ -9,11 +9,15 @@
 import Foundation
 import GameKit
 
-class GameCenterManager {    
+class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDelegate {
     static var instance: GameCenterManager?
     var loginAlert: UIAlertController?
     var view: GameViewController?
     var  settings: SettingsModel?
+    var isMatchStarted = false
+    var isMatchEnded = false
+    var isEnabledGameCenter = false
+    var currentMatch: GKMatch?
     var achievementsCache: [String:GKAchievement] = [:]
         
     static func INSTANCE(view: GameViewController, settings: SettingsModel) -> GameCenterManager? {
@@ -28,15 +32,104 @@ class GameCenterManager {
         self.view = view
         self.settings = settings
     }
+
+    // Find a match using real-time matchmaking
+    func findMatch(minPlayers: Int, maxPlayers: Int, viewController: UIViewController, delegate: GKMatchDelegate) {
+        if self.isEnabledGameCenter {
+            // Create match request for desired number of players
+            let matchRequest = GKMatchRequest()
+            matchRequest.minPlayers = minPlayers
+            matchRequest.maxPlayers = maxPlayers
+            
+            // Present matchmaker user interface and set its delegate
+            let matchmakerViewController = GKMatchmakerViewController(matchRequest: matchRequest)
+            matchmakerViewController?.matchmakerDelegate = self
+            
+            // Then present interface
+            viewController.present(matchmakerViewController!, animated: true, completion: nil)
+        }
+    }
+    
+    func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
+        // First dismiss current view controller
+        self.currentMatch = match
+        
+        // Set match started
+        self.isMatchStarted = true
+        
+        // Process data received from opponent - update board state, etc.
+    }
+    
+    func matchmakerViewControllerWasCancelled(_ viewController: GKMatchmakerViewController) {
+        // Dismiss view controller
+        viewController.dismiss(animated: true, completion: nil)
+        
+        // Set match ended
+        self.isMatchEnded = true
+    }
+
+    // Player connected to/disconnected from match
+    func match(_ match: GKMatch, player: GKPlayer, didChange state: GKPlayerConnectionState) {
+        //
+        switch state {
+        case GKPlayerConnectionState.stateConnected:
+            // Handle connected condition
+            break
+        case GKPlayerConnectionState.stateDisconnected:
+            // Handle disconnected condition
+            break
+        case GKPlayerConnectionState.stateUnknown:
+            break
+        }
+        
+        if !self.isMatchStarted && (match.expectedPlayerCount == 0) {
+            // Have number of expected players, start match!
+            self.isMatchStarted = true
+            
+            // Perform match negotiation
+        }
+    }
+    
+    // Matchmaking has failed - can't connect to other players; an error is supplied
+    public func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error) {
+        // Dismiss view controller
+        viewController.dismiss(animated: true, completion: nil)
+        
+            let loginError = UIAlertController(title: Constants.kGCMatchmakingFailureErrorTitle, message: error.localizedDescription, preferredStyle: .alert)
+            loginError.addAction(UIAlertAction(title: "OK", style: .default , handler: nil))
+            self.view?.present(loginError, animated: true, completion: nil)
+        
+    }
+
+    public func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
+        // Dismiss view controller
+        viewController.dismiss(animated: true, completion: nil)
+        
+        // Set current match accordingly
+        self.currentMatch = match
+        
+    }
     
     // Authenticate player for Game Center functionality (achievements, leaderboards, multi-player)
     func authenticateLocalPlayer() {
         let localPlayer = GKLocalPlayer.localPlayer()
         if !localPlayer.isAuthenticated {
+            self.isEnabledGameCenter = false
+            settings?.enableGameCenter = self.isEnabledGameCenter
             localPlayer.authenticateHandler = { (loginAlert, error) -> Void in
                 if localPlayer.isAuthenticated {
+                    // Set game center enabled
+                    self.isEnabledGameCenter = true
+                    self.settings?.enableGameCenter = self.isEnabledGameCenter
                     self.view?.displayName = localPlayer.displayName!
+                    
+                    // Intialize game center (load achievements, etc.)
                     self.initializeGameCenter(player: localPlayer)
+                    
+                    // Then find a match
+                    if self.settings?.gamePlayMode == EnumPlayMode.MultiPlayer {
+                        self.findMatch(minPlayers: Constants.kGCMatchMakingMinPlayers, maxPlayers: Constants.kGCMatchMakingMaxPlayers, viewController: self.view!, delegate: self)
+                        }
                 }
                 else if self.loginAlert != nil {
                     self.view?.present(self.loginAlert!, animated: true, completion: nil)
@@ -47,6 +140,11 @@ class GameCenterManager {
                         self.view?.present(loginError, animated: true, completion: nil)
                     }
                 }
+            }
+        } else {
+            // Authenticated, find match if in multiplayer mode
+            if self.settings?.gamePlayMode == EnumPlayMode.MultiPlayer {
+                self.findMatch(minPlayers: Constants.kGCMatchMakingMinPlayers, maxPlayers: Constants.kGCMatchMakingMaxPlayers, viewController: self.view!, delegate: self)
             }
         }
     }

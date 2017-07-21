@@ -53,7 +53,8 @@ class GameBoardViewController: UIViewController {
             cell.setImage(nil, for: .normal)
         }
     }
-    
+ 
+    // Send data for multiplayer game!
     func send(cell: UICellButton, petImage: UIImage?, opponentImage: UIImage?, boardView: UIView) {
         self.playLabel?.image = opponentImage
         
@@ -66,6 +67,11 @@ class GameBoardViewController: UIViewController {
             boardView.isUserInteractionEnabled = true
             self.playLabel?.image = petImage
         }
+    }
+    
+    // Receive data for multiplayer game!
+    func receive() {
+        
     }
     
     func stopAnimation(cell: UICellButton) {

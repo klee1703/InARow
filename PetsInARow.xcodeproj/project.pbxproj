@@ -107,6 +107,14 @@
 		796D08261EF0CAA200EE131D /* UICellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796D08241EF0CAA200EE131D /* UICellButton.swift */; };
 		79726F911EFE31E100C66E61 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79726F901EFE31E100C66E61 /* Constants.swift */; };
 		79726F921EFE31E100C66E61 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79726F901EFE31E100C66E61 /* Constants.swift */; };
+		79A02B2F1F201A3500A5B045 /* iPhoneApp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B2E1F201A3500A5B045 /* iPhoneApp@2x.png */; };
+		79A02B351F201A5400A5B045 /* iPhoneApp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B301F201A5400A5B045 /* iPhoneApp@3x.png */; };
+		79A02B361F201A5400A5B045 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B311F201A5400A5B045 /* Settings@2x.png */; };
+		79A02B371F201A5400A5B045 /* Settings@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B321F201A5400A5B045 /* Settings@3x.png */; };
+		79A02B381F201A5400A5B045 /* Spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B331F201A5400A5B045 /* Spotlight@2x.png */; };
+		79A02B391F201A5400A5B045 /* Spotlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B341F201A5400A5B045 /* Spotlight@3x.png */; };
+		79A02B3C1F201B3A00A5B045 /* Notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B3A1F201B3A00A5B045 /* Notification@2x.png */; };
+		79A02B3D1F201B3A00A5B045 /* Notification@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B3B1F201B3A00A5B045 /* Notification@3x.png */; };
 		79AA38511EFF82AC00BDEE61 /* cat1.png in Resources */ = {isa = PBXBuildFile; fileRef = 79AA384E1EFF82AC00BDEE61 /* cat1.png */; };
 		79AA38521EFF82AC00BDEE61 /* cat1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79AA384F1EFF82AC00BDEE61 /* cat1@2x.png */; };
 		79AA38531EFF82AC00BDEE61 /* cat1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79AA38501EFF82AC00BDEE61 /* cat1@3x.png */; };
@@ -230,6 +238,14 @@
 		796D08211EF0C9BA00EE131D /* EnumCellState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCellState.swift; sourceTree = "<group>"; };
 		796D08241EF0CAA200EE131D /* UICellButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICellButton.swift; sourceTree = "<group>"; };
 		79726F901EFE31E100C66E61 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		79A02B2E1F201A3500A5B045 /* iPhoneApp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhoneApp@2x.png"; path = "../iPhoneApp@2x.png"; sourceTree = "<group>"; };
+		79A02B301F201A5400A5B045 /* iPhoneApp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhoneApp@3x.png"; path = "../iPhoneApp@3x.png"; sourceTree = "<group>"; };
+		79A02B311F201A5400A5B045 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings@2x.png"; path = "../Settings@2x.png"; sourceTree = "<group>"; };
+		79A02B321F201A5400A5B045 /* Settings@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings@3x.png"; path = "../Settings@3x.png"; sourceTree = "<group>"; };
+		79A02B331F201A5400A5B045 /* Spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Spotlight@2x.png"; path = "../Spotlight@2x.png"; sourceTree = "<group>"; };
+		79A02B341F201A5400A5B045 /* Spotlight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Spotlight@3x.png"; path = "../Spotlight@3x.png"; sourceTree = "<group>"; };
+		79A02B3A1F201B3A00A5B045 /* Notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Notification@2x.png"; path = "../Notification@2x.png"; sourceTree = "<group>"; };
+		79A02B3B1F201B3A00A5B045 /* Notification@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Notification@3x.png"; path = "../Notification@3x.png"; sourceTree = "<group>"; };
 		79AA384E1EFF82AC00BDEE61 /* cat1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cat1.png; sourceTree = "<group>"; };
 		79AA384F1EFF82AC00BDEE61 /* cat1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat1@2x.png"; sourceTree = "<group>"; };
 		79AA38501EFF82AC00BDEE61 /* cat1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat1@3x.png"; sourceTree = "<group>"; };
@@ -390,6 +406,15 @@
 			name = GameCenter;
 			sourceTree = "<group>";
 		};
+		795F98191F20189200CF8ABB /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				79A02B3A1F201B3A00A5B045 /* Notification@2x.png */,
+				79A02B3B1F201B3A00A5B045 /* Notification@3x.png */,
+			);
+			name = icons;
+			sourceTree = "<group>";
+		};
 		796A51DA1EE8C8C500EED8D5 /* persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -507,6 +532,13 @@
 				79881CE61EE06F750086FA0D /* Subclass Views */,
 				791C38071ED94FCB00BA4F16 /* boards */,
 				79F71A771EBD3BB60067D98C /* Assets.xcassets */,
+				79A02B2E1F201A3500A5B045 /* iPhoneApp@2x.png */,
+				79A02B301F201A5400A5B045 /* iPhoneApp@3x.png */,
+				79A02B311F201A5400A5B045 /* Settings@2x.png */,
+				79A02B321F201A5400A5B045 /* Settings@3x.png */,
+				79A02B331F201A5400A5B045 /* Spotlight@2x.png */,
+				79A02B341F201A5400A5B045 /* Spotlight@3x.png */,
+				795F98191F20189200CF8ABB /* icons */,
 				79144E431EEDE1C4006B71F0 /* animals */,
 				796C58D01EC6B5AA0034CF94 /* art */,
 				7926FED81F02B829002DC70F /* audio */,
@@ -644,6 +676,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79144E3D1EEDE1AA006B71F0 /* Owl.png in Resources */,
+				79A02B381F201A5400A5B045 /* Spotlight@2x.png in Resources */,
 				79144E331EEDE1AA006B71F0 /* Crocodile.png in Resources */,
 				79144E411EEDE1AA006B71F0 /* Tiger.png in Resources */,
 				792D80821F018AC900A0CCAE /* settings-icon.png in Resources */,
@@ -651,8 +684,10 @@
 				791C380C1EDA5D0800BA4F16 /* Help.html in Resources */,
 				79AA38531EFF82AC00BDEE61 /* cat1@3x.png in Resources */,
 				79144E2F1EEDE1AA006B71F0 /* Cat.png in Resources */,
+				79A02B3D1F201B3A00A5B045 /* Notification@3x.png in Resources */,
 				791C38241EDFC6D200BA4F16 /* settings@2x.png in Resources */,
 				79144E1C1EECE4D1006B71F0 /* TTT3x3.png in Resources */,
+				79A02B391F201A5400A5B045 /* Spotlight@3x.png in Resources */,
 				796C58CF1EC6B2770034CF94 /* stats@3x.png in Resources */,
 				79AA38521EFF82AC00BDEE61 /* cat1@2x.png in Resources */,
 				791C38221EDFC6D200BA4F16 /* settings.png in Resources */,
@@ -664,17 +699,20 @@
 				79E5940D1EEC650000003250 /* clear.png in Resources */,
 				79144E311EEDE1AA006B71F0 /* Computer.png in Resources */,
 				79144E451EEDE339006B71F0 /* Dog.png in Resources */,
+				79A02B2F1F201A3500A5B045 /* iPhoneApp@2x.png in Resources */,
 				7948C5951ED673690028C062 /* wrench@3x.png in Resources */,
 				7926FED11F02B721002DC70F /* clapping.mp3 in Resources */,
 				79F71A7B1EBD3BB60067D98C /* LaunchScreen.storyboard in Resources */,
 				791C38121EDBA40E00BA4F16 /* FAQs.html in Resources */,
 				79F71A781EBD3BB60067D98C /* Assets.xcassets in Resources */,
 				79144E1A1EECE26F006B71F0 /* TTT4x4.png in Resources */,
+				79A02B371F201A5400A5B045 /* Settings@3x.png in Resources */,
 				7948C5941ED673690028C062 /* wrench@2x.png in Resources */,
 				79E5940F1EEC650000003250 /* clear@3x.png in Resources */,
 				792D80841F018AC900A0CCAE /* settings-icon@3x.png in Resources */,
 				7926FED51F02B721002DC70F /* GlassPlate1.wav in Resources */,
 				7948C5911ED673510028C062 /* wrench.png in Resources */,
+				79A02B351F201A5400A5B045 /* iPhoneApp@3x.png in Resources */,
 				79144E3B1EEDE1AA006B71F0 /* Giraffe.png in Resources */,
 				79E5940E1EEC650000003250 /* clear@2x.png in Resources */,
 				79144E391EEDE1AA006B71F0 /* Elephant.png in Resources */,
@@ -682,8 +720,10 @@
 				79E5941F1EEC9CD400003250 /* TTT3x3@2x.png in Resources */,
 				7926FECF1F02B721002DC70F /* oh_no.wav in Resources */,
 				7926FECB1F02B721002DC70F /* clapping.wav in Resources */,
+				79A02B361F201A5400A5B045 /* Settings@2x.png in Resources */,
 				796C58C81EC6B2770034CF94 /* faq@2x.png in Resources */,
 				79144E351EEDE1AA006B71F0 /* Cyclops.png in Resources */,
+				79A02B3C1F201B3A00A5B045 /* Notification@2x.png in Resources */,
 				796C58C71EC6B2770034CF94 /* faq.png in Resources */,
 				7926FECD1F02B721002DC70F /* boing.wav in Resources */,
 				79AA38511EFF82AC00BDEE61 /* cat1.png in Resources */,

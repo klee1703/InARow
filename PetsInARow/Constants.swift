@@ -54,5 +54,8 @@ struct Constants {
     static let kGCReportAchievementsErrorTitle = "Error reporting achievements"
     static let kGCSubmitAchievementErrorTitle = "Error submitting achievements"
     static let kGCReportAchievementErrorTitle = "Error reporting achievements"
+    static let kGCMatchmakingFailureErrorTitle = "Error with Game Center matchmaking"
+    static let kGCMatchMakingMinPlayers = 2
+    static let kGCMatchMakingMaxPlayers = 2
 
 }
