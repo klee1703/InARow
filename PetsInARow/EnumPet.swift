@@ -18,8 +18,10 @@ enum EnumPet: String {
     case Penguin = "Penguin"
     case Tiger = "Tiger"
     case Cyclops = "Cyclops"
+    case TRex = "TRex"
+    case Snail = "Snail"
     
     static func values() -> [String] {
-        return [Cat.rawValue, Dog.rawValue, Owl.rawValue, Giraffe.rawValue, Elephant.rawValue, Crocodile.rawValue, Tiger.rawValue, Penguin.rawValue, Cyclops.rawValue]
+        return [Cat.rawValue, Dog.rawValue, Owl.rawValue, Giraffe.rawValue, Elephant.rawValue, Crocodile.rawValue, Tiger.rawValue, Penguin.rawValue, Cyclops.rawValue, TRex.rawValue, Snail.rawValue]
     }
 }

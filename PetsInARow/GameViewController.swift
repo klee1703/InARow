@@ -17,11 +17,13 @@ class GameViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var beginResumeGame: UIButton!
     @IBOutlet weak var activePet: UIImageView!
+    @IBOutlet weak var match: UIButton!
     
     // Variables
     var isGameInPlay = false
     var gameBoard3x3: [String] = [String]()
     var gameBoard4x4: [String] = [String]()
+    var gameCenterManager: GameCenterManager?
 
     var tbvc: GameTabBarController?
     var gbcvc: GameBoardContainerViewController?
@@ -46,9 +48,10 @@ class GameViewController: UIViewController {
         gameModel = appDelegate?.game
         gameModel?.playLabel = activePet
         gameModel?.resultsLabel = resultsLabel
+        gameCenterManager = GameCenterManager.INSTANCE(view: self, settings: settingsModel!, game: gameModel!)
         
         // Authenticate
-        GameCenterManager.INSTANCE(view: self, settings: settingsModel!)?.authenticateLocalPlayer()
+        gameCenterManager?.authenticateLocalPlayer()
         
         // Instantiate login player
         loginAlert = UIAlertController(title: Constants.kGCLoginRequiredTitle, message: Constants.kGCLoginRequiredMessage, preferredStyle: .actionSheet)
@@ -64,7 +67,7 @@ class GameViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // Authenticate
-        GameCenterManager.INSTANCE(view: self, settings: settingsModel!)?.authenticateLocalPlayer()
+        GameCenterManager.INSTANCE(view: self, settings: settingsModel!, game: gameModel!)?.authenticateLocalPlayer()
 
         // Set player label based on play mode and current player
         if EnumPlayMode.SinglePlayer == settingsModel?.gamePlayMode {
@@ -86,6 +89,13 @@ class GameViewController: UIViewController {
             doBegin()
             settingsModel?.setupGame = false
         }
+        
+        // Setup match button label if necessary
+        if settingsModel?.gamePlayMode == EnumPlayMode.MultiPlayer {
+            match.setTitle("End Match", for: .normal)
+        } else {
+            match.setTitle("", for: .normal)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,6 +108,8 @@ class GameViewController: UIViewController {
     }
 
     func setup() {
+        // End multiplayer match
+//        gameModel?.match.parti
         print("Setup for New Game")
         // Initialize, game not started yet
         self.isGameInPlay = false

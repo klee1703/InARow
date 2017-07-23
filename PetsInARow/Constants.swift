@@ -10,7 +10,7 @@ import UIKit
 
 struct Constants {
     static let kArc4RandomMax = 0x100000000
-    static let kComputerImageFile = "Computer.png"
+    static let kComputerImageFile = "Robot.png"
 
     // Game label text
     static let kStartGameLabel = "Let's Begin"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -38,8 +38,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmw-Cd-shq">
-                                <rect key="frame" x="318" y="40" width="41" height="30"/>
-                                <state key="normal" title="Setup"/>
+                                <rect key="frame" x="285" y="40" width="74" height="30"/>
+                                <state key="normal" title="End Match"/>
                                 <connections>
                                     <action selector="newGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Aj3-Pt-X5s"/>
                                 </connections>
@@ -92,6 +92,7 @@
                         <outlet property="activePet" destination="xUP-pF-z3r" id="ixy-Ej-VEi"/>
                         <outlet property="beginResumeGame" destination="KWK-tE-XBQ" id="M0q-6J-rqh"/>
                         <outlet property="containerView" destination="F4D-2K-FPJ" id="Omj-TX-eY4"/>
+                        <outlet property="match" destination="Pmw-Cd-shq" id="jam-Ol-eLY"/>
                         <outlet property="resultsLabel" destination="ept-ax-hAh" id="Wow-Ew-An8"/>
                     </connections>
                 </viewController>

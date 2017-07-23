@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit
 
 class GameBoardViewController: UIViewController {
     var pet: String?
@@ -67,6 +68,20 @@ class GameBoardViewController: UIViewController {
             boardView.isUserInteractionEnabled = true
             self.playLabel?.image = petImage
         }
+
+        // Create a GKMatch instance for sending data
+        let match = gameModel?.match
+        
+        // Create a data instance and populate with data
+        var data = Data()
+        
+        do {
+//            try match?.sendData(toAllPlayers: data, with: GKMatchSendDataMode.reliable)
+            match?.saveCurrentTurn(withMatch: data, completionHandler: nil)
+        } catch {
+            
+        }
+        
     }
     
     // Receive data for multiplayer game!

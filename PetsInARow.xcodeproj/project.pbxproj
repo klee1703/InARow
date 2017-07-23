@@ -141,6 +141,9 @@
 		79E5940F1EEC650000003250 /* clear@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79E5940C1EEC650000003250 /* clear@3x.png */; };
 		79E594171EEC90A500003250 /* TTT4x4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79E594151EEC90A500003250 /* TTT4x4@2x.png */; };
 		79E5941F1EEC9CD400003250 /* TTT3x3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79E5941D1EEC9CD400003250 /* TTT3x3@2x.png */; };
+		79F413D01F2523BF00B56838 /* Snail.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F413CE1F2523BF00B56838 /* Snail.png */; };
+		79F413D31F25241600B56838 /* TRex.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F413D21F25241600B56838 /* TRex.png */; };
+		79F413D51F2524B900B56838 /* Robot.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F413D41F2524B900B56838 /* Robot.png */; };
 		79F71A6F1EBD3BB60067D98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71A6E1EBD3BB60067D98C /* AppDelegate.swift */; };
 		79F71A711EBD3BB60067D98C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71A701EBD3BB60067D98C /* SettingsViewController.swift */; };
 		79F71A731EBD3BB60067D98C /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71A721EBD3BB60067D98C /* StatisticsViewController.swift */; };
@@ -263,6 +266,9 @@
 		79E5940C1EEC650000003250 /* clear@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "clear@3x.png"; path = "../clear@3x.png"; sourceTree = "<group>"; };
 		79E594151EEC90A500003250 /* TTT4x4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TTT4x4@2x.png"; path = "../TTT4x4@2x.png"; sourceTree = "<group>"; };
 		79E5941D1EEC9CD400003250 /* TTT3x3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TTT3x3@2x.png"; path = "../TTT3x3@2x.png"; sourceTree = "<group>"; };
+		79F413CE1F2523BF00B56838 /* Snail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Snail.png; path = PetsInARow/Snail.png; sourceTree = "<group>"; };
+		79F413D21F25241600B56838 /* TRex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TRex.png; path = animals/TRex.png; sourceTree = "<group>"; };
+		79F413D41F2524B900B56838 /* Robot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Robot.png; path = animals/Robot.png; sourceTree = "<group>"; };
 		79F71A6B1EBD3BB60067D98C /* PetsInARow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsInARow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F71A6E1EBD3BB60067D98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79F71A701EBD3BB60067D98C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +318,9 @@
 		79144E431EEDE1C4006B71F0 /* animals */ = {
 			isa = PBXGroup;
 			children = (
+				79F413D41F2524B900B56838 /* Robot.png */,
+				79F413D21F25241600B56838 /* TRex.png */,
+				79F413CE1F2523BF00B56838 /* Snail.png */,
 				79144E251EEDE1AA006B71F0 /* Cat.png */,
 				79144E261EEDE1AA006B71F0 /* Computer.png */,
 				79144E271EEDE1AA006B71F0 /* Crocodile.png */,
@@ -697,6 +706,7 @@
 				792D808F1F018D5A00A0CCAE /* tictactoe@2x.png in Resources */,
 				796C58CC1EC6B2770034CF94 /* settings@3x.png in Resources */,
 				79E5940D1EEC650000003250 /* clear.png in Resources */,
+				79F413D51F2524B900B56838 /* Robot.png in Resources */,
 				79144E311EEDE1AA006B71F0 /* Computer.png in Resources */,
 				79144E451EEDE339006B71F0 /* Dog.png in Resources */,
 				79A02B2F1F201A3500A5B045 /* iPhoneApp@2x.png in Resources */,
@@ -710,6 +720,7 @@
 				7948C5941ED673690028C062 /* wrench@2x.png in Resources */,
 				79E5940F1EEC650000003250 /* clear@3x.png in Resources */,
 				792D80841F018AC900A0CCAE /* settings-icon@3x.png in Resources */,
+				79F413D31F25241600B56838 /* TRex.png in Resources */,
 				7926FED51F02B721002DC70F /* GlassPlate1.wav in Resources */,
 				7948C5911ED673510028C062 /* wrench.png in Resources */,
 				79A02B351F201A5400A5B045 /* iPhoneApp@3x.png in Resources */,
@@ -718,6 +729,7 @@
 				79144E391EEDE1AA006B71F0 /* Elephant.png in Resources */,
 				79144E3F1EEDE1AA006B71F0 /* Penguin.png in Resources */,
 				79E5941F1EEC9CD400003250 /* TTT3x3@2x.png in Resources */,
+				79F413D01F2523BF00B56838 /* Snail.png in Resources */,
 				7926FECF1F02B721002DC70F /* oh_no.wav in Resources */,
 				7926FECB1F02B721002DC70F /* clapping.wav in Resources */,
 				79A02B361F201A5400A5B045 /* Settings@2x.png in Resources */,

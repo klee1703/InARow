@@ -14,23 +14,25 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
     var loginAlert: UIAlertController?
     var view: GameViewController?
     var  settings: SettingsModel?
+    var game: GameModel?
     var isMatchStarted = false
     var isMatchEnded = false
     var isEnabledGameCenter = false
     var currentMatch: GKMatch?
     var achievementsCache: [String:GKAchievement] = [:]
         
-    static func INSTANCE(view: GameViewController, settings: SettingsModel) -> GameCenterManager? {
+    static func INSTANCE(view: GameViewController, settings: SettingsModel, game: GameModel) -> GameCenterManager? {
         if nil == instance {
-            instance = GameCenterManager(view: view, settings: settings)
+            instance = GameCenterManager(view: view, settings: settings, game: game)
         }
         
         return instance
     }
 
-    init(view: GameViewController, settings: SettingsModel) {
+    init(view: GameViewController, settings: SettingsModel, game: GameModel) {
         self.view = view
         self.settings = settings
+        self.game = game
     }
 
     // Find a match using real-time matchmaking
@@ -82,7 +84,7 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
             break
         }
         
-        if !self.isMatchStarted && (match.expectedPlayerCount == 0) {
+        if !self.isMatchStarted {
             // Have number of expected players, start match!
             self.isMatchStarted = true
             
@@ -91,7 +93,7 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
     }
     
     // Matchmaking has failed - can't connect to other players; an error is supplied
-    public func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error) {
+    public func turnBasedMatchmakerViewController(_ viewController: GKTurnBasedMatchmakerViewController, didFailWithError error: Error) {
         // Dismiss view controller
         viewController.dismiss(animated: true, completion: nil)
         
@@ -101,7 +103,7 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
         
     }
 
-    public func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
+    @nonobjc func turnBasedMatchmakerViewController(_ viewController: GKTurnBasedMatchmakerViewController, didFind match: GKTurnBasedMatch) {
         // Dismiss view controller
         viewController.dismiss(animated: true, completion: nil)
         
