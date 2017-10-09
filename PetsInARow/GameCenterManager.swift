@@ -9,7 +9,7 @@
 import Foundation
 import GameKit
 
-class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDelegate {
+class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDelegate, GKLocalPlayerListener {
     static var instance: GameCenterManager?
     var loginAlert: UIAlertController?
     var view: GameViewController?
@@ -35,6 +35,10 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
         self.game = game
     }
 
+    /**
+     * GKMatchDelegate methods
+     */
+    
     // Find a match using real-time matchmaking
     func findMatch(minPlayers: Int, maxPlayers: Int, viewController: UIViewController, delegate: GKMatchDelegate) {
         if self.isEnabledGameCenter {
@@ -51,7 +55,8 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
             viewController.present(matchmakerViewController!, animated: true, completion: nil)
         }
     }
-    
+
+    // Receive and process data
     func match(_ match: GKMatch, didReceive data: Data, fromRemotePlayer player: GKPlayer) {
         // First dismiss current view controller
         self.currentMatch = match
@@ -60,8 +65,12 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
         self.isMatchStarted = true
         
         // Process data received from opponent - update board state, etc.
+        view?.gbcvc?.gbvc?.receive(match: match, data: data, remotePlayer: player)
     }
-    
+
+    /**
+     * GKMatchmakerViewControllerDelegate methods
+     */
     func matchmakerViewControllerWasCancelled(_ viewController: GKMatchmakerViewController) {
         // Dismiss view controller
         viewController.dismiss(animated: true, completion: nil)
@@ -76,11 +85,14 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
         switch state {
         case GKPlayerConnectionState.stateConnected:
             // Handle connected condition
+            print("Player \(player.alias ?? "Unknown") connected")
             break
         case GKPlayerConnectionState.stateDisconnected:
             // Handle disconnected condition
+            print("Player \(player.alias ?? "Unknown") connected")
             break
         case GKPlayerConnectionState.stateUnknown:
+            print("Player \(player.alias ?? "Unknown") state unknown")
             break
         }
         
@@ -93,7 +105,7 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
     }
     
     // Matchmaking has failed - can't connect to other players; an error is supplied
-    public func turnBasedMatchmakerViewController(_ viewController: GKTurnBasedMatchmakerViewController, didFailWithError error: Error) {
+    public func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFailWithError error: Error) {
         // Dismiss view controller
         viewController.dismiss(animated: true, completion: nil)
         
@@ -102,13 +114,20 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
             self.view?.present(loginError, animated: true, completion: nil)
         
     }
-
-    @nonobjc func turnBasedMatchmakerViewController(_ viewController: GKTurnBasedMatchmakerViewController, didFind match: GKTurnBasedMatch) {
+    
+    // Match found, set GKMatch accordingly
+    public func matchmakerViewController(_ viewController: GKMatchmakerViewController, didFind match: GKMatch) {
         // Dismiss view controller
         viewController.dismiss(animated: true, completion: nil)
-        
+
         // Set current match accordingly
         self.currentMatch = match
+    }
+
+    /**
+     * GKLocalPlayerListener methods
+     */
+    func player(_ player: GKPlayer, didAccept invite: GKInvite) {
         
     }
     

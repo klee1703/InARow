@@ -9,5 +9,5 @@
 import UIKit
 
 protocol GameAIProtocol {
-    func markCell(image: UIImage)
+    func markCell(image: UIImage, settings: SettingsModel, statistics: StatisticsModel)
 }

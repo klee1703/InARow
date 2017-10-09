@@ -62,7 +62,7 @@ class GameEngineAI {
     }
     
     // Mark empty cell on board grid
-    func markBoardCell(image: UIImage) {
+    func markBoardCell(image: UIImage, settings: SettingsModel, statistics: StatisticsModel) {
         // Initialize
         var bestValue = -kEvaluateMax
         var bestRowPosition = 0
@@ -336,12 +336,12 @@ class GameEngineAI {
     }
     
     // Returns true if a random number is less than input value
-    func isRandomNumbeYes() -> Bool {
+    func isRandomNumberYes() -> Bool {
         return Double(arc4random() / UInt32(Constants.kArc4RandomMax)) < 0.7
     }
     
     // Returns true if a random number is less than input value
-    func isRandomNumbeYes(difficulty: EnumLevelOfDifficulty) -> Bool {
+    func isRandomNumberYes(difficulty: EnumLevelOfDifficulty) -> Bool {
         let randomNumber = Double(arc4random() / UInt32(Constants.kArc4RandomMax))
         switch difficulty {
         case .Easy:
@@ -353,7 +353,7 @@ class GameEngineAI {
         }
     }
     
-    // Returns true if number is less than wins
+    // Returns true if number is less than the current number of wins for the player
     func isNumberLessThan(wins: UInt) -> Bool {
         return arc4random_uniform(10) < UInt32(wins)
     }
@@ -370,16 +370,16 @@ class GameEngineAI {
         let randomNumber = arc4random_uniform(UInt32(10))
         switch difficulty {
         case .Easy:
-            return randomNumber <= 3
+            return randomNumber <= 5
         case .Medium:
-            return randomNumber <= 6
+            return randomNumber <= 7
         case .Hard:
-            return randomNumber <= 8
+            return randomNumber <= 9
         }
     }
     
     // Return true if the a number is less than an input number or a number bound
-    // by the degree of difficulty ofr the game
+    // by the degree of difficulty for the game
     func isNumberLessThan(wins: UInt32, difficulty: EnumLevelOfDifficulty) -> Bool {
         return isNumberLessThan(wins: wins) || isNumberLessThan(difficulty: difficulty)
     }
@@ -423,7 +423,7 @@ class GameEngineAI {
             (boardGrid[0][0]!.cellState == .Opponent) &&
             (boardGrid[2][0]!.cellState == .Player) &&
             (boardGrid[0][2]!.cellState == .Player) &&
-            (boardGrid[2][0]!.cellState == .None) &&
+            (boardGrid[2][2]!.cellState == .None) &&
             (boardGrid[1][0]!.cellState == .None) &&
             (boardGrid[0][1]!.cellState == .None) &&
             (boardGrid[2][1]!.cellState == .None) &&
@@ -438,14 +438,14 @@ class GameEngineAI {
          *    - - X
          */
         if (boardGrid[1][1]!.cellState == .Opponent) &&
-            (boardGrid[2][0]!.cellState == .Opponent) &&
+            (boardGrid[0][2]!.cellState == .Opponent) &&
             (boardGrid[0][0]!.cellState == .Player) &&
             (boardGrid[2][2]!.cellState == .Player) &&
             (boardGrid[1][2]!.cellState == .None) &&
             (boardGrid[1][0]!.cellState == .None) &&
             (boardGrid[0][1]!.cellState == .None) &&
             (boardGrid[2][1]!.cellState == .None) &&
-            (boardGrid[0][2]!.cellState == .None) {
+            (boardGrid[2][0]!.cellState == .None) {
             return isNumberLessThan(wins: UInt32(wins), difficulty: difficulty)
         }
         
@@ -545,15 +545,15 @@ class GameEngineAI {
          *    - X -
          *    - X O
          */
-        if (boardGrid[1][1]!.cellState == .Opponent) &&
-            (boardGrid[2][0]!.cellState == .Opponent) &&
-            (boardGrid[0][0]!.cellState == .Player) &&
-            (boardGrid[2][2]!.cellState == .Player) &&
-            (boardGrid[1][2]!.cellState == .None) &&
-            (boardGrid[1][0]!.cellState == .None) &&
+        if (boardGrid[0][2]!.cellState == .Opponent) &&
+            (boardGrid[2][2]!.cellState == .Opponent) &&
+            (boardGrid[1][1]!.cellState == .Player) &&
+            (boardGrid[2][1]!.cellState == .Player) &&
+            (boardGrid[0][0]!.cellState == .None) &&
             (boardGrid[0][1]!.cellState == .None) &&
-            (boardGrid[2][1]!.cellState == .None) &&
-            (boardGrid[0][2]!.cellState == .None) {
+            (boardGrid[1][0]!.cellState == .None) &&
+            (boardGrid[1][2]!.cellState == .None) &&
+            (boardGrid[2][0]!.cellState == .None) {
             return isNumberLessThan(wins: UInt32(wins), difficulty: difficulty)
         }
         
@@ -563,15 +563,15 @@ class GameEngineAI {
          *    - X X
          *    O - -
          */
-        if (boardGrid[1][1]!.cellState == .Opponent) &&
+        if (boardGrid[0][0]!.cellState == .Opponent) &&
             (boardGrid[2][0]!.cellState == .Opponent) &&
-            (boardGrid[0][0]!.cellState == .Player) &&
-            (boardGrid[2][2]!.cellState == .Player) &&
-            (boardGrid[1][2]!.cellState == .None) &&
-            (boardGrid[1][0]!.cellState == .None) &&
+            (boardGrid[1][1]!.cellState == .Player) &&
+            (boardGrid[1][2]!.cellState == .Player) &&
             (boardGrid[0][1]!.cellState == .None) &&
+            (boardGrid[0][2]!.cellState == .None) &&
+            (boardGrid[1][0]!.cellState == .None) &&
             (boardGrid[2][1]!.cellState == .None) &&
-            (boardGrid[0][2]!.cellState == .None) {
+            (boardGrid[2][2]!.cellState == .None) {
             return isNumberLessThan(wins: UInt32(wins), difficulty: difficulty)
         }
         
@@ -603,11 +603,11 @@ class GameEngineAI {
             (boardGrid[1][1]!.cellState == .Opponent) &&
             (boardGrid[2][0]!.cellState == .Opponent) &&
             (boardGrid[0][2]!.cellState == .Player) &&
-            (boardGrid[2][2]!.cellState == .Player) &&
             (boardGrid[1][0]!.cellState == .Player) &&
+            (boardGrid[2][2]!.cellState == .Player) &&
             (boardGrid[0][0]!.cellState == .None) &&
             (boardGrid[1][2]!.cellState == .None) &&
-            (boardGrid[2][0]!.cellState == .None) {
+            (boardGrid[2][1]!.cellState == .None) {
             return isNumberLessThan(wins: UInt32(wins), difficulty: difficulty)
         }
         
@@ -635,12 +635,12 @@ class GameEngineAI {
          *    X O -
          *    - O X
          */
-        if (boardGrid[0][2]!.cellState == .Opponent) &&
-            (boardGrid[1][0]!.cellState == .Opponent) &&
-            (boardGrid[2][2]!.cellState == .Opponent) &&
-            (boardGrid[0][0]!.cellState == .Player) &&
-            (boardGrid[1][1]!.cellState == .Player) &&
-            (boardGrid[2][1]!.cellState == .Player) &&
+        if (boardGrid[0][0]!.cellState == .Opponent) &&
+            (boardGrid[1][1]!.cellState == .Opponent) &&
+            (boardGrid[2][1]!.cellState == .Opponent) &&
+            (boardGrid[0][2]!.cellState == .Player) &&
+            (boardGrid[1][0]!.cellState == .Player) &&
+            (boardGrid[2][2]!.cellState == .Player) &&
             (boardGrid[0][1]!.cellState == .None) &&
             (boardGrid[1][2]!.cellState == .None) &&
             (boardGrid[2][0]!.cellState == .None) {

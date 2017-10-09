@@ -116,8 +116,8 @@ class GameBoard33ViewController: GameBoardViewController {
                 // Then mark the board using AI engine
                 aiMarkCell(cells: cells)
             } else {
-                // MultiPlayer, send message to enable opponent to mark board
-                send(cell: cell, petImage: labelPetImage, opponentImage: labelOpponentImage, boardView: gameBoard33View)
+                // MultiPlayer, send message with current board state, enabling opponent to mark board
+                send(cellIndex: boardIndex(cell: cell, cells: cells), playerImageFile: (settingsModel?.yourPet)! + ".png", opponentImageFile: (settingsModel?.opponentsPet)! + ".png", gameBoard: EnumGameBoard.TTBoard, boardView: gameBoard33View)
                 
                 // Update the board state
                 gameEngine?.incrementMovesPlayed()
@@ -171,7 +171,7 @@ class GameBoard33ViewController: GameBoardViewController {
             // Your code with delay
             // Use AI engine to mark best available cell
             print("AI marked cell")
-            self.gameEngine?.markCell(image: self.labelComputerImage)
+            self.gameEngine?.markCell(image: self.labelComputerImage, settings: self.settingsModel!, statistics: self.statisticsModel!)
             super.playLabel?.image = self.labelPetImage
             
             // Play mark sound

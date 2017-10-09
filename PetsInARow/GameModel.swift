@@ -16,7 +16,7 @@ class GameModel {
     var board: [UICellButton]?
     var playLabel: UIImageView?
     var resultsLabel: UILabel?
-    var match: GKTurnBasedMatch?
+    var match: GKMatch?
     var player: GKPlayer?
     
     init() {

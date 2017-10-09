@@ -20,9 +20,9 @@ class GameEngine33: GameEngine, GameEngineProtocol, GameAIProtocol {
         rows = initializeRows(cells: self.cells!)
     }
     
-    func markCell(image: UIImage) {
+    func markCell(image: UIImage, settings: SettingsModel, statistics: StatisticsModel) {
         // Mark grid board cell using AI engine
-        gameEngineAI?.markBoardCell(image: image)
+        gameEngineAI?.markBoardCell(image: image, settings: settings, statistics: statistics)
     }
     
     func isTicTacToe(cells: [UICellButton], cellState: EnumCellState) -> Bool {

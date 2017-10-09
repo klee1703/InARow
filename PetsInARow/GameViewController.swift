@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var beginResumeGame: UIButton!
     @IBOutlet weak var activePet: UIImageView!
+    @IBOutlet weak var endMatch: UIButton!
     @IBOutlet weak var match: UIButton!
     
     // Variables
@@ -85,7 +86,7 @@ class GameViewController: UIViewController {
         
         // if settings
         if (settingsModel?.setupGame)! {
-            setup()
+//            setup()
             doBegin()
             settingsModel?.setupGame = false
         }
@@ -93,8 +94,10 @@ class GameViewController: UIViewController {
         // Setup match button label if necessary
         if settingsModel?.gamePlayMode == EnumPlayMode.MultiPlayer {
             match.setTitle("End Match", for: .normal)
+            match.isEnabled = true
         } else {
             match.setTitle("", for: .normal)
+            match.isEnabled = false
         }
     }
     
@@ -102,17 +105,21 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func newGame(_ sender: UIButton) {
-        setup()
+    
+    @IBAction func endMatch(_ sender: Any) {
+        // Disconnects the local player from the match
+        print("Disconnect local player from match")
+        gameModel?.match?.disconnect()
+        
+        // Disable button and clear title
+        match.isEnabled = false
+        match.setTitle("", for: .normal)
     }
 
     func setup() {
-        // End multiplayer match
-//        gameModel?.match.parti
-        print("Setup for New Game")
-        // Initialize, game not started yet
-        self.isGameInPlay = false
+        // Disconnects the local player from thematch
+        print("Disconnect local player from match")
+        gameModel?.match?.disconnect()
     }
     
     @IBAction func beginGame(_ sender: UIButton) {

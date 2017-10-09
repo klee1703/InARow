@@ -80,5 +80,9 @@ class StatisticsViewController: UIViewController {
         self.viewWillAppear(true)
     }
     
+    @IBAction func clearAchievements(_ sender: UIButton) {
+        print("Reset achievements")
+        GameCenterManager.instance?.resetAchievements()
+    }
 }
 

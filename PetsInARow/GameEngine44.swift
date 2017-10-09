@@ -12,7 +12,8 @@ class GameEngine44: GameEngine, GameEngineProtocol {
     var cells: [UICellButton]?
     var rows: [Int:[UICellButton]] = [:]
     
-    override init(movesPlayed: Int, settings: SettingsModel, statistics: StatisticsModel) {
+    init(movesPlayed: Int, cells: [UICellButton], settings: SettingsModel, statistics: StatisticsModel) {
+        self.cells = cells
         super.init(movesPlayed: movesPlayed, settings: settings, statistics: statistics)
         rows = initializeRows(cells: self.cells!)
     }

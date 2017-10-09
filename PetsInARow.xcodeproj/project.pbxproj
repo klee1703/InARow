@@ -69,6 +69,7 @@
 		7926FED41F02B721002DC70F /* BrassPlate1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FEC91F02B721002DC70F /* BrassPlate1.wav */; };
 		7926FED51F02B721002DC70F /* GlassPlate1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FECA1F02B721002DC70F /* GlassPlate1.wav */; };
 		7926FED61F02B721002DC70F /* GlassPlate1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7926FECA1F02B721002DC70F /* GlassPlate1.wav */; };
+		792D2B031F2C407A00E5146A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792D2B021F2C407A00E5146A /* GameKit.framework */; };
 		792D80821F018AC900A0CCAE /* settings-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D807F1F018AC900A0CCAE /* settings-icon.png */; };
 		792D80831F018AC900A0CCAE /* settings-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D80801F018AC900A0CCAE /* settings-icon@2x.png */; };
 		792D80841F018AC900A0CCAE /* settings-icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 792D80811F018AC900A0CCAE /* settings-icon@3x.png */; };
@@ -144,6 +145,7 @@
 		79F413D01F2523BF00B56838 /* Snail.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F413CE1F2523BF00B56838 /* Snail.png */; };
 		79F413D31F25241600B56838 /* TRex.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F413D21F25241600B56838 /* TRex.png */; };
 		79F413D51F2524B900B56838 /* Robot.png in Resources */ = {isa = PBXBuildFile; fileRef = 79F413D41F2524B900B56838 /* Robot.png */; };
+		79F413D71F27042300B56838 /* GamePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F413D61F27042300B56838 /* GamePacket.swift */; };
 		79F71A6F1EBD3BB60067D98C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71A6E1EBD3BB60067D98C /* AppDelegate.swift */; };
 		79F71A711EBD3BB60067D98C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71A701EBD3BB60067D98C /* SettingsViewController.swift */; };
 		79F71A731EBD3BB60067D98C /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71A721EBD3BB60067D98C /* StatisticsViewController.swift */; };
@@ -212,6 +214,8 @@
 		7926FEC81F02B721002DC70F /* clapping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clapping.mp3; sourceTree = "<group>"; };
 		7926FEC91F02B721002DC70F /* BrassPlate1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BrassPlate1.wav; sourceTree = "<group>"; };
 		7926FECA1F02B721002DC70F /* GlassPlate1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GlassPlate1.wav; sourceTree = "<group>"; };
+		792D2B021F2C407A00E5146A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		792D2B041F2C408300E5146A /* PetsInARow.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PetsInARow.entitlements; sourceTree = "<group>"; };
 		792D807F1F018AC900A0CCAE /* settings-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon.png"; sourceTree = "<group>"; };
 		792D80801F018AC900A0CCAE /* settings-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon@2x.png"; sourceTree = "<group>"; };
 		792D80811F018AC900A0CCAE /* settings-icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-icon@3x.png"; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 		79F413CE1F2523BF00B56838 /* Snail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Snail.png; path = PetsInARow/Snail.png; sourceTree = "<group>"; };
 		79F413D21F25241600B56838 /* TRex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TRex.png; path = animals/TRex.png; sourceTree = "<group>"; };
 		79F413D41F2524B900B56838 /* Robot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Robot.png; path = animals/Robot.png; sourceTree = "<group>"; };
+		79F413D61F27042300B56838 /* GamePacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamePacket.swift; sourceTree = "<group>"; };
 		79F71A6B1EBD3BB60067D98C /* PetsInARow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetsInARow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F71A6E1EBD3BB60067D98C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79F71A701EBD3BB60067D98C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -295,6 +300,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				792D2B031F2C407A00E5146A /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +348,7 @@
 				7964CA0C1ED7E0D900C8A92D /* GameModel.swift */,
 				7964CA091ED7AE1600C8A92D /* SettingsModel.swift */,
 				7964CA0F1ED7E0FA00C8A92D /* StatisticsModel.swift */,
+				79F413D61F27042300B56838 /* GamePacket.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -407,6 +414,14 @@
 			name = audio;
 			sourceTree = "<group>";
 		};
+		792D2AFF1F2C405900E5146A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				792D2B021F2C407A00E5146A /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7940343D1F0820790047A64D /* GameCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +433,12 @@
 		795F98191F20189200CF8ABB /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				79A02B2E1F201A3500A5B045 /* iPhoneApp@2x.png */,
+				79A02B301F201A5400A5B045 /* iPhoneApp@3x.png */,
+				79A02B311F201A5400A5B045 /* Settings@2x.png */,
+				79A02B321F201A5400A5B045 /* Settings@3x.png */,
+				79A02B331F201A5400A5B045 /* Spotlight@2x.png */,
+				79A02B341F201A5400A5B045 /* Spotlight@3x.png */,
 				79A02B3A1F201B3A00A5B045 /* Notification@2x.png */,
 				79A02B3B1F201B3A00A5B045 /* Notification@3x.png */,
 			);
@@ -515,6 +536,7 @@
 				79F71A841EBD3BB70067D98C /* PetsInARowTests */,
 				79F71A8F1EBD3BB70067D98C /* PetsInARowUITests */,
 				79F71A6C1EBD3BB60067D98C /* Products */,
+				792D2AFF1F2C405900E5146A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -531,6 +553,7 @@
 		79F71A6D1EBD3BB60067D98C /* PetsInARow */ = {
 			isa = PBXGroup;
 			children = (
+				792D2B041F2C408300E5146A /* PetsInARow.entitlements */,
 				7940343D1F0820790047A64D /* GameCenter */,
 				79881CE71EE06FB20086FA0D /* Storyboards */,
 				791C38031ED94EF600BA4F16 /* enums */,
@@ -541,12 +564,6 @@
 				79881CE61EE06F750086FA0D /* Subclass Views */,
 				791C38071ED94FCB00BA4F16 /* boards */,
 				79F71A771EBD3BB60067D98C /* Assets.xcassets */,
-				79A02B2E1F201A3500A5B045 /* iPhoneApp@2x.png */,
-				79A02B301F201A5400A5B045 /* iPhoneApp@3x.png */,
-				79A02B311F201A5400A5B045 /* Settings@2x.png */,
-				79A02B321F201A5400A5B045 /* Settings@3x.png */,
-				79A02B331F201A5400A5B045 /* Spotlight@2x.png */,
-				79A02B341F201A5400A5B045 /* Spotlight@3x.png */,
 				795F98191F20189200CF8ABB /* icons */,
 				79144E431EEDE1C4006B71F0 /* animals */,
 				796C58D01EC6B5AA0034CF94 /* art */,
@@ -639,13 +656,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Keith Lee";
 				TargetAttributes = {
 					79F71A6A1EBD3BB60067D98C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = U823YHXB73;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					79F71A801EBD3BB70067D98C = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -802,6 +827,7 @@
 				792F88521ED0112B006685CC /* EnumLevelOfDifficulty.swift in Sources */,
 				79F71A9F1EBE7FEE0067D98C /* SupportViewController.swift in Sources */,
 				7926FEC31F02B67A002DC70F /* AudioManager.swift in Sources */,
+				79F413D71F27042300B56838 /* GamePacket.swift in Sources */,
 				79B54CA21EF8A4A8008282F6 /* GameEngineAI.swift in Sources */,
 				79FD34931ECC0A65005DC940 /* EnumOpponent.swift in Sources */,
 				792603821EE109A500A6EEDD /* GameBoardContainerViewController.swift in Sources */,
@@ -925,7 +951,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -933,7 +961,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -956,7 +988,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -975,7 +1007,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -983,7 +1017,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1000,7 +1038,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1012,6 +1050,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PetsInARow/PetsInARow.entitlements;
 				DEVELOPMENT_TEAM = U823YHXB73;
 				INFOPLIST_FILE = PetsInARow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1027,6 +1066,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PetsInARow/PetsInARow.entitlements;
 				DEVELOPMENT_TEAM = U823YHXB73;
 				INFOPLIST_FILE = PetsInARow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

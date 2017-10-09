@@ -41,7 +41,7 @@
                                 <rect key="frame" x="285" y="40" width="74" height="30"/>
                                 <state key="normal" title="End Match"/>
                                 <connections>
-                                    <action selector="newGame:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Aj3-Pt-X5s"/>
+                                    <action selector="endMatch:" destination="9pv-A4-QxB" eventType="touchUpInside" id="tBE-pk-HvW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Begin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ept-ax-hAh">
@@ -341,11 +341,19 @@
                                     <action selector="resetMp44Wins:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="sAv-Tg-vjX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iu7-qM-Xf8">
+                                <rect key="frame" x="109.5" y="455" width="156" height="30"/>
+                                <state key="normal" title="Clear all Achievements"/>
+                                <connections>
+                                    <action selector="clearAchievements:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="m5A-oh-Yub"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LnH-9J-TEb" firstAttribute="top" secondItem="vw1-3m-QQ1" secondAttribute="bottom" constant="15" id="1Bo-4m-3OW"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="h9b-Ek-EZc" secondAttribute="bottom" constant="5" id="3B5-ku-rQ5"/>
+                            <constraint firstItem="Iu7-qM-Xf8" firstAttribute="top" secondItem="v59-nC-oYt" secondAttribute="bottom" constant="58" id="3TM-q1-yWy"/>
                             <constraint firstItem="M6k-yX-nxF" firstAttribute="top" secondItem="NDk-cv-Gan" secondAttribute="bottom" constant="19" id="5EC-FB-39d"/>
                             <constraint firstItem="Wxc-UL-AMk" firstAttribute="top" secondItem="S5w-gX-8Vc" secondAttribute="bottom" constant="50" id="6eS-3A-ony"/>
                             <constraint firstItem="xTT-UR-9Lc" firstAttribute="top" secondItem="sZr-ca-Nh7" secondAttribute="bottom" constant="16" id="6z4-Dt-dGl"/>
@@ -354,6 +362,7 @@
                             <constraint firstItem="ROC-NG-XUe" firstAttribute="centerX" secondItem="xTT-UR-9Lc" secondAttribute="centerX" constant="-1" id="9zq-Xm-zEe"/>
                             <constraint firstItem="kut-6y-Fxz" firstAttribute="leading" secondItem="tFd-zE-kxH" secondAttribute="trailing" constant="62.5" id="BY8-e1-ygc"/>
                             <constraint firstItem="v59-nC-oYt" firstAttribute="top" secondItem="xN5-y0-Msm" secondAttribute="bottom" constant="11" id="Bji-Gr-NJI"/>
+                            <constraint firstItem="Iu7-qM-Xf8" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Bxa-VK-Vvx"/>
                             <constraint firstItem="sZr-ca-Nh7" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="CmQ-iK-9o2"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="xTT-UR-9Lc" secondAttribute="bottom" constant="5" id="Dkv-iW-05c"/>
                             <constraint firstItem="kVe-a1-zzq" firstAttribute="top" secondItem="47N-Fk-9wG" secondAttribute="bottom" constant="15" id="EeB-6C-QRf"/>

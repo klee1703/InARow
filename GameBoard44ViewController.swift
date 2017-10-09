@@ -42,7 +42,7 @@ class GameBoard44ViewController: GameBoardViewController {
         // Do any additional setup after loading the view.
         cells = [cell0, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, cell10, cell11, cell12, cell13, cell14, cell15]
         gameModel?.board = cells
-        gameEngine = GameEngine44(movesPlayed: 0, settings: settingsModel!, statistics: statisticsModel!)
+        gameEngine = GameEngine44(movesPlayed: 0, cells: cells, settings: settingsModel!, statistics: statisticsModel!)
         
         // Interaction initially enabled
         gameBoard44View.isUserInteractionEnabled = true
@@ -104,7 +104,7 @@ class GameBoard44ViewController: GameBoardViewController {
             gameBoard44View.isUserInteractionEnabled = false
         } else {
             // MultiPlayer, send message to enable move by opponent
-            send(cell: cell, petImage: labelPetImage, opponentImage: labelOpponentImage, boardView: gameBoard44View)
+            send(cellIndex: boardIndex(cell: cell, cells: cells), playerImageFile: (settingsModel?.yourPet)! + ".png", opponentImageFile: (settingsModel?.opponentsPet)! + ".png", gameBoard: EnumGameBoard.TTBoard, boardView: gameBoard44View)
             
             // Update the board state for opponent's move
             gameEngine?.incrementMovesPlayed()

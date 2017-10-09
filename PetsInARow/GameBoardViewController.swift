@@ -56,8 +56,7 @@ class GameBoardViewController: UIViewController {
     }
  
     // Send data for multiplayer game!
-    func send(cell: UICellButton, petImage: UIImage?, opponentImage: UIImage?, boardView: UIView) {
-        self.playLabel?.image = opponentImage
+    func send(cellIndex: Int, playerImageFile:String, opponentImageFile:String, gameBoard: EnumGameBoard, boardView: UIView) {
         
         // Delay to simulate opponent's move
         let randomNum = DispatchTimeInterval.seconds(Int(arc4random_uniform(3)+2))
@@ -66,26 +65,27 @@ class GameBoardViewController: UIViewController {
             // Opponent made move, now re-enable play on board
             print("Opponent marked cell")
             boardView.isUserInteractionEnabled = true
-            self.playLabel?.image = petImage
+//            self.playLabel?.image = petImage
         }
 
         // Create a GKMatch instance for sending data
         let match = gameModel?.match
         
         // Create a data instance and populate with data
-        var data = Data()
+            var packet = GamePacket(playerMove: true, cellIndex: cellIndex, playermageFileName: playerImageFile, opponentImageFileName: opponentImageFile, gameBoard: gameBoard)
+        let dataPacket = NSData(bytes: &packet, length: MemoryLayout<GamePacket>.size)
+        boardView.isUserInteractionEnabled = false
         
         do {
-//            try match?.sendData(toAllPlayers: data, with: GKMatchSendDataMode.reliable)
-            match?.saveCurrentTurn(withMatch: data, completionHandler: nil)
+            try match?.sendData(toAllPlayers: dataPacket as Data, with: GKMatchSendDataMode.reliable)
         } catch {
-            
+            print("Error sending data")
         }
         
     }
     
     // Receive data for multiplayer game!
-    func receive() {
+    func receive(match: GKMatch, data: Data, remotePlayer: GKPlayer) {
         
     }
     
@@ -93,6 +93,16 @@ class GameBoardViewController: UIViewController {
         UIView.animate(withDuration: 0.0, delay: 0.0, options: .allowUserInteraction, animations: {
             cell.alpha = 1.0
         }, completion: nil)
+    }
+    
+    func boardIndex(cell: UICellButton, cells: [UICellButton]) -> Int {
+        for index in 0..<cells.count {
+            if cells[index] == cell {
+                return index
+            }
+        }
+        return -1
+        
     }
 
     /*
