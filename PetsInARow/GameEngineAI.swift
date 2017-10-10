@@ -64,7 +64,7 @@ class GameEngineAI {
     // Mark empty cell on board grid
     func markBoardCell(image: UIImage, settings: SettingsModel, statistics: StatisticsModel) {
         // Initialize
-        var bestValue = -kEvaluateMax
+        var bestValueForPosition = -kEvaluateMax
         var bestRowPosition = 0
         var bestColumnPosition = 0
 
@@ -87,22 +87,24 @@ class GameEngineAI {
         if isFirstCounterMove && !isNumberLessThan(difficulty: settings.difficulty) {
             makeRandomCounterMove()
         } else {
-            // Mark cell with the best position
+            // Mark cell with the best grid position, computed using following logic
             for row in 0..<kGridRows {
                 for column in 0..<kGridColumns {
+                    // Only attempt to computed cell position value if not already marked!
                     if boardGrid[row][column]?.cellState == EnumCellState.None {
                         // First set the cell to evaluate position
                         boardGrid[row][column]?.cellState = .Opponent
                         
                         // Only attempt to determine best cell to mark if not already marked!
-                        let returnedValue = evaluatePosition()
-                        if returnedValue >= bestValue {
-                            bestValue = returnedValue
+                        let ValueForPosition = evaluatePosition()
+                        if ValueForPosition >= bestValueForPosition {
+                            // Computed position value better than current, update best position
+                            bestValueForPosition = ValueForPosition
                             bestRowPosition = row
                             bestColumnPosition = column
                         }
                         
-                        // Then clear the cell (set before evaluating position)
+                        // Then clear the cell before evaluating next computed position
                         boardGrid[row][column]?.cellState = .None
                     }
                 }
@@ -345,11 +347,11 @@ class GameEngineAI {
         let randomNumber = Double(arc4random() / UInt32(Constants.kArc4RandomMax))
         switch difficulty {
         case .Easy:
-            return randomNumber < 0.8
+            return randomNumber < 0.5
         case .Medium:
-            return randomNumber < 0.9
+            return randomNumber < 0.7
         case .Hard:
-            return randomNumber < 0.95
+            return randomNumber < 0.85
         }
     }
     

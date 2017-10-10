@@ -85,6 +85,12 @@
 		7948C5951ED673690028C062 /* wrench@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7948C5931ED673690028C062 /* wrench@3x.png */; };
 		795252111EE8650300FE651E /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795252101EE8650300FE651E /* PersistenceManager.swift */; };
 		795252121EE8650300FE651E /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795252101EE8650300FE651E /* PersistenceManager.swift */; };
+		796486801F8C350700A2CDEC /* EnumLevelOfDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88511ED0112B006685CC /* EnumLevelOfDifficulty.swift */; };
+		796486811F8C350700A2CDEC /* EnumPlayMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792F88531ED0FC45006685CC /* EnumPlayMode.swift */; };
+		796486821F8C351600A2CDEC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71AA01EBE81030067D98C /* GameViewController.swift */; };
+		796486831F8C35F400A2CDEC /* EnumPlayState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796D081F1EF0400E00EE131D /* EnumPlayState.swift */; };
+		796486841F8C35F400A2CDEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F71A6E1EBD3BB60067D98C /* AppDelegate.swift */; };
+		796486851F8C4B6000A2CDEC /* GamePacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F413D61F27042300B56838 /* GamePacket.swift */; };
 		7964CA071ED7ADD300C8A92D /* GameTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964CA061ED7ADD300C8A92D /* GameTabBarController.swift */; };
 		7964CA081ED7ADD300C8A92D /* GameTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964CA061ED7ADD300C8A92D /* GameTabBarController.swift */; };
 		7964CA0A1ED7AE1600C8A92D /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7964CA091ED7AE1600C8A92D /* SettingsModel.swift */; };
@@ -662,6 +668,7 @@
 					79F71A6A1EBD3BB60067D98C = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = U823YHXB73;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
@@ -674,11 +681,13 @@
 					};
 					79F71A801EBD3BB70067D98C = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 79F71A6A1EBD3BB60067D98C;
 					};
 					79F71A8B1EBD3BB70067D98C = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 79F71A6A1EBD3BB60067D98C;
 					};
@@ -861,6 +870,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				796486851F8C4B6000A2CDEC /* GamePacket.swift in Sources */,
+				796486831F8C35F400A2CDEC /* EnumPlayState.swift in Sources */,
+				796486841F8C35F400A2CDEC /* AppDelegate.swift in Sources */,
+				796486821F8C351600A2CDEC /* GameViewController.swift in Sources */,
+				796486801F8C350700A2CDEC /* EnumLevelOfDifficulty.swift in Sources */,
+				796486811F8C350700A2CDEC /* EnumPlayMode.swift in Sources */,
 				792603861EE122A800A6EEDD /* GameBoard33ViewController.swift in Sources */,
 				79B54CA61EF8BD09008282F6 /* EnumWinningElements.swift in Sources */,
 				79C657C11EF64F3E00D199AF /* GameEngine44.swift in Sources */,
@@ -1057,7 +1072,8 @@
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellago.PetsInARow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1073,7 +1089,8 @@
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellago.PetsInARow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1087,7 +1104,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellago.PetsInARowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetsInARow.app/PetsInARow";
 			};
 			name = Debug;
@@ -1101,7 +1119,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellago.PetsInARowTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PetsInARow.app/PetsInARow";
 			};
 			name = Release;
@@ -1114,7 +1133,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellago.PetsInARowUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = PetsInARow;
 			};
 			name = Debug;
@@ -1127,7 +1147,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pellago.PetsInARowUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = PetsInARow;
 			};
 			name = Release;

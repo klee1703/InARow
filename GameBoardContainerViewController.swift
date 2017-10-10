@@ -29,12 +29,7 @@ class GameBoardContainerViewController: UIViewController {
         settingsModel = appDelegate?.settings
         statisticsModel = appDelegate?.statistics
         gameModel = appDelegate?.game
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        // Do any additional setup after loading the view.
         switch settingsModel!.board {
         case EnumGameBoard.TTBoard:
             self.currentSegueIdentifier = Constants.k3x3BoardSegue
@@ -42,6 +37,26 @@ class GameBoardContainerViewController: UIViewController {
             self.currentSegueIdentifier = Constants.k4x4BoardSegue
         }
         self.performSegue(withIdentifier: self.currentSegueIdentifier, sender: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Do any additional setup after loading the view.
+        
+        // If board configuration changed then load a new one, otherwise
+        // leave the configuration (and settings) as is.  Logic needed if
+        // returning to game board without performing setup.
+        if settingsModel?.board != settingsModel?.previousBoard {
+            // Changed board, must display new one (clears previous)!
+            switch settingsModel!.board {
+            case EnumGameBoard.TTBoard:
+                self.currentSegueIdentifier = Constants.k3x3BoardSegue
+            case EnumGameBoard.FFBoard:
+                self.currentSegueIdentifier = Constants.k4x4BoardSegue
+            }
+            self.performSegue(withIdentifier: self.currentSegueIdentifier, sender: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {

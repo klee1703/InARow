@@ -307,6 +307,10 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
 
     @IBAction func controlGameBoard(_ sender: UISegmentedControl) {
+        // Set previous board configuration to current
+        settingsModel?.previousBoard = (settingsModel?.board)!
+        
+        // Now set board configuration to that selected
         switch sender.selectedSegmentIndex {
         case 0:
             settingsModel?.board = .TTBoard
@@ -378,6 +382,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             let alert = UIAlertController(title: "Level of Difficulty", message: Constants.kLevelOfDifficultyMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default) {action in
                 self.doUpdateLevelOfDifficulty(sender)
+                self.settingsModel?.setupGame = true
             })
             alert.addAction(UIAlertAction(title: "Cancel", style: .default) {action in
             })

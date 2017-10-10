@@ -18,9 +18,11 @@ class GameModel {
     var resultsLabel: UILabel?
     var match: GKMatch?
     var player: GKPlayer?
+    var isGameInPlay: Bool
     
     init() {
         computerPet = "computer"
         playState = .PlayerTurn
+        isGameInPlay = false
     }
 }

@@ -21,7 +21,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var match: UIButton!
     
     // Variables
-    var isGameInPlay = false
     var gameBoard3x3: [String] = [String]()
     var gameBoard4x4: [String] = [String]()
     var gameCenterManager: GameCenterManager?
@@ -60,7 +59,7 @@ class GameViewController: UIViewController {
         
         // Do any additional setup
         setup()
-        settingsModel?.setupGame = false
+        settingsModel?.setupGame = true
         resultsLabel.text = Constants.kStartGameLabel
     }
     
@@ -84,9 +83,8 @@ class GameViewController: UIViewController {
             }
         }
         
-        // if settings
+        // If we need to setup game then do so
         if (settingsModel?.setupGame)! {
-//            setup()
             doBegin()
             settingsModel?.setupGame = false
         }
@@ -117,7 +115,7 @@ class GameViewController: UIViewController {
     }
 
     func setup() {
-        // Disconnects the local player from thematch
+        // Disconnects the local player from the match
         print("Disconnect local player from match")
         gameModel?.match?.disconnect()
     }
@@ -129,10 +127,9 @@ class GameViewController: UIViewController {
     
     func doBegin() {
         print("Begin Game")
-        self.isGameInPlay = true
         resultsLabel.text = Constants.kStartGameLabel
         
-        // If board present clear
+        // If board instance has been created then initialize it
         if let board = gameModel?.board {
             gbcvc?.gbvc?.clearBoard(cells: (board))
         }

@@ -46,7 +46,11 @@ class GameBoard33ViewController: GameBoardViewController {
         labelOpponentImage = UIImage(named: (settingsModel?.opponentsPet)! + ".png")!
         labelComputerImage = UIImage(named: Constants.kComputerImageFile)!
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -148,8 +152,9 @@ class GameBoard33ViewController: GameBoardViewController {
     
     override func startGame(currentPlayer: Bool) {
         super.startGame(currentPlayer: currentPlayer)
-        
         print("Start game")
+        
+        //
         super.gameModel?.board = cells
         gameBoard33View.isUserInteractionEnabled = true
         

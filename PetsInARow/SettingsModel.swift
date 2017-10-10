@@ -16,6 +16,7 @@ class SettingsModel {
     
     // Properties
     var board: EnumGameBoard
+    var previousBoard: EnumGameBoard
     var gamePlayMode: EnumPlayMode
     var gameFirstMove: EnumFirstMove
     var difficulty: EnumLevelOfDifficulty
@@ -30,6 +31,7 @@ class SettingsModel {
         setupGame = false
         
         board = .TTBoard
+        previousBoard = .TTBoard
         gamePlayMode = .SinglePlayer
         gameFirstMove = .Player
         difficulty = .Easy
