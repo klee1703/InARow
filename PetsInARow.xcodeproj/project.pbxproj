@@ -209,6 +209,12 @@
 		791C38141EDBA54C00BA4F16 /* FaqsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqsViewController.swift; sourceTree = "<group>"; };
 		791C38201EDFC6D200BA4F16 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		791C38211EDFC6D200BA4F16 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		7922217B1F95516F00D52A08 /* App Screenshot 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Screenshot 1.png"; sourceTree = SOURCE_ROOT; };
+		7922217C1F95517F00D52A08 /* App Screenshot 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Screenshot 3.png"; sourceTree = SOURCE_ROOT; };
+		7922217D1F95517F00D52A08 /* App Screenshot 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Screenshot 4.png"; sourceTree = SOURCE_ROOT; };
+		7922217E1F95517F00D52A08 /* App Screenshot 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Screenshot 5.png"; sourceTree = SOURCE_ROOT; };
+		7922217F1F95517F00D52A08 /* App Screenshot 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Screenshot 2.png"; sourceTree = SOURCE_ROOT; };
+		792221801F95517F00D52A08 /* App Screenshot 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "App Screenshot 6.png"; sourceTree = SOURCE_ROOT; };
 		792603811EE109A500A6EEDD /* GameBoardContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoardContainerViewController.swift; path = ../GameBoardContainerViewController.swift; sourceTree = "<group>"; };
 		792603841EE122A800A6EEDD /* GameBoard33ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard33ViewController.swift; path = ../GameBoard33ViewController.swift; sourceTree = "<group>"; };
 		792603871EE123DF00A6EEDD /* GameBoard44ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameBoard44ViewController.swift; path = ../GameBoard44ViewController.swift; sourceTree = "<group>"; };
@@ -464,6 +470,12 @@
 			children = (
 				792D808B1F018D5A00A0CCAE /* tictactoe.png */,
 				792D808C1F018D5A00A0CCAE /* tictactoe@2x.png */,
+				7922217B1F95516F00D52A08 /* App Screenshot 1.png */,
+				7922217F1F95517F00D52A08 /* App Screenshot 2.png */,
+				7922217C1F95517F00D52A08 /* App Screenshot 3.png */,
+				7922217D1F95517F00D52A08 /* App Screenshot 4.png */,
+				7922217E1F95517F00D52A08 /* App Screenshot 5.png */,
+				792221801F95517F00D52A08 /* App Screenshot 6.png */,
 				792D808D1F018D5A00A0CCAE /* tictactoe@3x.png */,
 				792D807F1F018AC900A0CCAE /* settings-icon.png */,
 				792D80801F018AC900A0CCAE /* settings-icon@2x.png */,
