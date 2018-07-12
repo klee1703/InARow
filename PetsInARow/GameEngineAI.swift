@@ -96,12 +96,18 @@ class GameEngineAI {
                         boardGrid[row][column]?.cellState = .Opponent
                         
                         // Only attempt to determine best cell to mark if not already marked!
-                        let ValueForPosition = evaluatePosition()
-                        if ValueForPosition >= bestValueForPosition {
+                        let valueForPosition = evaluatePosition()
+                        if valueForPosition > bestValueForPosition {
                             // Computed position value better than current, update best position
-                            bestValueForPosition = ValueForPosition
+                            bestValueForPosition = valueForPosition
                             bestRowPosition = row
                             bestColumnPosition = column
+                        } else if valueForPosition == bestValueForPosition {
+                            // Computed position same as current best value, randomly update value
+                            if arc4random_uniform(10) > UInt32(5) {                            bestValueForPosition = valueForPosition
+                                bestRowPosition = row
+                                bestColumnPosition = column
+                            }
                         }
                         
                         // Then clear the cell before evaluating next computed position

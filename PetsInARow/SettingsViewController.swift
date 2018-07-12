@@ -73,6 +73,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // Set components
         if isInitializedGameCenter {
             self.doUpdateGameCenter(true, isEnabled: gameCenter.isOn)
+            self.settingsModel?.enableGameCenter = true
         }
         if isInitializedPlayMode {
             self.doUpdatePlayMode(true)

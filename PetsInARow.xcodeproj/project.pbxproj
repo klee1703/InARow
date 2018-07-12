@@ -114,6 +114,7 @@
 		796D08261EF0CAA200EE131D /* UICellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796D08241EF0CAA200EE131D /* UICellButton.swift */; };
 		79726F911EFE31E100C66E61 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79726F901EFE31E100C66E61 /* Constants.swift */; };
 		79726F921EFE31E100C66E61 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79726F901EFE31E100C66E61 /* Constants.swift */; };
+		79958CE920F7F98500C3905F /* Cat1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 79958CE820F7F98500C3905F /* Cat1024.png */; };
 		79A02B2F1F201A3500A5B045 /* iPhoneApp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B2E1F201A3500A5B045 /* iPhoneApp@2x.png */; };
 		79A02B351F201A5400A5B045 /* iPhoneApp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B301F201A5400A5B045 /* iPhoneApp@3x.png */; };
 		79A02B361F201A5400A5B045 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79A02B311F201A5400A5B045 /* Settings@2x.png */; };
@@ -257,6 +258,7 @@
 		796D08211EF0C9BA00EE131D /* EnumCellState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCellState.swift; sourceTree = "<group>"; };
 		796D08241EF0CAA200EE131D /* UICellButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICellButton.swift; sourceTree = "<group>"; };
 		79726F901EFE31E100C66E61 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		79958CE820F7F98500C3905F /* Cat1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cat1024.png; sourceTree = "<group>"; };
 		79A02B2E1F201A3500A5B045 /* iPhoneApp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhoneApp@2x.png"; path = "../iPhoneApp@2x.png"; sourceTree = "<group>"; };
 		79A02B301F201A5400A5B045 /* iPhoneApp@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhoneApp@3x.png"; path = "../iPhoneApp@3x.png"; sourceTree = "<group>"; };
 		79A02B311F201A5400A5B045 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings@2x.png"; path = "../Settings@2x.png"; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 		79144E431EEDE1C4006B71F0 /* animals */ = {
 			isa = PBXGroup;
 			children = (
+				79958CE820F7F98500C3905F /* Cat1024.png */,
 				79F413D41F2524B900B56838 /* Robot.png */,
 				79F413D21F25241600B56838 /* TRex.png */,
 				79F413CE1F2523BF00B56838 /* Snail.png */,
@@ -674,7 +677,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Keith Lee";
 				TargetAttributes = {
 					79F71A6A1EBD3BB60067D98C = {
@@ -765,6 +768,7 @@
 				79A02B371F201A5400A5B045 /* Settings@3x.png in Resources */,
 				7948C5941ED673690028C062 /* wrench@2x.png in Resources */,
 				79E5940F1EEC650000003250 /* clear@3x.png in Resources */,
+				79958CE920F7F98500C3905F /* Cat1024.png in Resources */,
 				792D80841F018AC900A0CCAE /* settings-icon@3x.png in Resources */,
 				79F413D31F25241600B56838 /* TRex.png in Resources */,
 				7926FED51F02B721002DC70F /* GlassPlate1.wav in Resources */,
@@ -982,6 +986,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -989,6 +994,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1038,6 +1044,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1045,6 +1052,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

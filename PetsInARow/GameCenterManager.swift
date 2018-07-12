@@ -16,7 +16,7 @@ class GameCenterManager: NSObject, GKMatchDelegate, GKMatchmakerViewControllerDe
     static var instance: GameCenterManager?
     var loginAlert: UIAlertController?
     var view: GameViewController?
-    var  settings: SettingsModel?
+    var settings: SettingsModel?
     var game: GameModel?
     var isMatchStarted = false
     var isMatchEnded = false
